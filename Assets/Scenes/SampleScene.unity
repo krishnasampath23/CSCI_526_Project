@@ -1116,8 +1116,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacle: {fileID: 1679436769864102079, guid: f11af8a0371a3d047a7cb927b471d278, type: 3}
   water: {fileID: 1679436769864102079, guid: 44f3e9003a0d81c448c6f578ce0576c3, type: 3}
-  MinSpeed: 5
-  MaxSpeed: 20
+  MinSpeed: 0
+  MaxSpeed: 0
   CurrSpeed: 0
   SpeedMultiplier: 0.0015
 --- !u!1 &8558196912431356156
