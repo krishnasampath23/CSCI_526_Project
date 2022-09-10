@@ -39,7 +39,17 @@ public class PlayerScript : MonoBehaviour
             }
         }
 
-        if(isAlive)
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            RB.AddForce(Vector2.right * JumpForce);
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            RB.AddForce(Vector2.left * JumpForce);
+        }
+
+        if (isAlive)
         {
             score += Time.deltaTime * 10;
         }
