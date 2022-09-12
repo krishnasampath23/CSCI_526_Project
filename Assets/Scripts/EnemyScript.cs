@@ -6,7 +6,7 @@ public class EnemyScript : MonoBehaviour
     [SerializeField]
     bool isGrounded = false;
     Rigidbody2D rb;
-    float moveSpeed = 2f;
+    float moveSpeed = 3f;
     Transform target;
     Vector2 moveDirection;
 
