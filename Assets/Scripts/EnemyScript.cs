@@ -5,19 +5,44 @@ public class EnemyScript : MonoBehaviour
 {
     [SerializeField]
     bool isGrounded = false;
+    Rigidbody2D rb;
+    float moveSpeed = 3f;
+    Transform target;
+    Vector2 moveDirection;
 
-    Rigidbody2D RB;
 
     private void Awake()
     {
-        RB = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void Start()
+    {
+        target = GameObject.Find("Player").transform;
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         // transform.Translate(Vector2.right * Time.deltaTime/2);
+        if (target)
+        {
+            Vector3 direction = (target.position - transform.position).normalized;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            rb.rotation = angle;
+            moveDirection = direction;
+        }
     }
+
+    private void FixedUpdate()
+    {
+        if(target)
+        {
+            rb.velocity = new Vector2(moveDirection.x, moveDirection.y) * moveSpeed;
+
+        }
+    }
+
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("ground"))
