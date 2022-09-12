@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
 
+    public Transform player;
     public GameObject followObject;
     public Vector2 followOffset;
     public float speed = 3f;
@@ -12,7 +13,7 @@ public class CameraFollow : MonoBehaviour
     private Rigidbody2D rb;
 
 
-    
+
 
     void Start()
     {
@@ -23,21 +24,26 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        this.transform.position = new Vector3(player.position.x, player.position.y + 3, this.transform.position.z);
+
+
         Vector2 follow = followObject.transform.position;
         float xDifference = Vector2.Distance(Vector2.right * transform.position.x, Vector2.right * follow.x);
         float yDifference = Vector2.Distance(Vector2.up * transform.position.y, Vector2.up * follow.y);
 
         Vector3 newPosition = transform.position;
-        if (Mathf.Abs(xDifference) >= threshold.x){
+        if (Mathf.Abs(xDifference) >= threshold.x)
+        {
             newPosition.x = follow.x;
         }
-        if (Mathf.Abs(yDifference) >= threshold.y){
+        if (Mathf.Abs(yDifference) >= threshold.y)
+        {
             newPosition.y = follow.y;
         }
         // camera move toward player smoothly
-        float moveSpeed = rb.velocity.magnitude > speed? rb.velocity.magnitude : speed;
-        transform.position = Vector3.MoveTowards(transform.position, newPosition, moveSpeed * Time.deltaTime);   
-    }   
+        float moveSpeed = rb.velocity.magnitude > speed ? rb.velocity.magnitude : speed;
+        transform.position = Vector3.MoveTowards(transform.position, newPosition, moveSpeed * Time.deltaTime);
+    }
 
     private Vector3 calculateThreshold()
     {
@@ -48,7 +54,8 @@ public class CameraFollow : MonoBehaviour
         return t;
     }
 
-    private void OnDrawGizmos(){
+    private void OnDrawGizmos()
+    {
         Gizmos.color = Color.blue;
         Vector2 border = calculateThreshold();
         Gizmos.DrawWireCube(transform.position, new Vector3(border.x * 2, border.y * 2, 1));

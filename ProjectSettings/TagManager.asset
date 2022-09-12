@@ -11,6 +11,8 @@ TagManager:
   - water
   - nextLineForWater
   - obstacle1
+  - LevelEnd
+  - LevelStart
   layers:
   - Default
   - TransparentFX
