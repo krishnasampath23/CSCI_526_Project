@@ -13,6 +13,8 @@ TagManager:
   - obstacle1
   - LevelEnd
   - LevelStart
+  - Bullet
+  - Enemy
   layers:
   - Default
   - TransparentFX
