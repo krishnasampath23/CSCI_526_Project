@@ -15,6 +15,8 @@ public class PlayerScript : MonoBehaviour
     public float CurrSpeed;
 
     public float SpeedMultiplier;
+    public ProjectileBehaviour projectileBehaviourPrefab;
+    public Transform LaunchOffSet;
 
     Rigidbody2D RB;
 
@@ -57,6 +59,10 @@ public class PlayerScript : MonoBehaviour
         if (CurrSpeed < MaxSpeed)
         {
             CurrSpeed += SpeedMultiplier;
+        }
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            Instantiate(projectileBehaviourPrefab, LaunchOffSet.position, transform.rotation);
         }
     }
 
