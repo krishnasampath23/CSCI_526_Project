@@ -64,6 +64,10 @@ public class EnemyScript : MonoBehaviour
              UnityEditor.EditorApplication.isPlaying = false;
             
         }
+        if (collision.gameObject.CompareTag("Bullet")){
+            // Debug.Log("Hello");
+            Destroy(this.gameObject);
+        } 
 
         if (collision.gameObject.CompareTag("obstacle"))
         {
