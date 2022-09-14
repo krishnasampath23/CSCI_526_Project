@@ -60,14 +60,20 @@ public class EnemyScript : MonoBehaviour
 
         if (collision.gameObject.CompareTag("player"))
         {
-             //Application.Quit(); // For Web GL Build
-             UnityEditor.EditorApplication.isPlaying = false;
+             Application.Quit(); // For Web GL Build
+             //UnityEditor.EditorApplication.isPlaying = false;
             
         }
         if (collision.gameObject.CompareTag("Bullet")){
             // Debug.Log("Hello");
             Destroy(this.gameObject);
-        } 
+        }
+
+        if (collision.gameObject.CompareTag("Peel"))
+        {
+            // Debug.Log("Hello");
+            Destroy(this.gameObject);
+        }
 
         if (collision.gameObject.CompareTag("obstacle"))
         {

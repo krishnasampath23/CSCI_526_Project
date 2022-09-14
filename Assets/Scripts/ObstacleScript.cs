@@ -25,7 +25,7 @@ public class ObstacleScript : MonoBehaviour
             {
                 //Time.timeScale = 0;
                 //Application.Quit(); // For Web GL Build
-                UnityEditor.EditorApplication.isPlaying = false;
+                //UnityEditor.EditorApplication.isPlaying = false;
             }
             obstacleGenerator.CurrSpeed = obstacleGenerator.CurrSpeed - 5;
             Destroy(this.gameObject);

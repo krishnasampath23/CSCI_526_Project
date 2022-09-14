@@ -15,6 +15,7 @@ TagManager:
   - LevelStart
   - Bullet
   - Enemy
+  - Peel
   layers:
   - Default
   - TransparentFX
