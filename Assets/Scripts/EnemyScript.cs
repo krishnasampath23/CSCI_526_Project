@@ -6,10 +6,9 @@ public class EnemyScript : MonoBehaviour
     [SerializeField]
     bool isGrounded = false;
     Rigidbody2D rb;
-    float moveSpeed = 3f;
+    float moveSpeed = 5f;
     Transform target;
     Vector2 moveDirection;
-
 
     private void Awake()
     {
@@ -18,16 +17,24 @@ public class EnemyScript : MonoBehaviour
 
     private void Start()
     {
+        if (isGrounded == false)
+        {
+            transform.Translate(Vector2.down/200);
+        }
+
         target = GameObject.Find("Player").transform;
+
+
     }
 
     // Update is called once per frame
     private void Update()
     {
+        
         // transform.Translate(Vector2.right * Time.deltaTime/2);
-        if(isGrounded == false)
+        if (isGrounded == false)
         {
-            transform.Translate(Vector2.down /200);
+            transform.Translate(Vector2.down/200);
         }
 
         else if (target)
@@ -41,9 +48,14 @@ public class EnemyScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(target)
+        if (isGrounded == false)
         {
-            rb.velocity = new Vector2(moveDirection.x, moveDirection.y) * moveSpeed;
+            transform.Translate(Vector2.down / 200);
+        }
+
+        else if (target)
+        {
+            rb.velocity = new Vector2(moveDirection.x, transform.position.y) * moveSpeed;
 
         }
     }
@@ -66,7 +78,19 @@ public class EnemyScript : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Bullet")){
             // Debug.Log("Hello");
-            Destroy(this.gameObject);
+            Vector3 currScale = transform.localScale;
+            currScale[0] -= 4;
+            currScale[1] -= 4;
+            if(currScale[0] > 0)
+            {
+                transform.localScale = currScale;
+            }
+            else
+            {
+    
+                Destroy(this.gameObject);
+            }
+            isGrounded = false;
         }
 
         if (collision.gameObject.CompareTag("Peel"))

@@ -21,7 +21,7 @@ public class PlayerShoot : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(1) && timeUntilFire < Time.time)
         {
-            Peel();
+            //Peel();
             //timeUntilFire = Time.time + fireRate;
         }
     }
@@ -33,7 +33,8 @@ public class PlayerShoot : MonoBehaviour
         Vector3 posBullet = new Vector3(0, 0, 0);
         posBullet = transform.position;
         //Debug.Log(posBullet);
-        posBullet[1] += -1;
+        //posBullet[0] += 1;
+        posBullet[1] -= 1;
         // pos[1] -= 1;
         Instantiate(bulletPrefab,posBullet, Quaternion.Euler(new Vector3(0f,0f,0)));
     }

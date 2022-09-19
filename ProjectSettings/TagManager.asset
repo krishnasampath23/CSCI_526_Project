@@ -16,6 +16,8 @@ TagManager:
   - Bullet
   - Enemy
   - Peel
+  - bird
+  - enemyFire
   layers:
   - Default
   - TransparentFX
