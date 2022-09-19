@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -84,8 +85,9 @@ public class PlayerScript : MonoBehaviour
 
             }
 
-            Application.Quit();
+            //Application.Quit();
             //UnityEditor.EditorApplication.isPlaying = false;
+            SceneManager.LoadScene("LoseScene");
 
         }
         if (collision.gameObject.CompareTag("enemyFire"))
