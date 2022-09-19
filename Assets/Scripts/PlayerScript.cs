@@ -32,11 +32,12 @@ public class PlayerScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if(isGrounded==true)
+            if(isGrounded==false)
             {
                 RB.AddForce(Vector2.up * JumpForce);
                 isGrounded = false;
             }
+
         }
 
         if (Input.GetKeyDown(KeyCode.RightArrow))

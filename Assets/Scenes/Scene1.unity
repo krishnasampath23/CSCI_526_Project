@@ -816,7 +816,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.808543
+  orthographic size: 18.203688
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -840,7 +840,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.1, y: 3.6, z: -10}
+  m_LocalPosition: {x: -1.05, y: 7.19, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1283,8 +1283,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1826260509}
   - component: {fileID: 1826260508}
-  - component: {fileID: 1826260507}
   - component: {fileID: 1826260506}
+  - component: {fileID: 1826260507}
+  - component: {fileID: 1826260512}
+  - component: {fileID: 1826260511}
   - component: {fileID: 1826260505}
   - component: {fileID: 1826260510}
   m_Layer: 0
@@ -1308,10 +1310,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JumpForce: 600
   isGrounded: 0
-  MinSpeed: 0
-  MaxSpeed: 0
-  CurrSpeed: 0
-  SpeedMultiplier: 0
+  MinSpeed: 10
+  MaxSpeed: 10
+  CurrSpeed: 10
+  SpeedMultiplier: 1
 --- !u!50 &1826260506
 Rigidbody2D:
   serializedVersion: 4
@@ -1340,7 +1342,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1826260504}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -1419,7 +1421,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1826260504}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.8, y: -2.9, z: 0}
+  m_LocalPosition: {x: -7.21, y: 13.09, z: 0}
   m_LocalScale: {x: 1.5, y: 1.4999999, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1442,6 +1444,36 @@ MonoBehaviour:
   firingPoint: {fileID: 0}
   bulletPrefab: {fileID: 901950675}
   peelPrefab: {fileID: 2112590085}
+--- !u!114 &1826260511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826260504}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fad3d40c5d5774cdb8b3be78e548383c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravity: -9.8
+  strength: 5
+--- !u!58 &1826260512
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826260504}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1996040874
 GameObject:
   m_ObjectHideFlags: 0
