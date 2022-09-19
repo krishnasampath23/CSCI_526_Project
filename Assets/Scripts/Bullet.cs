@@ -9,7 +9,7 @@ public class Bullet : MonoBehaviour
     public Rigidbody2D rb;
 
     private void FixedUpdate(){
-        rb.velocity = Vector2.right * bulletSpeed;
+        rb.velocity = Vector2.down * bulletSpeed;
     }
 
     private void OnCollisionEnter2D(Collision2D collision){
