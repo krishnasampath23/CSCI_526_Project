@@ -1,6 +1,6 @@
 
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class EnemyScript : MonoBehaviour
 {
     [SerializeField]
@@ -30,7 +30,7 @@ public class EnemyScript : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        
+
         // transform.Translate(Vector2.right * Time.deltaTime/2);
         if (isGrounded == false)
         {
@@ -72,9 +72,10 @@ public class EnemyScript : MonoBehaviour
 
         if (collision.gameObject.CompareTag("player"))
         {
-             Application.Quit(); // For Web GL Build
+             //Application.Quit(); // For Web GL Build
              //UnityEditor.EditorApplication.isPlaying = false;
-            
+             SceneManager.LoadScene("LoseScene");
+
         }
         if (collision.gameObject.CompareTag("Bullet")){
             // Debug.Log("Hello");
@@ -87,7 +88,7 @@ public class EnemyScript : MonoBehaviour
             }
             else
             {
-    
+
                 Destroy(this.gameObject);
             }
             isGrounded = false;

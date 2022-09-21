@@ -35,9 +35,10 @@ public class PlayerScript : MonoBehaviour
 
         if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
         {
-            Application.Quit(); ; // For Web GL Build
+            //Application.Quit(); ; // For Web GL Build
             Debug.Log("All enemies are dead");
             //UnityEditor.EditorApplication.isPlaying = false;
+            SceneManager.LoadScene("LoseScene");
         }
 
         if (Input.GetKeyDown(KeyCode.W))
@@ -84,7 +85,6 @@ public class PlayerScript : MonoBehaviour
                 isGrounded = true;
 
             }
-
             //Application.Quit();
             //UnityEditor.EditorApplication.isPlaying = false;
             SceneManager.LoadScene("LoseScene");

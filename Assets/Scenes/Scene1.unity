@@ -2010,7 +2010,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59b8196ecf0d80c4e859fb616c1513f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JumpForce: 600
+  JumpForce: 1000
   isGrounded: 0
   MinSpeed: 0
   MaxSpeed: 0
