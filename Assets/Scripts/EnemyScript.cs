@@ -1,5 +1,5 @@
-
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyScript : MonoBehaviour
 {
@@ -87,7 +87,9 @@ public class EnemyScript : MonoBehaviour
             }
             else
             {
-    
+                StaticScript.counter += 1;
+                // StaticScript.counterText = StaticScript.counter.ToString();
+                Debug.Log(StaticScript.counter);
                 Destroy(this.gameObject);
             }
             isGrounded = false;
