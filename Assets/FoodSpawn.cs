@@ -14,7 +14,7 @@ public class FoodSpawn : MonoBehaviour
     void Start()
     {
         q = new List<GameObject>();
-        InvokeRepeating("spawnObject",0,5);
+        InvokeRepeating("spawnObject",0,3);
     }
     void spawnObject()
     {
