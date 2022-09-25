@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
+    public bool WASDEnabled = true;
+
     public float JumpForce;
     float score;
 
@@ -33,30 +35,26 @@ public class PlayerScript : MonoBehaviour
             //UnityEditor.EditorApplication.isPlaying = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            if (isGrounded == false)
-            {
-                RB.AddForce(Vector2.up * JumpForce);
-                isGrounded = false;
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            RB.AddForce(Vector2.right * JumpForce);
-        }
-
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            RB.AddForce(Vector2.left * JumpForce);
-        }
+        move();
 
         if (isAlive)
         {
             score += Time.deltaTime * 10;
         }
 
+    }
+
+    private void move()
+    {
+        Vector2 input = new Vector2();;
+        if (WASDEnabled)
+        {
+            if (Input.GetKeyDown(KeyCode.W)) input += Vector2.up;
+            if (Input.GetKeyDown(KeyCode.D)) input += Vector2.right;
+            if (Input.GetKeyDown(KeyCode.A)) input += Vector2.left;
+            if (Input.GetKeyDown(KeyCode.S)) input += Vector2.down;
+        }
+        RB.AddForce(input * JumpForce);
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
