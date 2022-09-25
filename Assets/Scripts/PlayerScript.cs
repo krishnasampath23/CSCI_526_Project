@@ -10,27 +10,21 @@ public class PlayerScript : MonoBehaviour
     bool isGrounded = false;
     bool isAlive = true;
 
-    public float MinSpeed;
-    public float MaxSpeed;
-    public float CurrSpeed;
 
     int playerLives = 3;
 
-    public float SpeedMultiplier;
 
     Rigidbody2D RB;
 
     private void Awake()
     {
         RB = GetComponent<Rigidbody2D>();
-        CurrSpeed = MinSpeed;
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        transform.Translate(Vector2.right * CurrSpeed * Time.deltaTime);
 
         if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
         {
@@ -68,10 +62,6 @@ public class PlayerScript : MonoBehaviour
             score += Time.deltaTime * 10;
         }
 
-        if (CurrSpeed < MaxSpeed)
-        {
-            CurrSpeed += SpeedMultiplier;
-        }
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
