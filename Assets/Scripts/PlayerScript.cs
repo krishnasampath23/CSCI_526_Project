@@ -5,6 +5,7 @@ public class PlayerScript : MonoBehaviour
 {
     public bool WASDEnabled = true;
     public bool ArrowKeysEnabled = true;
+    public bool RightClickMoveEnabled = true;
 
     public float JumpForce;
     float score;
@@ -61,6 +62,15 @@ public class PlayerScript : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.LeftArrow)) input += Vector2.left;
             if (Input.GetKeyDown(KeyCode.DownArrow)) input += Vector2.down;
             if (Input.GetKeyDown(KeyCode.RightArrow)) input += Vector2.right;
+        }
+        if (RightClickMoveEnabled)
+        {
+            if (Input.GetMouseButtonDown(1))
+            {
+                Vector2 delta = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                delta.Normalize();
+                input += delta;
+            }
         }
         RB.AddForce(input * JumpForce);
     }
