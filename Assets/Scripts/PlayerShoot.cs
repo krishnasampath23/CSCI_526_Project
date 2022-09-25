@@ -15,7 +15,7 @@ public class PlayerShoot : MonoBehaviour
     }
     
     private void Update(){
-        if (Input.GetMouseButtonDown(0) && timeUntilFire < Time.time){
+        /*if (Input.GetMouseButtonDown(0) && timeUntilFire < Time.time){
             Shoot();
             timeUntilFire = Time.time + fireRate;
         }
@@ -23,6 +23,11 @@ public class PlayerShoot : MonoBehaviour
         {
             //Peel();
             //timeUntilFire = Time.time + fireRate;
+        }*/
+        if (Input.GetKeyDown(KeyCode.Space) && timeUntilFire < Time.time)
+        {
+            Shoot();
+            timeUntilFire = Time.time + fireRate;
         }
     }
 

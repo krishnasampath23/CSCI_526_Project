@@ -34,8 +34,8 @@ public class PlayerScript : MonoBehaviour
 
         if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
         {
-            Application.Quit(); ; // For Web GL Build
-            Debug.Log("All enemies are dead");
+            //Application.Quit(); ; // For Web GL Build
+            //Debug.Log("All enemies are dead");
             //UnityEditor.EditorApplication.isPlaying = false;
         }
 
@@ -89,6 +89,15 @@ public class PlayerScript : MonoBehaviour
 
         }
         if (collision.gameObject.CompareTag("enemyFire"))
+        {
+            playerLives -= 1;
+            if (playerLives <= 0)
+            {
+                Application.Quit();
+                //UnityEditor.EditorApplication.isPlaying = false;
+            }
+        }
+        if (collision.gameObject.CompareTag("person"))
         {
             playerLives -= 1;
             if (playerLives <= 0)

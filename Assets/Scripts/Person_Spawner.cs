@@ -26,7 +26,7 @@ public class Person_Spawner : MonoBehaviour
         while (true)
         {
 
-            yield return new WaitForSeconds(Random.Range(1, 5));
+            yield return new WaitForSeconds(Random.Range(3, 10));
             //randomIndex = Random.Range(0, personReference.Length);
             randomside = Random.Range(0, 2);
 
