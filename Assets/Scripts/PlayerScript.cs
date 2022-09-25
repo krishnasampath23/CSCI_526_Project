@@ -35,11 +35,6 @@ public class PlayerScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.W))
         {
-            /*if(isGrounded==true)
-            {
-                RB.AddForce(Vector2.up * JumpForce);
-                isGrounded = false;
-            }*/
             if (isGrounded == false)
             {
                 RB.AddForce(Vector2.up * JumpForce);
