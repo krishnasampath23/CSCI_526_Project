@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerScript : MonoBehaviour
 {
     public bool WASDEnabled = true;
+    public bool ArrowKeysEnabled = true;
 
     public float JumpForce;
     float score;
@@ -46,13 +47,20 @@ public class PlayerScript : MonoBehaviour
 
     private void move()
     {
-        Vector2 input = new Vector2();;
+        Vector2 input = new Vector2();
         if (WASDEnabled)
         {
             if (Input.GetKeyDown(KeyCode.W)) input += Vector2.up;
-            if (Input.GetKeyDown(KeyCode.D)) input += Vector2.right;
             if (Input.GetKeyDown(KeyCode.A)) input += Vector2.left;
             if (Input.GetKeyDown(KeyCode.S)) input += Vector2.down;
+            if (Input.GetKeyDown(KeyCode.D)) input += Vector2.right;
+        }
+        if (ArrowKeysEnabled)
+        {
+            if (Input.GetKeyDown(KeyCode.UpArrow)) input += Vector2.up;
+            if (Input.GetKeyDown(KeyCode.LeftArrow)) input += Vector2.left;
+            if (Input.GetKeyDown(KeyCode.DownArrow)) input += Vector2.down;
+            if (Input.GetKeyDown(KeyCode.RightArrow)) input += Vector2.right;
         }
         RB.AddForce(input * JumpForce);
     }
