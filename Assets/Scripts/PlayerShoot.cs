@@ -15,7 +15,7 @@ public class PlayerShoot : MonoBehaviour
     }
     
     private void Update(){
-        if (Input.GetMouseButtonDown(0) && timeUntilFire < Time.time){
+        /*if (Input.GetMouseButtonDown(0) && timeUntilFire < Time.time){
             Shoot();
             timeUntilFire = Time.time + fireRate;
         }
@@ -23,6 +23,11 @@ public class PlayerShoot : MonoBehaviour
         {
             //Peel();
             //timeUntilFire = Time.time + fireRate;
+        }*/
+        if (Input.GetKeyDown(KeyCode.Space) && timeUntilFire < Time.time && StaticScript.no_of_poops > 0)
+        {
+            Shoot();
+            timeUntilFire = Time.time + fireRate;
         }
     }
 
@@ -35,7 +40,8 @@ public class PlayerShoot : MonoBehaviour
         //Debug.Log(posBullet);
         //posBullet[0] += 1;
         posBullet[1] -= 1;
-        // pos[1] -= 1;
+        // pos[1] -= 1
+        StaticScript.no_of_poops -= 1; 
         Instantiate(bulletPrefab,posBullet, Quaternion.Euler(new Vector3(0f,0f,0)));
     }
     void Peel()

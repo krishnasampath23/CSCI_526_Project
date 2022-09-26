@@ -16,9 +16,21 @@ public class EnemyFireScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("player"))
+        {
+            Debug.Log("Hello");
+            Destroy(this.gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("LevelStart"))
+        {
+            //Debug.Log("Hello");
+            Destroy(this.gameObject);
+        }
+        if (collision.gameObject.CompareTag("Bullet"))
         {
             // Debug.Log("Hello");
+            //Destroy(collision.gameObject);
             Destroy(this.gameObject);
         }
     }
