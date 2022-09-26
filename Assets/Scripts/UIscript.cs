@@ -27,7 +27,11 @@ public class UIscript : MonoBehaviour
     {
         slider.value = StaticScript.health;
         slider1.value = StaticScript.no_of_poops;
-
+        if(StaticScript.health == 0)
+        {
+            Application.Quit(); // Replace this Play Again/ Restart scene
+            Debug.Log("End Game");
+        }
         Score.text = "score = " + StaticScript.score.ToString();
         if(StaticScript.timerOn)
         {
@@ -39,9 +43,13 @@ public class UIscript : MonoBehaviour
             }
 
             else{
+
                 TimerTxt.text = "Times Up !!!";
+                Application.Quit(); // Replace this Play Again/ Restart scene
+                Debug.Log("End Game");
             }            
         }
+        
         // basic.text = "Enemies Killed: " + StaticScript.counter.ToString();
     }
 

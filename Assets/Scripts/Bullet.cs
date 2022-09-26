@@ -15,20 +15,22 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision){
         if (collision.gameObject.CompareTag("person")){
-            StaticScript.score += 1;
+            // Red person/BadPerson = person
+            StaticScript.score += 100;
+            StaticScript.timeLeft += 20;
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
         }
         if (collision.gameObject.CompareTag("goodPerson"))
         {
-            StaticScript.score -= 1;
+            StaticScript.score -= 50;
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
         }
         if (collision.gameObject.CompareTag("enemyFire"))
         {
             // Debug.Log("Hello");
-            //Destroy(collision.gameObject);
+            Destroy(collision.gameObject);
             Destroy(this.gameObject);
         }
         if (collision.gameObject.CompareTag("ground"))

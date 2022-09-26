@@ -29,6 +29,9 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
+        //StaticScript.score += 1;
 
         transform.Translate(Vector2.right * CurrSpeed * Time.deltaTime);
 
@@ -83,8 +86,9 @@ public class PlayerScript : MonoBehaviour
                 isGrounded = true;
 
             }
-
-            Application.Quit();
+            StaticScript.health = 0;
+            Debug.Log("Hit Ground : End Game");
+            Application.Quit(); // Replace this Play Again/ Restart scene
             //UnityEditor.EditorApplication.isPlaying = false;
 
         }
@@ -99,12 +103,18 @@ public class PlayerScript : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("person"))
         {
-            playerLives -= 1;
-            if (playerLives <= 0)
-            {
-                Application.Quit();
-                //UnityEditor.EditorApplication.isPlaying = false;
-            }
+            StaticScript.health -= 20;
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("food"))
+        {
+            StaticScript.no_of_poops += 1;
+            Destroy(collision.gameObject);
+
+            //Application.Quit();
+            //UnityEditor.EditorApplication.isPlaying = false;
+
         }
     }
 }
