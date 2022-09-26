@@ -38,8 +38,20 @@ public class BirdScript : MonoBehaviour
         {
             if (isGrounded == false)
             {
+                StaticScript.health -= 100;
                 isGrounded = true;
             }
         }
+
+        if (collision.gameObject.CompareTag("enemyFire"))
+        {
+            Debug.Log("Hello");
+            StaticScript.health -= 10;
+        }
+
+
     }
+
+
+
 }

@@ -15,13 +15,13 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision){
         if (collision.gameObject.CompareTag("person")){
-            // Debug.Log("Hello");
+            StaticScript.score += 1;
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
         }
         if (collision.gameObject.CompareTag("goodPerson"))
         {
-            // Debug.Log("Hello");
+            StaticScript.score -= 1;
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
         }

@@ -87,7 +87,8 @@ public class EnemyScript : MonoBehaviour
             }
             else
             {
-    
+                // StaticScript.score += 1;
+                // Debug.Log("hello");
                 Destroy(this.gameObject);
             }
             isGrounded = false;
