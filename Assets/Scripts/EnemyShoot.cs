@@ -17,7 +17,7 @@ public class EnemyShoot : MonoBehaviour
     private void Update()
     {
         
-        //Invoke("Shoot", Random.Range(1000f,6000f));
+        Invoke("Shoot", Random.Range(1000f,6000f));
         //Shoot();
         timeUntilFire = Time.time + fireRate;
     }

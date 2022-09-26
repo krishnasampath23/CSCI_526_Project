@@ -9,20 +9,23 @@ public class EnemyScript : MonoBehaviour
     float moveSpeed = 5f;
     Transform target;
     Vector2 moveDirection;
+    private Vector3 oriPos;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        target = GameObject.Find("Player").transform;
     }
 
     private void Start()
     {
+        oriPos = transform.position;
         if (isGrounded == false)
         {
             transform.Translate(Vector2.down/200);
         }
 
-        target = GameObject.Find("Player").transform;
+       
 
 
     }
@@ -60,6 +63,12 @@ public class EnemyScript : MonoBehaviour
         }
     }
 
+    public void ResetState()
+    {
+        transform.position = oriPos;
+        gameObject.SetActive(false);
+    }
+
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("ground"))
@@ -72,7 +81,7 @@ public class EnemyScript : MonoBehaviour
 
         if (collision.gameObject.CompareTag("player"))
         {
-             Application.Quit(); // For Web GL Build
+            EventHandle.CallEventOver(); // For Web GL Build
              //UnityEditor.EditorApplication.isPlaying = false;
             
         }

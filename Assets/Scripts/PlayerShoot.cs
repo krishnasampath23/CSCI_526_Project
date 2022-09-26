@@ -12,8 +12,9 @@ public class PlayerShoot : MonoBehaviour
     float timeUntilFire;
 
     private void Start(){
+        
     }
-    
+
     private void Update(){
         if (Input.GetMouseButtonDown(0) && timeUntilFire < Time.time){
             Shoot();
@@ -48,6 +49,7 @@ public class PlayerShoot : MonoBehaviour
         pos[1] -= 1;
         Instantiate(peelPrefab, pos, Quaternion.Euler(new Vector3(10f, 10f, 0)));
     }
+    
 }
 
 

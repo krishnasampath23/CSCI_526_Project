@@ -5,7 +5,7 @@ public class PlayerScript : MonoBehaviour
 {
     public float JumpForce;
     float score;
-
+    private Vector3 oriPos;
     [SerializeField]
     bool isGrounded = false;
     bool isAlive = true;
@@ -26,6 +26,11 @@ public class PlayerScript : MonoBehaviour
         CurrSpeed = MinSpeed;
     }
 
+    private void Start()
+    {
+        oriPos = transform.position;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -34,7 +39,7 @@ public class PlayerScript : MonoBehaviour
 
         if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
         {
-            Application.Quit(); ; // For Web GL Build
+            EventHandle.CallEventOver() ; // For Web GL Build
             Debug.Log("All enemies are dead");
             //UnityEditor.EditorApplication.isPlaying = false;
         }
@@ -83,8 +88,7 @@ public class PlayerScript : MonoBehaviour
                 isGrounded = true;
 
             }
-
-            Application.Quit();
+            EventHandle.CallEventOver();
             //UnityEditor.EditorApplication.isPlaying = false;
 
         }
@@ -93,9 +97,16 @@ public class PlayerScript : MonoBehaviour
             playerLives -= 1;
             if (playerLives <= 0)
             {
-                Application.Quit();
+                EventHandle.CallEventOver();
                 //UnityEditor.EditorApplication.isPlaying = false;
             }
         }
+    }
+
+    public void ResetState()
+    {
+        transform.position = oriPos;
+        isGrounded = false;
+        gameObject.SetActive(false);
     }
 }

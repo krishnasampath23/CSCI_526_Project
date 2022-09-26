@@ -6,6 +6,7 @@ public class BirdScript : MonoBehaviour
 {
     public float speed;
     private Vector3 target;
+    
 
     //public float JumpForce;
 
@@ -31,6 +32,7 @@ public class BirdScript : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, target, speed);
         }
     }
+
 
     public void OnCollisionEnter2D(Collision2D collision)
     {

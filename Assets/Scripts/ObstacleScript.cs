@@ -24,7 +24,7 @@ public class ObstacleScript : MonoBehaviour
             if(this.gameObject.tag == "obstacle1")
             {
                 //Time.timeScale = 0;
-                //Application.Quit(); // For Web GL Build
+                //EventHandle.CallEventOver(); // For Web GL Build
                 //UnityEditor.EditorApplication.isPlaying = false;
             }
             obstacleGenerator.CurrSpeed = obstacleGenerator.CurrSpeed - 5;
@@ -42,7 +42,7 @@ public class ObstacleScript : MonoBehaviour
     /*public void Quit()
     {
         /*if UNITY_STANDALONE
-                Application.Quit();
+                EventHandle.CallEventOver();
         #endif
        // #if UNITY_EDITOR
                 UnityEditor.EditorApplication.isPlaying = false;
