@@ -19,6 +19,7 @@ public class EnemyFireScript : MonoBehaviour
         if (collision.gameObject.CompareTag("player"))
         {
             Debug.Log("Hello");
+            StaticScript.health -= 10;
             Destroy(this.gameObject);
         }
 

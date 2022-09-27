@@ -33,7 +33,7 @@ public class EnemyShoot : MonoBehaviour
         while (true)
         {
 
-            yield return new WaitForSeconds(Random.Range(2, 6));
+            yield return new WaitForSeconds(Random.Range(2, 5));
             Shoot();
 
         }

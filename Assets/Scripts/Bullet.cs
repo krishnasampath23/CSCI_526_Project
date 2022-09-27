@@ -24,6 +24,7 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.CompareTag("goodPerson"))
         {
             StaticScript.score -= 50;
+            StaticScript.timeLeft -= 10;
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
         }

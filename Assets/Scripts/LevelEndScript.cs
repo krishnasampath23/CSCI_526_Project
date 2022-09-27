@@ -16,12 +16,12 @@ public class LevelEndScript : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("player"))
         {
                 // Application.Quit(); // For Web GL Build
                 //UnityEditor.EditorApplication.isPlaying = false;
         }
-    }
+    }*/
 }
