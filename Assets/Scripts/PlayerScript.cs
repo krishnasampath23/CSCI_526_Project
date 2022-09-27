@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -88,7 +89,8 @@ public class PlayerScript : MonoBehaviour
             }
             StaticScript.health = 0;
             Debug.Log("Hit Ground : End Game");
-            Application.Quit(); // Replace this Play Again/ Restart scene
+            SceneManager.LoadScene("RestartScene");
+            //Application.Quit(); // Replace this Play Again/ Restart scene
             //UnityEditor.EditorApplication.isPlaying = false;
 
         }

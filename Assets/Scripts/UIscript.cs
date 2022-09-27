@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class UIscript : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class UIscript : MonoBehaviour
     public TMP_Text Score;
     public Slider slider;
     public Slider slider1;
+
     
 
 
@@ -21,6 +23,7 @@ public class UIscript : MonoBehaviour
         slider1.value = 10;
 
 
+
     }
 
     void Update()
@@ -29,8 +32,9 @@ public class UIscript : MonoBehaviour
         slider1.value = StaticScript.no_of_poops;
         if(StaticScript.health == 0)
         {
-            Application.Quit(); // Replace this Play Again/ Restart scene
+            //Application.Quit(); // Replace this Play Again/ Restart scene
             Debug.Log("End Game");
+            SceneManager.LoadScene("RestartScene");
         }
         Score.text = "score = " + StaticScript.score.ToString();
         if(StaticScript.timerOn)
@@ -45,7 +49,8 @@ public class UIscript : MonoBehaviour
             else{
 
                 TimerTxt.text = "Times Up !!!";
-                Application.Quit(); // Replace this Play Again/ Restart scene
+                //Application.Quit(); // Replace this Play Again/ Restart scene
+                SceneManager.LoadScene("RestartScene");
                 Debug.Log("End Game");
             }            
         }
