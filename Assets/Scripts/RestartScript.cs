@@ -7,6 +7,7 @@ public class RestartScript : MonoBehaviour
 {
     public void LoadGame()
     {
+        StaticScript.timePrevious=StaticScript.timeElapsed;
         StaticScript.score = 0;
         StaticScript.timeLeft = 180;
         StaticScript.timerOn = false;
@@ -14,5 +15,9 @@ public class RestartScript : MonoBehaviour
         StaticScript.health = 100;
 
         SceneManager.LoadScene("Scene1");
+    }
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }

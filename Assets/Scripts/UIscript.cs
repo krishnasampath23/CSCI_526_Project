@@ -28,6 +28,7 @@ public class UIscript : MonoBehaviour
 
     void Update()
     {
+        StaticScript.timeElapsed+=Time.deltaTime;
         slider.value = StaticScript.health;
         slider1.value = StaticScript.no_of_poops;
         if(StaticScript.health == 0)

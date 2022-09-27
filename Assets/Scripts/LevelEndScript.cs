@@ -20,7 +20,7 @@ public class LevelEndScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("player"))
         {
-                Application.Quit(); // For Web GL Build
+                // Application.Quit(); // For Web GL Build
                 //UnityEditor.EditorApplication.isPlaying = false;
         }
     }

@@ -99,7 +99,7 @@ public class PlayerScript : MonoBehaviour
             playerLives -= 1;
             if (playerLives <= 0)
             {
-                Application.Quit();
+                // Application.Quit();
                 //UnityEditor.EditorApplication.isPlaying = false;
             }
         }

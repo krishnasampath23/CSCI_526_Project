@@ -27,6 +27,7 @@ public class PlayerShoot : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && timeUntilFire < Time.time && StaticScript.no_of_poops > 0)
         {
             Shoot();
+            StaticScript._poopsUsed+=1;
             timeUntilFire = Time.time + fireRate;
         }
     }
