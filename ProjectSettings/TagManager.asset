@@ -18,6 +18,10 @@ TagManager:
   - Peel
   - bird
   - enemyFire
+  - person
+  - goodPerson
+  - food
+  - restart
   layers:
   - Default
   - TransparentFX
@@ -25,7 +29,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Person
   - 
   - 
   - 

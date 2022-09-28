@@ -1,7 +1,9 @@
+
 using UnityEngine;
 
 public class ObstacleGenerator : MonoBehaviour
 {
+    /*
     public GameObject obstacle;
     public GameObject water;
     GameObject instance;
@@ -51,4 +53,5 @@ public class ObstacleGenerator : MonoBehaviour
             CurrSpeed += SpeedMultiplier;
         }
     }
+*/
 }

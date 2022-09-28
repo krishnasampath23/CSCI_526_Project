@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -29,13 +30,16 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
+        //StaticScript.score += 1;
 
         transform.Translate(Vector2.right * CurrSpeed * Time.deltaTime);
 
         if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
         {
-            Application.Quit(); ; // For Web GL Build
-            Debug.Log("All enemies are dead");
+            //Application.Quit(); ; // For Web GL Build
+            //Debug.Log("All enemies are dead");
             //UnityEditor.EditorApplication.isPlaying = false;
         }
 
@@ -83,8 +87,10 @@ public class PlayerScript : MonoBehaviour
                 isGrounded = true;
 
             }
-
-            Application.Quit();
+            StaticScript.health = 0;
+            Debug.Log("Hit Ground : End Game");
+            SceneManager.LoadScene("RestartScene");
+            //Application.Quit(); // Replace this Play Again/ Restart scene
             //UnityEditor.EditorApplication.isPlaying = false;
 
         }
@@ -93,9 +99,24 @@ public class PlayerScript : MonoBehaviour
             playerLives -= 1;
             if (playerLives <= 0)
             {
-                Application.Quit();
+                // Application.Quit();
                 //UnityEditor.EditorApplication.isPlaying = false;
             }
+        }
+        if (collision.gameObject.CompareTag("person"))
+        {
+            StaticScript.health -= 20;
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("food"))
+        {
+            StaticScript.no_of_poops += 1;
+            Destroy(collision.gameObject);
+
+            //Application.Quit();
+            //UnityEditor.EditorApplication.isPlaying = false;
+
         }
     }
 }

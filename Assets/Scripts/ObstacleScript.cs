@@ -4,6 +4,7 @@ using System.Collections;
 
 public class ObstacleScript : MonoBehaviour
 {
+    /*
     public ObstacleGenerator obstacleGenerator;
 
     // Update is called once per frame
@@ -48,11 +49,13 @@ public class ObstacleScript : MonoBehaviour
                 UnityEditor.EditorApplication.isPlaying = false;
         #endif
     }*/
-
+    /*
     IEnumerator Waiter()
     {
 
         //yield on a new YieldInstruction that waits for 5 seconds.
         yield return new WaitForSeconds(1);
     }
+   */
 }
+
