@@ -10,7 +10,7 @@ public class UIscript : MonoBehaviour
     public Slider slider;
     public Slider slider1;
 
-    
+
 
 
     void Start()
@@ -28,7 +28,7 @@ public class UIscript : MonoBehaviour
 
     void Update()
     {
-        StaticScript.timeElapsed+=Time.deltaTime;
+        StaticScript.timeElapsed+=Time.deltaTime/4;
         slider.value = StaticScript.health;
         slider1.value = StaticScript.no_of_poops;
         if(StaticScript.health == 0)
@@ -44,7 +44,7 @@ public class UIscript : MonoBehaviour
                 StaticScript.timeLeft -= Time.deltaTime;
                 updateTimer(StaticScript.timeLeft);
                 // TimerTxt.text = StaticScript.timeLeft.ToString();
-                
+
             }
 
             else{
@@ -53,9 +53,9 @@ public class UIscript : MonoBehaviour
                 //Application.Quit(); // Replace this Play Again/ Restart scene
                 SceneManager.LoadScene("RestartScene");
                 Debug.Log("End Game");
-            }            
+            }
         }
-        
+
         // basic.text = "Enemies Killed: " + StaticScript.counter.ToString();
     }
 
