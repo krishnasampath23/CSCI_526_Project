@@ -10,7 +10,7 @@ public class UIscript : MonoBehaviour
     public Slider slider;
     public Slider slider1;
 
-    
+
 
 
     void Start()
@@ -41,10 +41,10 @@ public class UIscript : MonoBehaviour
         if(StaticScript.timerOn)
         {
             if(StaticScript.timeLeft > 0){
-                StaticScript.timeLeft -= Time.deltaTime;
+                StaticScript.timeLeft -= Time.deltaTime/4;
                 updateTimer(StaticScript.timeLeft);
                 // TimerTxt.text = StaticScript.timeLeft.ToString();
-                
+
             }
 
             else{
@@ -53,9 +53,9 @@ public class UIscript : MonoBehaviour
                 //Application.Quit(); // Replace this Play Again/ Restart scene
                 SceneManager.LoadScene("RestartScene");
                 Debug.Log("End Game");
-            }            
+            }
         }
-        
+
         // basic.text = "Enemies Killed: " + StaticScript.counter.ToString();
     }
 
