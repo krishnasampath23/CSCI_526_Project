@@ -22,6 +22,7 @@ TagManager:
   - goodPerson
   - food
   - restart
+  - level
   layers:
   - Default
   - TransparentFX
