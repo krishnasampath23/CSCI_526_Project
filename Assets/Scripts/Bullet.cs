@@ -28,12 +28,12 @@ public class Bullet : MonoBehaviour
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
         }
-        if (collision.gameObject.CompareTag("enemyFire"))
-        {
-            // Debug.Log("Hello");
-            Destroy(collision.gameObject);
-            Destroy(this.gameObject);
-        }
+        // if (collision.gameObject.CompareTag("EnemyBullet"))
+        // {
+        //     // Destroy(this.gameObject);
+        //     Destroy(collision.gameObject);
+        // }
+        
         if (collision.gameObject.CompareTag("ground"))
         {
             // Debug.Log("Hello");
