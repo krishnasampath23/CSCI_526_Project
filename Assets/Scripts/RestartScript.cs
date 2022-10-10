@@ -9,12 +9,36 @@ public class RestartScript : MonoBehaviour
     {
         StaticScript.timePrevious=StaticScript.timeElapsed;
         StaticScript.score = 0;
-        StaticScript.timeLeft = 180;
+        StaticScript.timeLeft = 10;
         StaticScript.timerOn = false;
-        StaticScript.no_of_poops = 10;
+        StaticScript.enemies_killed=0;
+        StaticScript.no_of_enemies = 3;
+        StaticScript.level += 1;
+        StaticScript.no_of_poops += 10;
         StaticScript.health = 100;
+        Debug.Log("Level"+StaticScript.level.ToString());
+        SceneManager.LoadScene("Level"+StaticScript.level.ToString());
+    }
 
-        SceneManager.LoadScene("Scene1");
+    public void LoadAgain()
+    {
+        StaticScript.timePrevious=StaticScript.timeElapsed;
+        StaticScript.score = 0;
+        StaticScript.timeLeft = 10;
+        StaticScript.timerOn = false;
+        StaticScript.enemies_killed=0;
+        StaticScript.no_of_enemies = 3;
+        StaticScript.level += 0;
+        StaticScript.no_of_poops += 10;
+        StaticScript.health = 100;
+        if(StaticScript.level==0){
+            SceneManager.LoadScene("Tutorial");
+        }
+        else{
+            Debug.Log("Level"+StaticScript.level.ToString());
+            SceneManager.LoadScene("Level"+StaticScript.level.ToString());
+        }
+        
     }
 
      public void LoadLevels()

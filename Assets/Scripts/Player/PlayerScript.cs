@@ -89,7 +89,7 @@ public class PlayerScript : MonoBehaviour
             }
             StaticScript.health = 0;
             Debug.Log("Hit Ground : End Game");
-            SceneManager.LoadScene("RestartScene");
+            SceneManager.LoadScene("FailScene");
             //Application.Quit(); // Replace this Play Again/ Restart scene
             //UnityEditor.EditorApplication.isPlaying = false;
 

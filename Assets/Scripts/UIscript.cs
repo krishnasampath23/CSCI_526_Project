@@ -31,11 +31,20 @@ public class UIscript : MonoBehaviour
         StaticScript.timeElapsed+=Time.deltaTime;
         slider.value = StaticScript.health;
         slider1.value = StaticScript.no_of_poops;
+        if(StaticScript.enemies_killed == StaticScript.no_of_enemies){
+            SceneManager.LoadScene("RestartScene");
+        }
         if(StaticScript.health == 0)
         {
             //Application.Quit(); // Replace this Play Again/ Restart scene
             Debug.Log("End Game");
-            SceneManager.LoadScene("RestartScene");
+            SceneManager.LoadScene("FailScene");
+        }
+        if(StaticScript.no_of_poops == 0)
+        {
+            //Application.Quit(); // Replace this Play Again/ Restart scene
+            Debug.Log("End Game");
+            SceneManager.LoadScene("FailScene");
         }
         Score.text = "score = " + StaticScript.score.ToString();
         if(StaticScript.timerOn)
@@ -49,10 +58,10 @@ public class UIscript : MonoBehaviour
 
             else{
 
-                TimerTxt.text = "Times Up !!!";
-                //Application.Quit(); // Replace this Play Again/ Restart scene
-                SceneManager.LoadScene("RestartScene");
-                Debug.Log("End Game");
+                // TimerTxt.text = "Times Up !!!";
+                // //Application.Quit(); // Replace this Play Again/ Restart scene
+                // SceneManager.LoadScene("RestartScene");
+                // Debug.Log("End Game");
             }
         }
 

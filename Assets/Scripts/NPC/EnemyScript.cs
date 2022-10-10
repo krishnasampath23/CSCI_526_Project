@@ -78,20 +78,23 @@ public class EnemyScript : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Bullet")){
             // Debug.Log("Hello");
-            Vector3 currScale = transform.localScale;
-            currScale[0] -= 4;
-            currScale[1] -= 4;
-            if(currScale[0] > 0)
-            {
-                transform.localScale = currScale;
-            }
-            else
-            {
-                // StaticScript.score += 1;
-                // Debug.Log("hello");
-                Destroy(this.gameObject);
-            }
-            isGrounded = false;
+            // Vector3 currScale = transform.localScale;
+            // currScale[0] -= 4;
+            // currScale[1] -= 4;
+            // if(currScale[0] > 0)
+            // {
+            //     transform.localScale = currScale;
+            // }
+            // else
+            // {
+            //     // StaticScript.score += 1;
+            //     // Debug.Log("hello");
+            //     Destroy(this.gameObject);
+            // }
+            // isGrounded = false;
+            StaticScript.enemies_killed += 1;
+            Destroy(this.gameObject);
+
         }
 
         if (collision.gameObject.CompareTag("Peel"))
