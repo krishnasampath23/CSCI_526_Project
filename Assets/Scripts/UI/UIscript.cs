@@ -11,8 +11,6 @@ public class UIscript : MonoBehaviour
     public Slider slider1;
 
 
-
-
     void Start()
     {
         StaticScript.timerOn = true;
@@ -21,9 +19,6 @@ public class UIscript : MonoBehaviour
         slider.value = 100;
         slider1.maxValue = 10;
         slider1.value = 10;
-
-
-
     }
 
     void Update()
@@ -80,5 +75,7 @@ public class UIscript : MonoBehaviour
     //{
     //    slider.value = health;
     //}
+
+
 
 }

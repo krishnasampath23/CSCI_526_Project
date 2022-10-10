@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 51530606}
   - component: {fileID: 51530605}
   m_Layer: 5
-  m_Name: Play
+  m_Name: TryAgainButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1131,7 +1131,7 @@ GameObject:
   - component: {fileID: 1462232888}
   - component: {fileID: 1462232887}
   m_Layer: 5
-  m_Name: Exit
+  m_Name: ExitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1265,7 +1265,7 @@ GameObject:
   - component: {fileID: 2008394032}
   - component: {fileID: 2008394031}
   m_Layer: 5
-  m_Name: Levels
+  m_Name: LevelsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
