@@ -23,11 +23,8 @@ public class UIscript : MonoBehaviour
 
     void Update()
     {
-<<<<<<< Updated upstream
         StaticScript.lines_drawn=GameObject.FindGameObjectsWithTag("Line").Length;
-=======
 
->>>>>>> Stashed changes
         StaticScript.timeElapsed+=Time.deltaTime;
         slider.value = StaticScript.health;
         slider1.value = StaticScript.no_of_poops;
