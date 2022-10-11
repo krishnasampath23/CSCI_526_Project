@@ -71,10 +71,10 @@ public class BlockMovement : MonoBehaviour
         isRightDirection = false;
         spriteRenderer.flipX = true;
       }
-      if(!isRightDirection)
+      else if(!isRightDirection)
       {
-        isRightDirection = false;
-        spriteRenderer.flipX = true;
+        isRightDirection = true;
+        spriteRenderer.flipX = false;
       }
     }
 }
