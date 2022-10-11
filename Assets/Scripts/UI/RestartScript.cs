@@ -55,25 +55,31 @@ public class RestartScript : MonoBehaviour
     public void LoadLevel1()
     {
         SceneManager.LoadScene("Level1");
+        StaticScript.level = 1;
     }
     public void LoadLevel2()
     {
         SceneManager.LoadScene("Level2");
+        StaticScript.level = 2;
     }
 
     public void LoadLevel3()
     {
         SceneManager.LoadScene("Level3");
+        StaticScript.level = 3;
+
     }
 
     public void LoadLevel4()
     {
         SceneManager.LoadScene("Level4");
+        StaticScript.level = 4;
     }
 
     public void LoadBack()
     {
         SceneManager.LoadScene("RestartScene");
+        
     }
 
 
