@@ -28,22 +28,35 @@ public class UIscript : MonoBehaviour
         StaticScript.timeElapsed+=Time.deltaTime;
         slider.value = StaticScript.health;
         slider1.value = StaticScript.no_of_poops;
-        if(StaticScript.enemies_killed == StaticScript.no_of_enemies){
+        StaticScript.score = StaticScript.enemies_killed*100;
+
+        if(StaticScript.enemies_killed == StaticScript.no_of_enemies && StaticScript.playingOrNot == true){
+            StaticScript.success_or_fail = 1;
+            StaticScript.lines_drawn=GameObject.FindGameObjectsWithTag("Line").Length;
+            StaticScript.playingOrNot = false;
+            Debug.Log("End Game: Level Complete");
             SceneManager.LoadScene("RestartScene");
         }
 
 
 
-        if(StaticScript.health == 0)
+        if(StaticScript.health == 0 && StaticScript.playingOrNot == true)
         {
             //Application.Quit(); // Replace this Play Again/ Restart scene
-            Debug.Log("End Game");
+            StaticScript.playingOrNot = false;
+            StaticScript.success_or_fail = 0;
+            StaticScript.lines_drawn=GameObject.FindGameObjectsWithTag("Line").Length;
+            Debug.Log("End Game: Health Lost");
             SceneManager.LoadScene("FailScene");
         }
-        if(StaticScript.no_of_poops == 0)
+        if(StaticScript.no_of_poops == 0 && StaticScript.playingOrNot == true)
         {
+
             //Application.Quit(); // Replace this Play Again/ Restart scene
-            Debug.Log("End Game");
+            StaticScript.playingOrNot = false;
+            StaticScript.success_or_fail = 0;
+            StaticScript.lines_drawn=GameObject.FindGameObjectsWithTag("Line").Length;
+            Debug.Log("End Game: Poops Over");
             SceneManager.LoadScene("FailScene");
         }
         Score.text = "score = " + StaticScript.score.ToString();
