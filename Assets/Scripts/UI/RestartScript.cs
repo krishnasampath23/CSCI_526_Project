@@ -52,6 +52,11 @@ public class RestartScript : MonoBehaviour
 
         SceneManager.LoadScene("Levels");
     }
+    public void LoadTutorial()
+    {
+        SceneManager.LoadScene("Tutorial");
+    }
+
     public void LoadLevel1()
     {
         SceneManager.LoadScene("Level1");
@@ -79,9 +84,12 @@ public class RestartScript : MonoBehaviour
     public void LoadBack()
     {
         SceneManager.LoadScene("RestartScene");
-        
+
     }
 
+    public void LoadMenu(){
+        SceneManager.LoadScene("StartMenu");
+    }
 
     public void ExitGame()
     {
