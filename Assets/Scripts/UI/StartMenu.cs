@@ -12,11 +12,15 @@ public class StartMenu : MonoBehaviour
         SceneManager.LoadScene("Levels");
     }
 
-    public void TutorialButton(){
-        SceneManager.LoadScene("Tutorial");
+    public void InstructionButton(){
+        SceneManager.LoadScene("Instruction");
     }
 
     public void QuitButton(){
         Application.Quit();
+    }
+
+    public void BackToMenu(){
+        SceneManager.LoadScene("StartMenu");
     }
 }
