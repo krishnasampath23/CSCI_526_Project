@@ -23,13 +23,20 @@ public class UIscript : MonoBehaviour
 
     void Update()
     {
+<<<<<<< Updated upstream
         StaticScript.lines_drawn=GameObject.FindGameObjectsWithTag("Line").Length;
+=======
+
+>>>>>>> Stashed changes
         StaticScript.timeElapsed+=Time.deltaTime;
         slider.value = StaticScript.health;
         slider1.value = StaticScript.no_of_poops;
         if(StaticScript.enemies_killed == StaticScript.no_of_enemies){
             SceneManager.LoadScene("RestartScene");
         }
+
+
+
         if(StaticScript.health == 0)
         {
             //Application.Quit(); // Replace this Play Again/ Restart scene
@@ -43,23 +50,37 @@ public class UIscript : MonoBehaviour
             SceneManager.LoadScene("FailScene");
         }
         Score.text = "score = " + StaticScript.score.ToString();
-        if(StaticScript.timerOn)
-        {
-            if(StaticScript.timeLeft > 0){
-                StaticScript.timeLeft -= Time.deltaTime/4;
-                updateTimer(StaticScript.timeLeft);
-                // TimerTxt.text = StaticScript.timeLeft.ToString();
 
+
+        //if (StaticScript.timerOn && StaticScript.timeLeft >= 10 && StaticScript.timeLeft > 0)
+        //{
+        //    StaticScript.timeLeft -= Time.deltaTime / 4;
+        //}
+
+        //if (StaticScript.timerOn)
+        //{
+
+            if (StaticScript.timerOn && StaticScript.timeLeft > 0)
+            {
+                StaticScript.timeLeft -= Time.deltaTime / 4;
+
+                if (StaticScript.timeLeft <= 10)
+                {
+
+                    updateTimer(StaticScript.timeLeft);
+                    // TimerTxt.text = StaticScript.timeLeft.ToString();
+                }
             }
 
-            else{
+            else
+            {
 
                 // TimerTxt.text = "Times Up !!!";
                 // //Application.Quit(); // Replace this Play Again/ Restart scene
                 // SceneManager.LoadScene("RestartScene");
                 // Debug.Log("End Game");
             }
-        }
+        //}
 
         // basic.text = "Enemies Killed: " + StaticScript.counter.ToString();
     }
