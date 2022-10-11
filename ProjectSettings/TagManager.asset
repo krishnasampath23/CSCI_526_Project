@@ -25,6 +25,7 @@ TagManager:
   - level
   - Line
   - EnemyBullet
+  - EnemyShield
   layers:
   - Default
   - TransparentFX

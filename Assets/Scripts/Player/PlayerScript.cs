@@ -88,34 +88,52 @@ public class PlayerScript : MonoBehaviour
 
             }
             // StaticScript.health = 0;
-            Debug.Log("Hit Ground : End Game");
-            SceneManager.LoadScene("FailScene");
+            if(StaticScript.playingOrNot == true)
+            {
+                StaticScript.playingOrNot = false;
+                Debug.Log("Hit Ground : End Game");
+                StaticScript.success_or_fail = 0;
+                StaticScript.lines_drawn=GameObject.FindGameObjectsWithTag("Line").Length;
+                SceneManager.LoadScene("FailScene");
+            }
             //Application.Quit(); // Replace this Play Again/ Restart scene
             //UnityEditor.EditorApplication.isPlaying = false;
 
         }
-        if (collision.gameObject.CompareTag("enemyFire"))
-        {
-            playerLives -= 1;
-            if (playerLives <= 0)
-            {
-                // Application.Quit();
-                //UnityEditor.EditorApplication.isPlaying = false;
-            }
-        }
-        if (collision.gameObject.CompareTag("person"))
-        {
-            StaticScript.health -= 20;
-            Destroy(collision.gameObject);
-        }
+        // if (collision.gameObject.CompareTag("enemyFire"))
+        // {
+        //     playerLives -= 1;
+        //     if (playerLives <= 0)
+        //     {
+        //         // Application.Quit();
+        //         //UnityEditor.EditorApplication.isPlaying = false;
+        //     }
+        // }
+        // if (collision.gameObject.CompareTag("person"))
+        // {
+        //     StaticScript.health -= 20;
+        //     Destroy(collision.gameObject);
+        // }
 
-        if (collision.gameObject.CompareTag("food"))
-        {
-            StaticScript.no_of_poops += 1;
-            Destroy(collision.gameObject);
+        // if (collision.gameObject.CompareTag("food"))
+        // {
+        //     StaticScript.no_of_poops += 1;
+        //     Destroy(collision.gameObject);
 
-            //Application.Quit();
-            //UnityEditor.EditorApplication.isPlaying = false;
+        //     //Application.Quit();
+        //     //UnityEditor.EditorApplication.isPlaying = false;
+
+        // }
+        if (collision.gameObject.CompareTag("EnemyShield"))
+        {
+            StaticScript.health -= 10;
+            RB.AddForce(Vector2.up * 2000);
+
+        }
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            StaticScript.health -= 10;
+            RB.AddForce(Vector2.up * 2000);
 
         }
     }

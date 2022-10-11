@@ -11,7 +11,7 @@ public class SendToGoogle : MonoBehaviour
 {
     //[SerializeField]
     // public string URL = @"https://docs.google.com/forms/u/2/d/e/1FAIpQLSeINTJed3u0J9RmvZs3GItAditDUFW4MR9yRh5YwCEBvafDnQ/formResponse";
-    public string URL=@"https://docs.google.com/forms/u/2/d/e/1FAIpQLSf1G-1mTRCavEjK6v0fQzWC1BYzN3gl6kmGmNa8JBkZs-V0dw/formResponse";
+    public string URL="https://docs.google.com/forms/u/2/d/e/1FAIpQLSf1G-1mTRCavEjK6v0fQzWC1BYzN3gl6kmGmNa8JBkZs-V0dw/formResponse";
     private long _sessionID;
     private int _poopsUsed=StaticScript._poopsUsed;
     private int _score=(StaticScript.enemies_killed*100)+((StaticScript.no_of_poops-StaticScript._poopsUsed)*100);
@@ -22,6 +22,7 @@ public class SendToGoogle : MonoBehaviour
     private int enemies_killed=StaticScript.enemies_killed;
     private int lines_drawn=StaticScript.lines_drawn;
     private int health=StaticScript.health;
+    private int do_or_not=-1;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -29,14 +30,28 @@ public class SendToGoogle : MonoBehaviour
         _sessionID = DateTime.Now.Ticks;
         Send();
     }
+    public void Start(){
+        do_or_not = -1;
+    }
     public void Send()
     {
         // Assign variables
       
        // _testPlayers = UnityEngine.Random.Range(0, 101);
 
- 
-        StartCoroutine(Post(_sessionID.ToString(),_timePlayed.ToString(),_score.ToString(), poops_left.ToString(),success_or_fail.ToString(),level.ToString(),enemies_killed.ToString(),health.ToString(),lines_drawn.ToString()));
+        if(do_or_not == -1)
+        {
+            do_or_not = 1;
+            if(health<0){
+                health=0;
+            }
+            if(poops_left<0){
+                poops_left = 0;
+                _score=(StaticScript.enemies_killed*100);
+            }
+            StartCoroutine(Post(_sessionID.ToString(),_timePlayed.ToString(),_score.ToString(), poops_left.ToString(),success_or_fail.ToString(),level.ToString(),enemies_killed.ToString(),health.ToString(),lines_drawn.ToString()));
+        }
+        
     }
     private IEnumerator Post(string _sessionID, string _timePlayed,string _score, string poops_left, string success_or_fail, string level, string enemies_killed, string health, string lines_drawn )
     {
@@ -61,11 +76,15 @@ public class SendToGoogle : MonoBehaviour
             if (www.result != UnityWebRequest.Result.Success)
             {
                 Debug.Log(www.error);
+                www.Dispose();
             }
             else
             {
                 Debug.Log("Form upload complete!");
+                www.Dispose();
             }
+            www.Dispose();
+            
         }
 
     }
