@@ -7,6 +7,8 @@ public class RestartScript : MonoBehaviour
 {
     public void LoadGame()
     {
+        StaticScript.success_or_fail=1;
+        StaticScript.lines_drawn=GameObject.FindGameObjectsWithTag("Line").Length;
         StaticScript.timePrevious=StaticScript.timeElapsed;
         StaticScript.score = 0;
         StaticScript.timeLeft = 10;
@@ -22,6 +24,8 @@ public class RestartScript : MonoBehaviour
 
     public void LoadAgain()
     {
+        StaticScript.success_or_fail=0;
+        StaticScript.lines_drawn=GameObject.FindGameObjectsWithTag("Line").Length;
         StaticScript.timePrevious=StaticScript.timeElapsed;
         StaticScript.score = 0;
         StaticScript.timeLeft = 10;
