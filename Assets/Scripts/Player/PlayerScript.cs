@@ -87,7 +87,7 @@ public class PlayerScript : MonoBehaviour
                 isGrounded = true;
 
             }
-            StaticScript.health = 0;
+            // StaticScript.health = 0;
             Debug.Log("Hit Ground : End Game");
             SceneManager.LoadScene("FailScene");
             //Application.Quit(); // Replace this Play Again/ Restart scene
