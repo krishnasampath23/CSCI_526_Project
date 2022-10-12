@@ -41,10 +41,11 @@ public class RestartScript : MonoBehaviour
         if(StaticScript.level == 2 || StaticScript.level == 3){
             StaticScript.no_of_enemies = 5;
         }
-        StaticScript.no_of_poops += 10;
+        StaticScript.no_of_poops = 10;
         StaticScript.health = 100;
         StaticScript.playingOrNot = true;
         if(StaticScript.level==0){
+            StaticScript.timeLeft = 1000;
             SceneManager.LoadScene("Tutorial");
         }
         else{
@@ -77,7 +78,7 @@ public class RestartScript : MonoBehaviour
         StaticScript.lines_drawn=0;
         StaticScript.timePrevious=StaticScript.timeElapsed;
         StaticScript.score = 0;
-        StaticScript.timeLeft = 10;
+        StaticScript.timeLeft = 10000;
         StaticScript.timerOn = false;
         StaticScript.enemies_killed=0;
         StaticScript.no_of_enemies = 3;
@@ -94,7 +95,7 @@ public class RestartScript : MonoBehaviour
         StaticScript.lines_drawn=0;
         StaticScript.timePrevious=StaticScript.timeElapsed;
         StaticScript.score = 0;
-        StaticScript.timeLeft = 10;
+        StaticScript.timeLeft = 12;
         StaticScript.timerOn = false;
         StaticScript.enemies_killed=0;
         StaticScript.no_of_enemies = 3;
@@ -110,7 +111,7 @@ public class RestartScript : MonoBehaviour
         StaticScript.lines_drawn=0;
         StaticScript.timePrevious=StaticScript.timeElapsed;
         StaticScript.score = 0;
-        StaticScript.timeLeft = 10;
+        StaticScript.timeLeft = 12;
         StaticScript.timerOn = false;
         StaticScript.enemies_killed=0;
         StaticScript.no_of_enemies = 5;
@@ -127,7 +128,7 @@ public class RestartScript : MonoBehaviour
         StaticScript.lines_drawn=0;
         StaticScript.timePrevious=StaticScript.timeElapsed;
         StaticScript.score = 0;
-        StaticScript.timeLeft = 10;
+        StaticScript.timeLeft = 12;
         StaticScript.timerOn = false;
         StaticScript.enemies_killed=0;
         StaticScript.no_of_enemies = 5;

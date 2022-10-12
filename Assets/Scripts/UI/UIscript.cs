@@ -17,8 +17,8 @@ public class UIscript : MonoBehaviour
         Score.text = "score = 0";
         slider.maxValue = 100;
         slider.value = 100;
-        slider1.maxValue = 10;
-        slider1.value = 10;
+        slider1.maxValue = StaticScript.no_of_poops;
+        slider1.value = StaticScript.no_of_poops;
     }
 
     void Update()
