@@ -136,5 +136,13 @@ public class PlayerScript : MonoBehaviour
             RB.AddForce(Vector2.up * 2000);
 
         }
+        if (collision.gameObject.CompareTag("Eagle"))
+        {
+            StaticScript.health -= 20;
+
+            //Application.Quit();
+            //UnityEditor.EditorApplication.isPlaying = false;
+
+        }
     }
 }
