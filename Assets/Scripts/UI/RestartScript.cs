@@ -131,7 +131,7 @@ public class RestartScript : MonoBehaviour
         StaticScript.timerOn = false;
         StaticScript.enemies_killed=0;
         StaticScript.no_of_enemies = 5;
-        StaticScript.level = 0;
+        StaticScript.level = 3;
         StaticScript.no_of_poops += 10;
         StaticScript.health = 100;
         StaticScript.playingOrNot = true;
@@ -149,7 +149,7 @@ public class RestartScript : MonoBehaviour
         StaticScript.timerOn = false;
         StaticScript.enemies_killed=0;
         StaticScript.no_of_enemies = 3;
-        StaticScript.level = 0;
+        StaticScript.level = 4;
         StaticScript.no_of_poops += 10;
         StaticScript.health = 100;
         StaticScript.playingOrNot = true;

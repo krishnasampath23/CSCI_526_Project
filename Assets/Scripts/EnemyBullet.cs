@@ -27,5 +27,10 @@ public class EnemyBullet : MonoBehaviour
                 Destroy(this.gameObject);
             }
 
+            if (collision.gameObject.CompareTag("Line"))
+            {
+                Destroy(this.gameObject);
+            }
+
     }
     }
