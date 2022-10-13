@@ -25,7 +25,7 @@ TagManager:
   - level
   - Line
   - EnemyBullet
-  - EnemyShield
+  - Eagle
   layers:
   - Default
   - TransparentFX
@@ -34,9 +34,9 @@ TagManager:
   - Water
   - UI
   - Person
-  - 
-  - 
-  - 
+  - NotColliderWithPlayer
+  - Player
+  - Eagle
   - 
   - 
   - 

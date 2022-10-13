@@ -10,8 +10,11 @@ public class EnemyShoot : MonoBehaviour
 
     float timeUntilFire;
 
-
-    private void Start()
+    private void Awake()
+    {
+        EventHandle.EventStart += StartGame;
+    }
+    private void StartGame()
     {
         StartCoroutine(SpawnFire());
     }

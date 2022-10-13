@@ -23,14 +23,6 @@ public class EnemyBullet : MonoBehaviour
             if (collision.gameObject.CompareTag("LevelStart")){
                 Destroy(this.gameObject);
             }
-            if (collision.gameObject.CompareTag("ground")){
-                Destroy(this.gameObject);
-            }
-
-            if (collision.gameObject.CompareTag("Line"))
-            {
-                Destroy(this.gameObject);
-            }
 
     }
     }

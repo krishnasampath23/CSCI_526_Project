@@ -12,15 +12,16 @@ public class StartMenu : MonoBehaviour
         SceneManager.LoadScene("Levels");
     }
 
-    public void InstructionButton(){
-        SceneManager.LoadScene("Instruction");
+    public void TutorialButton(){
+        if (!StaticScript.operateInfoShowed)
+        {
+            StaticScript.showOperateInfo = true;
+            StaticScript.operateInfoShowed = true;
+        }
+        SceneManager.LoadScene("Tutorial");
     }
 
     public void QuitButton(){
         Application.Quit();
-    }
-
-    public void BackToMenu(){
-        SceneManager.LoadScene("StartMenu");
     }
 }
