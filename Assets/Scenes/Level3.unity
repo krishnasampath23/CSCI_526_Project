@@ -408,11 +408,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 248634468}
   m_CullTransparentMesh: 1
---- !u!1 &379724009 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3353471114203153454, guid: bc55e8283970e48c6a13f44d053cc742, type: 3}
-  m_PrefabInstance: {fileID: 1122937289}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &388879353
 GameObject:
   m_ObjectHideFlags: 0
@@ -1236,8 +1231,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireRate: 0.2
   firingPoint: {fileID: 0}
-  bulletPrefab: {fileID: 379724009}
+  blackbulletPrefab: {fileID: 0}
+  greenbulletPrefab: {fileID: 0}
   peelPrefab: {fileID: 0}
+  black: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &719164724
 MonoBehaviour:
   m_ObjectHideFlags: 0
