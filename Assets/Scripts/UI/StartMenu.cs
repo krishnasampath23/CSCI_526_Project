@@ -23,4 +23,12 @@ public class StartMenu : MonoBehaviour
     public void BackToMenu(){
         SceneManager.LoadScene("StartMenu");
     }
+
+    public void NextButton(){
+        SceneManager.LoadScene("Instruction2");
+    }
+
+    public void BackToInstruction(){
+        SceneManager.LoadScene("Instruction");
+    }
 }
