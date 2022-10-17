@@ -76,31 +76,35 @@ public class EnemyScript : MonoBehaviour
              //UnityEditor.EditorApplication.isPlaying = false;
             
         }
-        if (this.gameObject.CompareTag("Black Enemy") && collision.gameObject.CompareTag("Black Bullet")){
-            // Debug.Log("Hello");
-            // Vector3 currScale = transform.localScale;
-            // currScale[0] -= 4;
-            // currScale[1] -= 4;
-            // if(currScale[0] > 0)
-            // {
-            //     transform.localScale = currScale;
-            // }
-            // else
-            // {
-            //     // StaticScript.score += 1;
-            //     // Debug.Log("hello");
-            //     Destroy(this.gameObject);
-            // }
-            // isGrounded = false;
-            StaticScript.enemies_killed += 1;
-            Destroy(this.gameObject);
+        // if (this.gameObject.CompareTag("Black Enemy") && collision.gameObject.CompareTag("Black Bullet")){
+        //     // Debug.Log("Hello");
+        //     // Vector3 currScale = transform.localScale;
+        //     // currScale[0] -= 4;
+        //     // currScale[1] -= 4;
+        //     // if(currScale[0] > 0)
+        //     // {
+        //     //     transform.localScale = currScale;
+        //     // }
+        //     // else
+        //     // {
+        //     //     // StaticScript.score += 1;
+        //     //     // Debug.Log("hello");
+        //     //     Destroy(this.gameObject);
+        //     // }
+        //     // isGrounded = false;
+        //     StaticScript.enemies_killed += 1;
+        //     Destroy(this.gameObject);
 
-        }
+        // }
 
-        if (this.gameObject.CompareTag("Green Enemy") && collision.gameObject.CompareTag("Green Bullet")){
-            StaticScript.enemies_killed += 1;
-            Destroy(this.gameObject);
-        }
+        // if (this.gameObject.CompareTag("Green Enemy") && collision.gameObject.CompareTag("Green Bullet")){
+        //     StaticScript.enemies_killed += 1;
+        //     Destroy(this.gameObject);
+        // }
+        // if (collision.gameObject.CompareTag("Bullet") && this.gameObject.GetComponent<SpriteRenderer>().color == collision.gameObject.GetComponent<SpriteRenderer>().color){
+        //     StaticScript.enemies_killed += 1;
+        //     Destroy(this.gameObject);
+        // }
 
 
         if (collision.gameObject.CompareTag("Peel"))

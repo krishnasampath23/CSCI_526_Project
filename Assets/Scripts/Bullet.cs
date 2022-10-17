@@ -28,6 +28,25 @@ public class Bullet : MonoBehaviour
         //    Destroy(collision.gameObject);
         //    Destroy(this.gameObject);
         //}
+
+         if (collision.gameObject.CompareTag("Green Enemy"))
+        {
+            if(this.gameObject.GetComponent<SpriteRenderer>().color == collision.gameObject.GetComponent<SpriteRenderer>().color){
+            StaticScript.enemies_killed += 1;
+            Destroy(collision.gameObject);
+            Destroy(this.gameObject);
+            }
+        }
+
+        if (collision.gameObject.CompareTag("Black Enemy"))
+        {
+            if(this.gameObject.GetComponent<SpriteRenderer>().color == collision.gameObject.GetComponent<SpriteRenderer>().color){
+            StaticScript.enemies_killed += 1;
+            Destroy(collision.gameObject);
+            Destroy(this.gameObject);
+            }
+        }
+        
         if (collision.gameObject.CompareTag("EnemyBullet"))
         {
             Destroy(this.gameObject);

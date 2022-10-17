@@ -19,5 +19,5 @@ static class StaticScript
     public static int level = 0;
     public static int success_or_fail=-1;
     public static int lines_drawn=0;
-    public static int no_of_erasers = 2;
+    public static int no_of_erasers = 3;
 }

@@ -9,7 +9,7 @@ public class BlockMovement : MonoBehaviour
     private Rigidbody2D rb;
     private float currentX;
     private int val;
-    public bool isRightDirection;
+    public bool isRightDirection=false;
     private void Awake(){
       rb = GetComponent<Rigidbody2D>();
     }

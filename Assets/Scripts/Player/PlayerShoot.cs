@@ -6,9 +6,16 @@ public class PlayerShoot : MonoBehaviour
 {
     public float fireRate = 0.2f;
     public Transform firingPoint;
-    public GameObject blackbulletPrefab;
-    public GameObject greenbulletPrefab;
+// <<<<<<< Updated upstream
+//     // public GameObject blackbulletPrefab;
+//     // public GameObject greenbulletPrefab;
+// //     // public GameObject EraserPrefab;
+// =======
+    // public GameObject blackbulletPrefab;
+    // public GameObject greenbulletPrefab;
+    public GameObject bulletPrefab;
     public GameObject EraserPrefab;
+// >>>>>>> Stashed changes
     public GameObject peelPrefab;
     public Color black = new Color (0,0,0,1);
 
@@ -54,13 +61,17 @@ public class PlayerShoot : MonoBehaviour
         // pos[1] -= 1
         StaticScript.no_of_poops -= 1; 
 
-        if (x.Equals(black)){
-            Instantiate(blackbulletPrefab,posBullet, Quaternion.Euler(new Vector3(0f,0f,0)));
-        }
+        bulletPrefab.GetComponent<SpriteRenderer>().color = this.GetComponent<SpriteRenderer>().color;
+
+        Instantiate(bulletPrefab,posBullet, Quaternion.Euler(new Vector3(0f,0f,0)));
+
+        // if (x.Equals(black)){
+        //     Instantiate(blackbulletPrefab,posBullet, Quaternion.Euler(new Vector3(0f,0f,0)));
+        // }
         
-        else{
-            Instantiate(greenbulletPrefab,posBullet, Quaternion.Euler(new Vector3(0f,0f,0)));
-        }
+        // else{
+        //     Instantiate(greenbulletPrefab,posBullet, Quaternion.Euler(new Vector3(0f,0f,0)));
+        // }
 
     }
 
@@ -72,16 +83,16 @@ public class PlayerShoot : MonoBehaviour
         StaticScript.no_of_erasers -= 1; 
         Instantiate(EraserPrefab,posBullet, Quaternion.Euler(new Vector3(0f,0f,0)));
     }
-    void Peel()
-    {
-        //Debug.Log(transform.position);
-        Vector3 pos = new Vector3(0,0,0);
-        pos = transform.position;
-        //Debug.Log(pos);
-        pos[0] -= 2;
-        pos[1] -= 1;
-        Instantiate(peelPrefab, pos, Quaternion.Euler(new Vector3(10f, 10f, 0)));
-    }
+    // void Peel()
+    // {
+    //     //Debug.Log(transform.position);
+    //     Vector3 pos = new Vector3(0,0,0);
+    //     pos = transform.position;
+    //     //Debug.Log(pos);
+    //     pos[0] -= 2;
+    //     pos[1] -= 1;
+    //     Instantiate(peelPrefab, pos, Quaternion.Euler(new Vector3(10f, 10f, 0)));
+    // }
 }
 
 

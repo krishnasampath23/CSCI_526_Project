@@ -20,6 +20,15 @@ public class EnemyBullet : MonoBehaviour
                 Destroy(this.gameObject);
             }
 
+            if (collision.gameObject.CompareTag("Platform1")){
+                collision.gameObject.GetComponent<SpriteRenderer>().color = this.GetComponent<SpriteRenderer>().color;
+                Destroy(this.gameObject);
+            }
+            if (collision.gameObject.CompareTag("Platform2")){
+                collision.gameObject.GetComponent<SpriteRenderer>().color = this.GetComponent<SpriteRenderer>().color;
+                Destroy(this.gameObject);
+            }
+
             if (collision.gameObject.CompareTag("LevelStart")){
                 Destroy(this.gameObject);
             }

@@ -7,12 +7,16 @@ public class EnemyShoot : MonoBehaviour
     public float fireRate = 0.2f;
     public Transform firingPoint;
     public GameObject bulletPrefab;
-
+    public SpriteRenderer sprite;
     float timeUntilFire;
 
 
     private void Start()
     {
+        sprite = GetComponent<SpriteRenderer>();
+        Debug.Log(sprite.color);
+        bulletPrefab.GetComponent<SpriteRenderer>().color = sprite.color;
+        Debug.Log(bulletPrefab.GetComponent<SpriteRenderer>().color);
         StartCoroutine(SpawnFire());
     }
 
@@ -50,6 +54,7 @@ public class EnemyShoot : MonoBehaviour
         //posBullet[0] += 10;
         posBullet[1] += 20;
         // pos[1] -= 1;
+        bulletPrefab.GetComponent<SpriteRenderer>().color = sprite.color;
         Instantiate(bulletPrefab, posBullet, Quaternion.Euler(new Vector3(0f, 0f, 0)));
     }
 
