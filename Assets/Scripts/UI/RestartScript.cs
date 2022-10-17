@@ -17,7 +17,7 @@ public class RestartScript : MonoBehaviour
         StaticScript.level += 1;
         StaticScript.lines_drawn=0;
         StaticScript.no_of_erasers = 3;
-        if(StaticScript.level == 2 || StaticScript.level == 4){
+        if(StaticScript.level == 2 || StaticScript.level == 4 ||  StaticScript.level == 5){
             StaticScript.no_of_enemies = 4;
         }
         StaticScript.no_of_poops += 10;
@@ -41,7 +41,7 @@ public class RestartScript : MonoBehaviour
         StaticScript.no_of_enemies = 3;
         StaticScript.level += 0;
         StaticScript.no_of_erasers = 3;
-        if(StaticScript.level == 2 || StaticScript.level == 4){
+        if(StaticScript.level == 2 || StaticScript.level == 4 ||  StaticScript.level == 5){
             StaticScript.no_of_enemies = 4;
         }
         StaticScript.no_of_poops = 10;
@@ -171,6 +171,25 @@ public class RestartScript : MonoBehaviour
         StaticScript.health = 100;
         StaticScript.playingOrNot = true;
         SceneManager.LoadScene("Level4");
+    }
+
+    public void LoadLevel5()
+    {
+        StaticScript.success_or_fail=-1;
+        StaticScript.timePrevious=StaticScript.timeElapsed;
+        StaticScript.score = 0;
+        StaticScript.timeLeft = 10;
+        StaticScript.lines_drawn=0;
+        StaticScript.timerOn = false;
+        StaticScript.no_of_erasers = 3;
+        StaticScript.enemies_killed=0;
+        StaticScript.no_of_enemies = 4;
+        StaticScript.level = 4;
+        StaticScript.lines_drawn = 0;
+        StaticScript.no_of_poops += 10;
+        StaticScript.health = 100;
+        StaticScript.playingOrNot = true;
+        SceneManager.LoadScene("Level5");
     }
 
     public void LoadBack()
