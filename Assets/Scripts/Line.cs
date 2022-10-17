@@ -20,6 +20,14 @@ public class Line : MonoBehaviour
         
     }
 
+    private void OnCollisionEnter2D(Collision2D collision){
+        if (collision.gameObject.CompareTag("Eraser")){
+                Destroy(this.gameObject);
+                Destroy(collision.gameObject);
+            }
+
+    }
+
     public void SetPosition( Vector2 pos){
         if(!CanAppend(pos)) return;
 

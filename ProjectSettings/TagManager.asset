@@ -27,7 +27,15 @@ TagManager:
   - EnemyBullet
   - EnemyShield
   - Platform2
+<<<<<<< Updated upstream
   - Platform1
+=======
+  - Black Enemy
+  - Green Enemy
+  - Black Bullet
+  - Green Bullet
+  - Eraser
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX

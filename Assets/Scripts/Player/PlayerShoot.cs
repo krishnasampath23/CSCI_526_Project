@@ -8,6 +8,7 @@ public class PlayerShoot : MonoBehaviour
     public Transform firingPoint;
     public GameObject blackbulletPrefab;
     public GameObject greenbulletPrefab;
+    public GameObject EraserPrefab;
     public GameObject peelPrefab;
     public Color black = new Color (0,0,0,1);
 
@@ -33,6 +34,12 @@ public class PlayerShoot : MonoBehaviour
             StaticScript._poopsUsed+=1;
             timeUntilFire = Time.time + fireRate;
         }
+
+        if (Input.GetKeyDown(KeyCode.X) && timeUntilFire < Time.time && StaticScript.no_of_erasers > 0)
+        {    
+            Shoot_eraser();
+            timeUntilFire = Time.time + fireRate;
+        }
     }
 
     void Shoot(Color x){
@@ -55,7 +62,15 @@ public class PlayerShoot : MonoBehaviour
             Instantiate(greenbulletPrefab,posBullet, Quaternion.Euler(new Vector3(0f,0f,0)));
         }
 
+    }
 
+    void Shoot_eraser(){
+        Vector3 posBullet = new Vector3(0, 0, 0);
+        posBullet = transform.position;
+        posBullet[1] -= 1;
+        // pos[1] -= 1
+        StaticScript.no_of_erasers -= 1; 
+        Instantiate(EraserPrefab,posBullet, Quaternion.Euler(new Vector3(0f,0f,0)));
     }
     void Peel()
     {
