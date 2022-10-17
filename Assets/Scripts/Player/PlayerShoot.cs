@@ -6,8 +6,10 @@ public class PlayerShoot : MonoBehaviour
 {
     public float fireRate = 0.2f;
     public Transform firingPoint;
-    public GameObject bulletPrefab;
+    public GameObject blackbulletPrefab;
+    public GameObject greenbulletPrefab;
     public GameObject peelPrefab;
+    public Color black = new Color (0,0,0,1);
 
     float timeUntilFire;
 
@@ -26,13 +28,14 @@ public class PlayerShoot : MonoBehaviour
         }*/
         if (Input.GetKeyDown(KeyCode.Space) && timeUntilFire < Time.time && StaticScript.no_of_poops > 0)
         {
-            Shoot();
+            
+            Shoot(GetComponent<SpriteRenderer>().color);
             StaticScript._poopsUsed+=1;
             timeUntilFire = Time.time + fireRate;
         }
     }
 
-    void Shoot(){
+    void Shoot(Color x){
         /*Vector3 mouseDelta = Input.mousePosition;
         float angle = Mathf.Atan2(mouseDelta.y, mouseDelta.x) * Mathf.Rad2Deg;
         if (angle < 0) angle += 360;*/
@@ -43,7 +46,16 @@ public class PlayerShoot : MonoBehaviour
         posBullet[1] -= 1;
         // pos[1] -= 1
         StaticScript.no_of_poops -= 1; 
-        Instantiate(bulletPrefab,posBullet, Quaternion.Euler(new Vector3(0f,0f,0)));
+
+        if (x.Equals(black)){
+            Instantiate(blackbulletPrefab,posBullet, Quaternion.Euler(new Vector3(0f,0f,0)));
+        }
+        
+        else{
+            Instantiate(greenbulletPrefab,posBullet, Quaternion.Euler(new Vector3(0f,0f,0)));
+        }
+
+
     }
     void Peel()
     {

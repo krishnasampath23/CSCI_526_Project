@@ -26,6 +26,12 @@ TagManager:
   - Line
   - EnemyBullet
   - EnemyShield
+  - Platform1
+  - Platform2
+  - Black Enemy
+  - Green Enemy
+  - Black Bullet
+  - Green Bullet
   layers:
   - Default
   - TransparentFX

@@ -21,7 +21,7 @@ public class EnemyScript : MonoBehaviour
         {
             transform.Translate(Vector2.down/200);
         }
-
+        
         target = GameObject.Find("Player").transform;
 
 
@@ -76,7 +76,7 @@ public class EnemyScript : MonoBehaviour
              //UnityEditor.EditorApplication.isPlaying = false;
             
         }
-        if (collision.gameObject.CompareTag("Bullet")){
+        if (this.gameObject.CompareTag("Black Enemy") && collision.gameObject.CompareTag("Black Bullet")){
             // Debug.Log("Hello");
             // Vector3 currScale = transform.localScale;
             // currScale[0] -= 4;
@@ -96,6 +96,12 @@ public class EnemyScript : MonoBehaviour
             Destroy(this.gameObject);
 
         }
+
+        if (this.gameObject.CompareTag("Green Enemy") && collision.gameObject.CompareTag("Green Bullet")){
+            StaticScript.enemies_killed += 1;
+            Destroy(this.gameObject);
+        }
+
 
         if (collision.gameObject.CompareTag("Peel"))
         {

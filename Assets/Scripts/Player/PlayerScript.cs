@@ -130,6 +130,21 @@ public class PlayerScript : MonoBehaviour
             RB.AddForce(Vector2.up * 2000);
 
         }
+
+        if (collision.gameObject.CompareTag("Platform1"))
+        {
+            
+            GetComponent<SpriteRenderer>().color = new Color (0,0,0,1);
+
+        }
+
+        if (collision.gameObject.CompareTag("Platform2"))
+        {
+            
+            GetComponent<SpriteRenderer>().color = new Color32 (5,137,35,255);
+
+        }
+
         if (collision.gameObject.CompareTag("Enemy"))
         {
             StaticScript.health -= 10;
