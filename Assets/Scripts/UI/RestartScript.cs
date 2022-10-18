@@ -24,6 +24,9 @@ public class RestartScript : MonoBehaviour
         StaticScript.health = 100;
         StaticScript.playingOrNot = true;
         StaticScript.lines_drawn = 0;
+        if(StaticScript.level >= 5){
+            SceneManager.LoadScene("Levels");
+        }
 
     Debug.Log("Level"+StaticScript.level.ToString());
         SceneManager.LoadScene("Level"+StaticScript.level.ToString());

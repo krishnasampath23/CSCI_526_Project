@@ -36,15 +36,32 @@ public class Bullet : MonoBehaviour
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
             }
+            else
+            {
+                Destroy(this.gameObject);
+            }
         }
 
         if (collision.gameObject.CompareTag("Black Enemy"))
-        {
+        {Destroy(this.gameObject);
             if(this.gameObject.GetComponent<SpriteRenderer>().color == collision.gameObject.GetComponent<SpriteRenderer>().color){
             StaticScript.enemies_killed += 1;
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
             }
+            else
+            {
+                
+            }
+        }
+
+        if (collision.gameObject.CompareTag("Platform1"))
+        {
+            Destroy(this.gameObject);
+        }
+        if (collision.gameObject.CompareTag("Platform2"))
+        {
+            Destroy(this.gameObject);
         }
         
         if (collision.gameObject.CompareTag("EnemyBullet"))

@@ -187,5 +187,15 @@ public class PlayerScript : MonoBehaviour
             RB.AddForce(Vector2.up * 2000);
 
         }
+        if (collision.gameObject.CompareTag("Green Enemy"))
+        {
+            StaticScript.health -= 10;
+            RB.AddForce(Vector2.up * 1000);
+        }
+        if (collision.gameObject.CompareTag("Black Enemy"))
+        {
+            StaticScript.health -= 10;
+            RB.AddForce(Vector2.up * 1000);
+        }
     }
 }

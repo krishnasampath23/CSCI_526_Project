@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Level1_old.unity
     guid: ccb9fcc628fbf4126b003d32475b5f38
   - enabled: 1
+    path: Assets/Scenes/Level1.unity
+    guid: edad8b7cb387d41318ec4652c0754970
+  - enabled: 1
     path: Assets/Scenes/Menu/Instruction2.unity
     guid: 7c9bd00a27e53c44f869929847044084
   - enabled: 1
@@ -50,4 +53,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level4_old.unity
     guid: d0d9ee41fc1dae042b524aeb8a4059e0
+  - enabled: 1
+    path: Assets/Scenes/Drawing lines.unity
+    guid: fca4cca0e0e794153ba2d27c2189d093
   m_configObjects: {}
