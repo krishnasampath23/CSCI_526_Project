@@ -24,6 +24,7 @@ public class RestartScript : MonoBehaviour
         StaticScript.health = 100;
         StaticScript.playingOrNot = true;
         StaticScript.lines_drawn = 0;
+        StaticScript.no_color_switches=0;
         if(StaticScript.level >= 5){
             SceneManager.LoadScene("Levels");
         }
@@ -44,6 +45,7 @@ public class RestartScript : MonoBehaviour
         StaticScript.no_of_enemies = 3;
         StaticScript.level += 0;
         StaticScript.no_of_erasers = 3;
+        StaticScript.no_color_switches=0;
         if(StaticScript.level == 2 || StaticScript.level == 4 ||  StaticScript.level == 5){
             StaticScript.no_of_enemies = 4;
         }
@@ -78,6 +80,7 @@ public class RestartScript : MonoBehaviour
         StaticScript.no_of_poops += 10;
         StaticScript.health = 100;
         StaticScript.playingOrNot = false;
+        StaticScript.no_color_switches=0;
 
         SceneManager.LoadScene("Levels");
     }
@@ -98,6 +101,7 @@ public class RestartScript : MonoBehaviour
         StaticScript.lines_drawn = 0;
         StaticScript.playingOrNot = true;
         SceneManager.LoadScene("Tutorial");
+        StaticScript.no_color_switches=0;
     }
 
     public void LoadLevel1()
@@ -116,6 +120,7 @@ public class RestartScript : MonoBehaviour
         StaticScript.health = 100;
         StaticScript.lines_drawn = 0;
         StaticScript.playingOrNot = true;
+        StaticScript.no_color_switches=0;
         SceneManager.LoadScene("Level1");
     }
     public void LoadLevel2()
@@ -134,6 +139,7 @@ public class RestartScript : MonoBehaviour
         StaticScript.lines_drawn = 0;
         StaticScript.health = 100;
         StaticScript.playingOrNot = true;
+        StaticScript.no_color_switches=0;
         SceneManager.LoadScene("Level2");
     }
 
@@ -153,6 +159,7 @@ public class RestartScript : MonoBehaviour
         StaticScript.no_of_poops += 10;
         StaticScript.health = 100;
         StaticScript.playingOrNot = true;
+        StaticScript.no_color_switches=0;
         SceneManager.LoadScene("Level3");
 
     }
@@ -173,6 +180,7 @@ public class RestartScript : MonoBehaviour
         StaticScript.no_of_poops += 10;
         StaticScript.health = 100;
         StaticScript.playingOrNot = true;
+        StaticScript.no_color_switches=0;
         SceneManager.LoadScene("Level4");
     }
 
@@ -192,6 +200,7 @@ public class RestartScript : MonoBehaviour
         StaticScript.no_of_poops += 10;
         StaticScript.health = 100;
         StaticScript.playingOrNot = true;
+        StaticScript.no_color_switches=0;
         SceneManager.LoadScene("Level5");
     }
 

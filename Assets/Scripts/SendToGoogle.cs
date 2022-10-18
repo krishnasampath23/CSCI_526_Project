@@ -23,6 +23,8 @@ public class SendToGoogle : MonoBehaviour
     private int lines_drawn=StaticScript.lines_drawn;
     private int health=StaticScript.health;
     private int do_or_not=-1;
+    private int no_of_erasers_used=3-StaticScript.no_of_erasers;
+    private int no_color_switches=StaticScript.no_color_switches;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -49,11 +51,11 @@ public class SendToGoogle : MonoBehaviour
                 poops_left = 0;
                 _score=(StaticScript.enemies_killed*100);
             }
-            StartCoroutine(Post(_sessionID.ToString(),_timePlayed.ToString(),_score.ToString(), poops_left.ToString(),success_or_fail.ToString(),level.ToString(),enemies_killed.ToString(),health.ToString(),lines_drawn.ToString()));
+            StartCoroutine(Post(_sessionID.ToString(),_timePlayed.ToString(),_score.ToString(), poops_left.ToString(),success_or_fail.ToString(),level.ToString(),enemies_killed.ToString(),health.ToString(),lines_drawn.ToString(),no_color_switches.ToString(),no_of_erasers_used.ToString()));
         }
         
     }
-    private IEnumerator Post(string _sessionID, string _timePlayed,string _score, string poops_left, string success_or_fail, string level, string enemies_killed, string health, string lines_drawn )
+    private IEnumerator Post(string _sessionID, string _timePlayed,string _score, string poops_left, string success_or_fail, string level, string enemies_killed, string health, string lines_drawn, string no_color_switches, string no_of_erasers_used)
     {
         WWWForm form = new WWWForm();
         form.AddField("entry.1506871634", _sessionID);
@@ -65,6 +67,8 @@ public class SendToGoogle : MonoBehaviour
         form.AddField("entry.303544330",enemies_killed);
         form.AddField("entry.1754955229",health);
         form.AddField("entry.2114550311",lines_drawn);
+        form.AddField("entry.164622401",no_color_switches);
+        form.AddField("entry.985529023",no_of_erasers_used);
 
 
 

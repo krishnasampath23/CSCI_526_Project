@@ -37,6 +37,9 @@ public class PlayerScript : MonoBehaviour
     {
         if(isCurrentlyColliding == true){
             // Debug.Log(whichPlatform);
+            if(this.GetComponent<SpriteRenderer>().color != GameObject.FindGameObjectWithTag(whichPlatform).GetComponent<SpriteRenderer>().color){
+                StaticScript.no_color_switches+=1;
+            }
             this.GetComponent<SpriteRenderer>().color=GameObject.FindGameObjectWithTag(whichPlatform).GetComponent<SpriteRenderer>().color;
 
         }
@@ -91,7 +94,11 @@ public class PlayerScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Platform1"))
         {
+
             whichPlatform = "Platform1";
+            // if(this.GetComponent<SpriteRenderer>().color != collision.gameObject.GetComponent<SpriteRenderer>().color){
+            //     StaticScript.no_color_switches+=1;
+            // }
             this.GetComponent<SpriteRenderer>().color = collision.gameObject.GetComponent<SpriteRenderer>().color;
             isCurrentlyColliding = false;
             // GetComponent<SpriteRenderer>().color = new Color (0,0,0,1);
@@ -101,6 +108,9 @@ public class PlayerScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Platform2"))
         {
             whichPlatform = "Platform2";
+            // if(this.GetComponent<SpriteRenderer>().color != collision.gameObject.GetComponent<SpriteRenderer>().color){
+            //     StaticScript.no_color_switches+=1;
+            // }
             this.GetComponent<SpriteRenderer>().color = collision.gameObject.GetComponent<SpriteRenderer>().color;
             isCurrentlyColliding = false;
             // GetComponent<SpriteRenderer>().color = new Color32 (5,137,35,255);
@@ -166,6 +176,9 @@ public class PlayerScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Platform1"))
         {
             whichPlatform = "Platform1";
+            if(this.GetComponent<SpriteRenderer>().color != collision.gameObject.GetComponent<SpriteRenderer>().color){
+                StaticScript.no_color_switches+=1;
+            }
             this.GetComponent<SpriteRenderer>().color = collision.gameObject.GetComponent<SpriteRenderer>().color;
             isCurrentlyColliding = true;
             // GetComponent<SpriteRenderer>().color = new Color (0,0,0,1);
@@ -175,6 +188,9 @@ public class PlayerScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Platform2"))
         {
             whichPlatform = "Platform2";
+            if(this.GetComponent<SpriteRenderer>().color != collision.gameObject.GetComponent<SpriteRenderer>().color){
+                StaticScript.no_color_switches+=1;
+            }
             this.GetComponent<SpriteRenderer>().color = collision.gameObject.GetComponent<SpriteRenderer>().color;
             isCurrentlyColliding = true;
             // GetComponent<SpriteRenderer>().color = new Color32 (5,137,35,255);
