@@ -1827,7 +1827,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 543996965}
         m_TargetAssemblyTypeName: RestartScript, Assembly-CSharp
-        m_MethodName: LoadTutorial
+        m_MethodName: Load_Tutorial_Page
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

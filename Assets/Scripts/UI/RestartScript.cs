@@ -19,6 +19,8 @@ public class RestartScript : MonoBehaviour
         StaticScript.no_of_erasers = 3;
         if(StaticScript.level == 2 || StaticScript.level == 4 ||  StaticScript.level == 5){
             StaticScript.no_of_enemies = 4;
+            Debug.Log(StaticScript.level);
+            Debug.Log(StaticScript.no_of_enemies);
         }
         StaticScript.no_of_poops += 10;
         StaticScript.health = 100;
@@ -27,9 +29,18 @@ public class RestartScript : MonoBehaviour
         if(StaticScript.level >= 5){
             SceneManager.LoadScene("Levels");
         }
+        if(StaticScript.level == 1){
+            StaticScript.no_of_poops = 10;
+        }
+
 
     Debug.Log("Level"+StaticScript.level.ToString());
         SceneManager.LoadScene("Level"+StaticScript.level.ToString());
+    }
+
+    public void Load_Tutorial_Page()
+    {
+        SceneManager.LoadScene("Tutorial_Page");
     }
 
     public void LoadAgain()
@@ -53,7 +64,11 @@ public class RestartScript : MonoBehaviour
         StaticScript.playingOrNot = true;
         if (StaticScript.level==0){
             StaticScript.timeLeft = 1000;
-            SceneManager.LoadScene("Tutorial");
+            StaticScript.lines_limit = 10000;
+            StaticScript.no_of_erasers = 10000;
+            StaticScript.no_of_poops = 10000;
+            SceneManager.LoadScene("Tutorial_Page");
+            StaticScript.lines_limit = 3;
         }
         else{
             Debug.Log("Level"+StaticScript.level.ToString());
@@ -88,16 +103,19 @@ public class RestartScript : MonoBehaviour
         StaticScript.score = 0;
         StaticScript.timeLeft = 12;
         StaticScript.timerOn = false;
-        StaticScript.no_of_erasers = 3;
+        StaticScript.no_of_erasers = 10000;
         StaticScript.enemies_killed=0;
         StaticScript.no_of_enemies = 3;
         StaticScript.level = 0;
-        StaticScript.no_of_poops += 10;
+        StaticScript.no_of_poops = 10000;
         StaticScript.health = 100;
+        StaticScript.lines_limit = 10000;
         StaticScript.lines_drawn = 0;
         StaticScript.playingOrNot = true;
-        SceneManager.LoadScene("Tutorial");
         StaticScript.no_color_switches=0;
+        SceneManager.LoadScene("Tutorial");
+        StaticScript.lines_limit = 3;
+        
     }
 
     public void LoadLevel1()

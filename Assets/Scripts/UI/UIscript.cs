@@ -37,9 +37,14 @@ public class UIscript : MonoBehaviour
         StaticScript.score = StaticScript.enemies_killed*100;
         PoopNumTxt.text = "x" + StaticScript.no_of_poops.ToString();
 
-        if (StaticScript.lines_drawn <= 3)
-        {
-            Lines_left.text = "Lines = " + (StaticScript.lines_limit - StaticScript.lines_drawn).ToString();
+        if(StaticScript.level == 0){
+            Lines_left.text = "Lines = " + (10000 - StaticScript.lines_drawn).ToString();
+        }
+        else {
+            if (StaticScript.lines_drawn <= 3)
+            {
+                Lines_left.text = "Lines = " + (StaticScript.lines_limit - StaticScript.lines_drawn).ToString();
+            }
         }
 
         Erasers.text = "Erasers = " + StaticScript.no_of_erasers.ToString();
