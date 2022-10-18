@@ -4,32 +4,23 @@ using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
+    public bool WASDEnabled = true;
+    public bool ArrowKeysEnabled = true;
+    public bool RightClickMoveEnabled = false;
+
     public float JumpForce;
     float score;
 
     [SerializeField]
     bool isGrounded = false;
     bool isAlive = true;
-
-    public float MinSpeed;
-    public float MaxSpeed;
-    public float CurrSpeed;
-
     public string whichPlatform;
-
-    int playerLives = 3;
-
-    public float SpeedMultiplier;
-
     bool isCurrentlyColliding = false;
-
-
     Rigidbody2D RB;
 
     private void Awake()
     {
         RB = GetComponent<Rigidbody2D>();
-        CurrSpeed = MinSpeed;
     }
 
     // Update is called once per frame
@@ -46,7 +37,6 @@ public class PlayerScript : MonoBehaviour
 
         //StaticScript.score += 1;
 
-        transform.Translate(Vector2.right * CurrSpeed * Time.deltaTime);
 
         if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
         {
@@ -55,39 +45,42 @@ public class PlayerScript : MonoBehaviour
             //UnityEditor.EditorApplication.isPlaying = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            /*if(isGrounded==true)
-            {
-                RB.AddForce(Vector2.up * JumpForce);
-                isGrounded = false;
-            }*/
-            if (isGrounded == false)
-            {
-                RB.AddForce(Vector2.up * JumpForce);
-                isGrounded = false;
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            RB.AddForce(Vector2.right * JumpForce);
-        }
-
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            RB.AddForce(Vector2.left * JumpForce);
-        }
+        move();
 
         if (isAlive)
         {
             score += Time.deltaTime * 10;
         }
 
-        if (CurrSpeed < MaxSpeed)
+    }
+
+    private void move()
+    {
+        Vector2 input = new Vector2();
+        if (WASDEnabled)
         {
-            CurrSpeed += SpeedMultiplier;
+            if (Input.GetKeyDown(KeyCode.W)) input += Vector2.up;
+            if (Input.GetKeyDown(KeyCode.A)) input += Vector2.left;
+            if (Input.GetKeyDown(KeyCode.S)) input += Vector2.down;
+            if (Input.GetKeyDown(KeyCode.D)) input += Vector2.right;
         }
+        if (ArrowKeysEnabled)
+        {
+            if (Input.GetKeyDown(KeyCode.UpArrow)) input += Vector2.up;
+            if (Input.GetKeyDown(KeyCode.LeftArrow)) input += Vector2.left;
+            if (Input.GetKeyDown(KeyCode.DownArrow)) input += Vector2.down;
+            if (Input.GetKeyDown(KeyCode.RightArrow)) input += Vector2.right;
+        }
+        if (RightClickMoveEnabled)
+        {
+            if (Input.GetMouseButtonDown(1))
+            {
+                Vector2 delta = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                delta.Normalize();
+                input += delta;
+            }
+        }
+        RB.AddForce(input * JumpForce);
     }
 
     public void OnCollisionExit2D(Collision2D collision)
@@ -119,7 +112,6 @@ public class PlayerScript : MonoBehaviour
 
     }
 
-
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("ground"))
@@ -142,15 +134,6 @@ public class PlayerScript : MonoBehaviour
             //UnityEditor.EditorApplication.isPlaying = false;
 
         }
-        // if (collision.gameObject.CompareTag("enemyFire"))
-        // {
-        //     playerLives -= 1;
-        //     if (playerLives <= 0)
-        //     {
-        //         // Application.Quit();
-        //         //UnityEditor.EditorApplication.isPlaying = false;
-        //     }
-        // }
         // if (collision.gameObject.CompareTag("person"))
         // {
         //     StaticScript.health -= 20;
