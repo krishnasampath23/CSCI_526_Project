@@ -116,7 +116,7 @@ public class RestartScript : MonoBehaviour
         StaticScript.enemies_killed=0;
         StaticScript.no_of_enemies = 3;
         StaticScript.level = 1;
-        StaticScript.no_of_poops += 10;
+        StaticScript.no_of_poops = 10;
         StaticScript.health = 100;
         StaticScript.lines_drawn = 0;
         StaticScript.playingOrNot = true;
@@ -135,7 +135,7 @@ public class RestartScript : MonoBehaviour
         StaticScript.enemies_killed=0;
         StaticScript.no_of_enemies = 4;
         StaticScript.level = 2;
-        StaticScript.no_of_poops += 10;
+        StaticScript.no_of_poops = 10;
         StaticScript.lines_drawn = 0;
         StaticScript.health = 100;
         StaticScript.playingOrNot = true;
@@ -156,7 +156,7 @@ public class RestartScript : MonoBehaviour
         StaticScript.no_of_enemies = 3;
         StaticScript.level = 3;
         StaticScript.lines_drawn = 0;
-        StaticScript.no_of_poops += 10;
+        StaticScript.no_of_poops = 10;
         StaticScript.health = 100;
         StaticScript.playingOrNot = true;
         StaticScript.no_color_switches=0;
@@ -177,7 +177,7 @@ public class RestartScript : MonoBehaviour
         StaticScript.no_of_enemies = 4;
         StaticScript.level = 4;
         StaticScript.lines_drawn = 0;
-        StaticScript.no_of_poops += 10;
+        StaticScript.no_of_poops = 10;
         StaticScript.health = 100;
         StaticScript.playingOrNot = true;
         StaticScript.no_color_switches=0;
@@ -197,7 +197,7 @@ public class RestartScript : MonoBehaviour
         StaticScript.no_of_enemies = 4;
         StaticScript.level = 4;
         StaticScript.lines_drawn = 0;
-        StaticScript.no_of_poops += 10;
+        StaticScript.no_of_poops = 10;
         StaticScript.health = 100;
         StaticScript.playingOrNot = true;
         StaticScript.no_color_switches=0;
