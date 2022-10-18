@@ -18,11 +18,14 @@ public class DrawManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (StaticScript.lines_drawn < 6 )
+        if (StaticScript.lines_drawn < 4 )
         {
             Vector2 mousePos = _cam.ScreenToWorldPoint(Input.mousePosition);
-            if (Input.GetMouseButtonDown(0)) _currentLine = Instantiate(_linePrefab, mousePos, Quaternion.identity);
-            StaticScript.lines_drawn += 1;
+            if (Input.GetMouseButtonDown(0))
+            {
+                _currentLine = Instantiate(_linePrefab, mousePos, Quaternion.identity);
+                StaticScript.lines_drawn += 1;
+            }
             if (Input.GetMouseButton(0)) _currentLine.SetPosition(mousePos);
         }
     }

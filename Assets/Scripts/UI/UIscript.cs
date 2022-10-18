@@ -8,6 +8,8 @@ public class UIscript : MonoBehaviour
     public TMP_Text TimerTxt;
     public TMP_Text Score;
     public TMP_Text PoopNumTxt;
+    public TMP_Text Lines_left;
+    public TMP_Text Erasers;
     public Slider slider;
     public Slider slider1;
    
@@ -16,6 +18,8 @@ public class UIscript : MonoBehaviour
     {
         StaticScript.timerOn = true;
         Score.text = "score = 0";
+        Lines_left.text = "Lines = 0";
+        Erasers.text = "Erasers = 0";
         slider.maxValue = 100;
         slider.value = 100;
         slider1.maxValue = StaticScript.no_of_poops;
@@ -25,7 +29,7 @@ public class UIscript : MonoBehaviour
 
     void Update()
     {
-        StaticScript.lines_drawn=GameObject.FindGameObjectsWithTag("Line").Length;
+        //StaticScript.lines_drawn=GameObject.FindGameObjectsWithTag("Line").Length;
 
         StaticScript.timeElapsed+=Time.deltaTime;
         slider.value = StaticScript.health;
@@ -33,10 +37,16 @@ public class UIscript : MonoBehaviour
         StaticScript.score = StaticScript.enemies_killed*100;
         PoopNumTxt.text = "x" + StaticScript.no_of_poops.ToString();
 
+        if (StaticScript.lines_drawn <= 3)
+        {
+            Lines_left.text = "Lines = " + (StaticScript.lines_limit - StaticScript.lines_drawn).ToString();
+        }
+
+        Erasers.text = "Erasers = " + StaticScript.no_of_erasers.ToString();
 
         if(StaticScript.enemies_killed == StaticScript.no_of_enemies && StaticScript.playingOrNot == true){
             StaticScript.success_or_fail = 1;
-            StaticScript.lines_drawn=GameObject.FindGameObjectsWithTag("Line").Length;
+            //StaticScript.lines_drawn=GameObject.FindGameObjectsWithTag("Line").Length;
             StaticScript.playingOrNot = false;
             Debug.Log("End Game: Level Complete");
             SceneManager.LoadScene("RestartScene");
@@ -49,7 +59,7 @@ public class UIscript : MonoBehaviour
             //Application.Quit(); // Replace this Play Again/ Restart scene
             StaticScript.playingOrNot = false;
             StaticScript.success_or_fail = 0;
-            StaticScript.lines_drawn=GameObject.FindGameObjectsWithTag("Line").Length;
+            //StaticScript.lines_drawn=GameObject.FindGameObjectsWithTag("Line").Length;
             Debug.Log("End Game: Health Lost");
             SceneManager.LoadScene("FailScene");
         }
@@ -65,7 +75,7 @@ public class UIscript : MonoBehaviour
             {
                 StaticScript.playingOrNot = false;
                 StaticScript.success_or_fail = 0;
-                StaticScript.lines_drawn=GameObject.FindGameObjectsWithTag("Line").Length;
+                //StaticScript.lines_drawn=GameObject.FindGameObjectsWithTag("Line").Length;
                 Debug.Log("End Game: Poops Over");
                 SceneManager.LoadScene("FailScene");
             }
