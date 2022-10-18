@@ -2408,7 +2408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimerTxt: {fileID: 698232111}
   Score: {fileID: 727350259}
-  PoopNumTxt: {fileID: 0}
+  PoopNumTxt: {fileID: 120593049}
   slider: {fileID: 1453731636}
   slider1: {fileID: 1011650543}
 --- !u!114 &698232111
@@ -2561,7 +2561,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimerTxt: {fileID: 698232111}
   Score: {fileID: 727350259}
-  PoopNumTxt: {fileID: 0}
+  PoopNumTxt: {fileID: 120593049}
   slider: {fileID: 1453731636}
   slider1: {fileID: 1011650543}
 --- !u!114 &727350259
@@ -3239,7 +3239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimerTxt: {fileID: 698232111}
   Score: {fileID: 727350259}
-  PoopNumTxt: {fileID: 0}
+  PoopNumTxt: {fileID: 120593049}
   slider: {fileID: 1453731636}
   slider1: {fileID: 1011650543}
 --- !u!1 &1112074672
@@ -3830,7 +3830,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimerTxt: {fileID: 698232111}
   Score: {fileID: 727350259}
-  PoopNumTxt: {fileID: 0}
+  PoopNumTxt: {fileID: 120593049}
   slider: {fileID: 1453731636}
   slider1: {fileID: 1011650543}
 --- !u!114 &1453731636
