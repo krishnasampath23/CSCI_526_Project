@@ -10,7 +10,7 @@ public class RestartScript : MonoBehaviour
         StaticScript.success_or_fail=-1;
         StaticScript.timePrevious=StaticScript.timeElapsed;
         StaticScript.score = 0;
-        StaticScript.timeLeft = 10;
+        StaticScript.timeLeft = 12;
         StaticScript.timerOn = false;
         StaticScript.enemies_killed=0;
         StaticScript.no_of_enemies = 3;
@@ -39,7 +39,7 @@ public class RestartScript : MonoBehaviour
         StaticScript.lines_drawn=0;
         StaticScript.timePrevious=StaticScript.timeElapsed;
         StaticScript.score = 0;
-        StaticScript.timeLeft = 10;
+        StaticScript.timeLeft = 12;
         StaticScript.timerOn = false;
         StaticScript.enemies_killed=0;
         StaticScript.no_of_enemies = 3;
@@ -70,7 +70,7 @@ public class RestartScript : MonoBehaviour
         StaticScript.timePrevious=StaticScript.timeElapsed;
         StaticScript.lines_drawn=0;
         StaticScript.score = 0;
-        StaticScript.timeLeft = 10;
+        StaticScript.timeLeft = 12;
         StaticScript.timerOn = false;
         StaticScript.no_of_erasers = 3;
         StaticScript.enemies_killed=0;
@@ -90,7 +90,7 @@ public class RestartScript : MonoBehaviour
         StaticScript.timePrevious=StaticScript.timeElapsed;
         StaticScript.lines_drawn=0;
         StaticScript.score = 0;
-        StaticScript.timeLeft = 10000;
+        StaticScript.timeLeft = 12;
         StaticScript.timerOn = false;
         StaticScript.no_of_erasers = 3;
         StaticScript.enemies_killed=0;
@@ -169,7 +169,7 @@ public class RestartScript : MonoBehaviour
         StaticScript.success_or_fail=-1;
         StaticScript.timePrevious=StaticScript.timeElapsed;
         StaticScript.score = 0;
-        StaticScript.timeLeft = 10;
+        StaticScript.timeLeft = 12;
         StaticScript.lines_drawn=0;
         StaticScript.timerOn = false;
         StaticScript.no_of_erasers = 3;
@@ -189,7 +189,7 @@ public class RestartScript : MonoBehaviour
         StaticScript.success_or_fail=-1;
         StaticScript.timePrevious=StaticScript.timeElapsed;
         StaticScript.score = 0;
-        StaticScript.timeLeft = 10;
+        StaticScript.timeLeft = 12;
         StaticScript.lines_drawn=0;
         StaticScript.timerOn = false;
         StaticScript.no_of_erasers = 3;

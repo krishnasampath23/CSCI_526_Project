@@ -54,6 +54,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Level4_old.unity
     guid: d0d9ee41fc1dae042b524aeb8a4059e0
   - enabled: 1
+<<<<<<< Updated upstream
     path: Assets/Scenes/Drawing lines.unity
     guid: fca4cca0e0e794153ba2d27c2189d093
+=======
+    path: Assets/Scenes/Level1.unity
+    guid: edad8b7cb387d41318ec4652c0754970
+>>>>>>> Stashed changes
   m_configObjects: {}
