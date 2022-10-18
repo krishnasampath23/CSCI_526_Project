@@ -7,6 +7,7 @@ public class UIscript : MonoBehaviour
 {
     public TMP_Text TimerTxt;
     public TMP_Text Score;
+    public TMP_Text PoopNumTxt;
     public Slider slider;
     public Slider slider1;
    
@@ -19,6 +20,7 @@ public class UIscript : MonoBehaviour
         slider.value = 100;
         slider1.maxValue = StaticScript.no_of_poops;
         slider1.value = StaticScript.no_of_poops;
+        PoopNumTxt.text = "x" + StaticScript.no_of_poops.ToString();
     }
 
     void Update()
@@ -29,6 +31,8 @@ public class UIscript : MonoBehaviour
         slider.value = StaticScript.health;
         slider1.value = StaticScript.no_of_poops;
         StaticScript.score = StaticScript.enemies_killed*100;
+        PoopNumTxt.text = "x" + StaticScript.no_of_poops.ToString();
+
 
         if(StaticScript.enemies_killed == StaticScript.no_of_enemies && StaticScript.playingOrNot == true){
             StaticScript.success_or_fail = 1;
