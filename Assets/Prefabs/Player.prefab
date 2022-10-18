@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 2157619544145303718}
   - component: {fileID: 2157619544145303719}
   - component: {fileID: 2157619544145303716}
-  - component: {fileID: 2157619544145303717}
   m_Layer: 0
   m_Name: Player
   m_TagString: player
@@ -173,17 +172,3 @@ MonoBehaviour:
   EraserPrefab: {fileID: 0}
   peelPrefab: {fileID: 0}
   black: {r: 0, g: 0, b: 0, a: 1}
---- !u!114 &2157619544145303717
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2157619544145303714}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbf179e0200aa0c43aa8967525f3fa9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  isGrounded: 0
