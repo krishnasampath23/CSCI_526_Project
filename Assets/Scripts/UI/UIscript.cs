@@ -9,7 +9,7 @@ public class UIscript : MonoBehaviour
     public TMP_Text Score;
     public Slider slider;
     public Slider slider1;
-
+   
 
     void Start()
     {
@@ -53,11 +53,18 @@ public class UIscript : MonoBehaviour
         {
 
             //Application.Quit(); // Replace this Play Again/ Restart scene
-            StaticScript.playingOrNot = false;
-            StaticScript.success_or_fail = 0;
-            StaticScript.lines_drawn=GameObject.FindGameObjectsWithTag("Line").Length;
-            Debug.Log("End Game: Poops Over");
-            SceneManager.LoadScene("FailScene");
+            Debug.Log("Number of bullets");
+            Debug.Log(GameObject.FindGameObjectsWithTag("Bullet").Length);
+
+
+            if(GameObject.FindGameObjectsWithTag("Bullet").Length == 1)
+            {
+                StaticScript.playingOrNot = false;
+                StaticScript.success_or_fail = 0;
+                StaticScript.lines_drawn=GameObject.FindGameObjectsWithTag("Line").Length;
+                Debug.Log("End Game: Poops Over");
+                SceneManager.LoadScene("FailScene");
+            }
         }
         Score.text = "score = " + StaticScript.score.ToString();
 
