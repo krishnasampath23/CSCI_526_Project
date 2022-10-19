@@ -168,6 +168,6 @@ MonoBehaviour:
   fireRate: 0.2
   firingPoint: {fileID: 0}
   bulletPrefab: {fileID: 2137809467630382691, guid: 32f95935490c7a6479ab7a63d870b034, type: 3}
-  EraserPrefab: {fileID: 6748412254685856346, guid: 4bc936d542d647349bbbf8119b3075ee, type: 3}
+  EraserPrefab: {fileID: 8307462610353344779, guid: 33800be0b7eb45f49b2773212a0797e3, type: 3}
   peelPrefab: {fileID: 0}
   black: {r: 0, g: 0, b: 0, a: 1}
