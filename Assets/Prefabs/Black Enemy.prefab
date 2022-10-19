@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5178402001637848598}
   - component: {fileID: 5178402001637848599}
-  - component: {fileID: 5178402001637848596}
   - component: {fileID: 5178402001637848597}
   - component: {fileID: 5178402001637848602}
   - component: {fileID: 5178402001637848603}
@@ -89,19 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5178402001637848596
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5178402001637848601}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc3f388119b127246a75737ddf757b40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isGrounded: 0
 --- !u!50 &5178402001637848597
 Rigidbody2D:
   serializedVersion: 4
@@ -136,7 +122,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.012733161, y: 0.01585126}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -147,7 +133,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0296208, y: 1.0253642}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &5178402001637848603
 MonoBehaviour:
@@ -161,10 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0a304a91201bbd4cbf03473c1c08730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 0.2
-  firingPoint: {fileID: 0}
   bulletPrefab: {fileID: 6330315066043923592, guid: 904bffacfedec1c419e126a4679cad4c, type: 3}
-  sprite: {fileID: 5178402001637848599}
 --- !u!114 &5178402001637848600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,5 +160,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e352a15ebfae5498cb724f066164778d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  block: {fileID: 5178402001637848601}
-  isRightDirection: 1
+  velocityX: 20
+  rangeVal: 25
+  initialRightDirection: 0
