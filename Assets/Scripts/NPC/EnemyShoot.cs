@@ -27,8 +27,8 @@ public class EnemyShoot : MonoBehaviour
 
     void Shoot()
     {
-        bulletPrefab.GetComponent<SpriteRenderer>().color = color;
-        Instantiate(bulletPrefab, transform.position + firingPointDelta, Quaternion.Euler(new Vector3(0f, 0f, 0)));
+        GameObject bullet = Instantiate(bulletPrefab, transform.position + firingPointDelta, Quaternion.identity);
+        bullet.GetComponent<SpriteRenderer>().color = color;
     }
 
 }
