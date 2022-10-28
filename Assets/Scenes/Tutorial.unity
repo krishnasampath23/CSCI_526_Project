@@ -969,6 +969,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4194331834256466456, guid: 38cf5604fa09adc4aa716870f1d5beed, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4194331835459824433, guid: 38cf5604fa09adc4aa716870f1d5beed, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1056,6 +1060,18 @@ PrefabInstance:
     - target: {fileID: 4194331835459824437, guid: 38cf5604fa09adc4aa716870f1d5beed, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4194331835459824437, guid: 38cf5604fa09adc4aa716870f1d5beed, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4194331835514061672, guid: 38cf5604fa09adc4aa716870f1d5beed, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4194331835514061672, guid: 38cf5604fa09adc4aa716870f1d5beed, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38cf5604fa09adc4aa716870f1d5beed, type: 3}
@@ -1964,6 +1980,22 @@ PrefabInstance:
     - target: {fileID: 2157619544145303714, guid: efb6a638c9802a445a1b963f0a93c973, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2157619544145303718, guid: efb6a638c9802a445a1b963f0a93c973, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2157619544145303718, guid: efb6a638c9802a445a1b963f0a93c973, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 2157619544145303718, guid: efb6a638c9802a445a1b963f0a93c973, type: 3}
+      propertyPath: m_GravityScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2157619544145303719, guid: efb6a638c9802a445a1b963f0a93c973, type: 3}
+      propertyPath: JumpForce
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2157619544145303723, guid: efb6a638c9802a445a1b963f0a93c973, type: 3}
       propertyPath: m_RootOrder

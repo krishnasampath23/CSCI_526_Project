@@ -150,7 +150,7 @@ MonoBehaviour:
   WASDEnabled: 1
   ArrowKeysEnabled: 1
   RightClickMoveEnabled: 0
-  JumpForce: 700
+  JumpForce: 50
   isGrounded: 0
   whichPlatform: 
 --- !u!114 &2157619544145303716

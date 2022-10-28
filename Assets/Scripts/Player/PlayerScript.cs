@@ -59,10 +59,14 @@ public class PlayerScript : MonoBehaviour
         Vector2 input = new Vector2();
         if (WASDEnabled)
         {
-            if (Input.GetKeyDown(KeyCode.W)) input += Vector2.up;
-            if (Input.GetKeyDown(KeyCode.A)) input += Vector2.left;
-            if (Input.GetKeyDown(KeyCode.S)) input += Vector2.down;
-            if (Input.GetKeyDown(KeyCode.D)) input += Vector2.right;
+            // if (Input.GetKeyDown(KeyCode.W)) input += Vector2.up;
+            // if (Input.GetKeyDown(KeyCode.A)) input += Vector2.left;
+            // if (Input.GetKeyDown(KeyCode.S)) input += Vector2.down;
+            // if (Input.GetKeyDown(KeyCode.D)) input += Vector2.right;
+            if (Input.GetKey(KeyCode.W)) input = Vector2.up;
+            if (Input.GetKey(KeyCode.A)) input = Vector2.left;
+            if (Input.GetKey(KeyCode.S)) input = Vector2.down;
+            if (Input.GetKey(KeyCode.D)) input = Vector2.right;
         }
         if (ArrowKeysEnabled)
         {
@@ -81,6 +85,7 @@ public class PlayerScript : MonoBehaviour
             }
         }
         RB.AddForce(input * JumpForce);
+        // RB.velocity = input * JumpForce;
     }
 
     public void OnCollisionExit2D(Collision2D collision)
