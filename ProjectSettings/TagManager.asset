@@ -4,28 +4,30 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - ground
-  - nextLine
   - obstacle
-  - player
-  - water
-  - nextLineForWater
-  - obstacle1
-  - LevelEnd
-  - LevelStart
-  - Bullet
-  - Enemy
-  - Peel
-  - bird
-  - enemyFire
-  - person
-  - goodPerson
-  - food
-  - restart
-  - level
   - Line
+  - goodPerson
+  - enemyFire
+  - water
+  - obstacle1
+  - person
+  - player
+  - Bullet
+  - LevelStart
+  - EnemyShield
+  - Platform1
+  - Enemy
+  - Black Enemy
+  - Green Enemy
+  - Platform2
+  - ground
+  - Eraser
+  - Green Bullet
   - EnemyBullet
-  - Eagle
+  - Black Bullet
+  - level
+  - food
+  - Peel
   layers:
   - Default
   - TransparentFX
@@ -33,10 +35,10 @@ TagManager:
   - 
   - Water
   - UI
-  - Person
-  - NotColliderWithPlayer
-  - Player
-  - Eagle
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
