@@ -18,6 +18,7 @@ public class TipScript:MonoBehaviour
         }
     }
     string[] tips = { "Move:A&D", "Jump to another platform to change your color","Shoot:SPACE","DrawingLines:Mouse","Eraser:X" };
+    Vector3[] poses = { new Vector3(-88.2f, 154, 0), new Vector3(-40, 154, 0), new Vector3(-113.5f, 48.1f, 0), new Vector3(30.6f, 70.6f, 0), new Vector3(63, 70.6f, 0) };
     int tipIndex = 0;
 
     private void Awake()
@@ -26,6 +27,7 @@ public class TipScript:MonoBehaviour
         tipText = GetComponent<TextMeshPro>();
         tip1 = transform.Find("tip1").gameObject;
         tip2 = transform.Find("tip2").gameObject;
+        
     }
     private void Start()
     {
@@ -52,20 +54,28 @@ public class TipScript:MonoBehaviour
 
     private void ChangePos()
     {
-        var w = tipText.preferredWidth * transform.localScale.x;
-        var h = tipText.preferredHeight * transform.localScale.y;
-        var playerPos = player.transform.position;
-        var posX = playerPos.x - w - 40;
-        var posY = playerPos.y;
-        if (posX < -146)
+        tipText.transform.position = poses[tipIndex];
+        if (tipIndex == 1)
         {
-            posX = playerPos.x + 40;
-        }
-        if (posY > 162)
+            tipText.horizontalAlignment = HorizontalAlignmentOptions.Center;
+        }else
         {
-            posY = playerPos.y - h / 2 - 10;
+            tipText.horizontalAlignment = HorizontalAlignmentOptions.Left;
         }
-        tipText.transform.position = new Vector3(posX, posY, 0);
+        //var w = tipText.preferredWidth * transform.localScale.x;
+        //var h = tipText.preferredHeight * transform.localScale.y;
+        //var playerPos = player.transform.position;
+        //var posX = playerPos.x - w - 40;
+        //var posY = playerPos.y;
+        //if (posX < -146)
+        //{
+        //    posX = playerPos.x + 40;
+        //}
+        //if (posY > 162)
+        //{
+        //    posY = playerPos.y - h / 2 - 10;
+        //}
+        //tipText.transform.position = new Vector3(posX, posY, 0);
     }
     private string GetShowTip()
     {
