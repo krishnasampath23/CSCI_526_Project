@@ -1463,8 +1463,8 @@ GameObject:
   - component: {fileID: 875529803}
   - component: {fileID: 875529802}
   m_Layer: 0
-  m_Name: Platform2
-  m_TagString: Platform2
+  m_Name: Platform1
+  m_TagString: Platform1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
