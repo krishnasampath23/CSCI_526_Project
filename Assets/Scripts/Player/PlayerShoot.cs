@@ -61,9 +61,8 @@ public class PlayerShoot : MonoBehaviour
         // pos[1] -= 1
         StaticScript.no_of_poops -= 1; 
 
-        bulletPrefab.GetComponent<SpriteRenderer>().color = this.GetComponent<SpriteRenderer>().color;
-
-        Instantiate(bulletPrefab,posBullet, Quaternion.Euler(new Vector3(0f,0f,0)));
+        GameObject bullet = Instantiate(bulletPrefab, posBullet, Quaternion.identity);
+        bullet.GetComponent<SpriteRenderer>().color = this.GetComponent<SpriteRenderer>().color;
 
         // if (x.Equals(black)){
         //     Instantiate(blackbulletPrefab,posBullet, Quaternion.Euler(new Vector3(0f,0f,0)));
