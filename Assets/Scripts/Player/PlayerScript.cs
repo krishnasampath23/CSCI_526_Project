@@ -1,5 +1,4 @@
 
-using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -19,7 +18,6 @@ public class PlayerScript : MonoBehaviour
     bool isCurrentlyColliding = false;
     Rigidbody2D RB;
 
-    
     private void Awake()
     {
         RB = GetComponent<Rigidbody2D>();
@@ -46,15 +44,15 @@ public class PlayerScript : MonoBehaviour
             //Debug.Log("All enemies are dead");
             //UnityEditor.EditorApplication.isPlaying = false;
         }
-        
+
         move();
+
         if (isAlive)
         {
             score += Time.deltaTime * 10;
         }
 
     }
-
 
     private void move()
     {
@@ -69,7 +67,7 @@ public class PlayerScript : MonoBehaviour
             if (Input.GetKey(KeyCode.A)) input = Vector2.left;
             if (Input.GetKey(KeyCode.S)) input = Vector2.down;
             if (Input.GetKey(KeyCode.D)) input = Vector2.right;
-            if (input == Vector2.up || input == Vector2.left || input == Vector2.right)
+            if(input == Vector2.up || input == Vector2.left || input == Vector2.down || input == Vector2.right)
             {
                 TipScript.Ins.DirStepOk();
             }
@@ -187,8 +185,8 @@ public class PlayerScript : MonoBehaviour
             }
             this.GetComponent<SpriteRenderer>().color = collision.gameObject.GetComponent<SpriteRenderer>().color;
             isCurrentlyColliding = true;
-            // GetComponent<SpriteRenderer>().color = new Color32 (5,137,35,255);
             TipScript.Ins.ToGreenPlatformOK();
+            // GetComponent<SpriteRenderer>().color = new Color32 (5,137,35,255);
 
         }
 

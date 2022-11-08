@@ -40,7 +40,6 @@ public class PlayerShoot : MonoBehaviour
             Shoot(GetComponent<SpriteRenderer>().color);
             StaticScript._poopsUsed+=1;
             timeUntilFire = Time.time + fireRate;
-            TipScript.Ins.PoopBulletOK();
         }
 
         if (Input.GetKeyDown(KeyCode.X) && timeUntilFire < Time.time && StaticScript.no_of_erasers > 0)
@@ -82,7 +81,6 @@ public class PlayerShoot : MonoBehaviour
         // pos[1] -= 1
         StaticScript.no_of_erasers -= 1; 
         Instantiate(EraserPrefab,posBullet, Quaternion.Euler(new Vector3(0f,0f,0)));
-        TipScript.Ins.EraserOK();
     }
     // void Peel()
     // {

@@ -32,22 +32,27 @@ public class Bullet : MonoBehaviour
          if (collision.gameObject.CompareTag("Green Enemy"))
         {
             if(this.gameObject.GetComponent<SpriteRenderer>().color == collision.gameObject.GetComponent<SpriteRenderer>().color){
-            StaticScript.enemies_killed += 1;
-            Destroy(collision.gameObject);
-            Destroy(this.gameObject);
+                StaticScript.enemies_killed += 1;
+                Destroy(collision.gameObject);
+                Destroy(this.gameObject);
+                TipScript.Ins.KillGreenEnemy();
             }
             else
             {
                 Destroy(this.gameObject);
+                TipScript.Ins.BlackBulletTouchGreenEnemy();
             }
         }
 
         if (collision.gameObject.CompareTag("Black Enemy"))
-        {Destroy(this.gameObject);
-            if(this.gameObject.GetComponent<SpriteRenderer>().color == collision.gameObject.GetComponent<SpriteRenderer>().color){
-            StaticScript.enemies_killed += 1;
-            Destroy(collision.gameObject);
+        {
+            
             Destroy(this.gameObject);
+            if(this.gameObject.GetComponent<SpriteRenderer>().color == collision.gameObject.GetComponent<SpriteRenderer>().color){
+                StaticScript.enemies_killed += 1;
+                Destroy(collision.gameObject);
+                Destroy(this.gameObject);
+                TipScript.Ins.KillBlackEnemy();
             }
             else
             {
