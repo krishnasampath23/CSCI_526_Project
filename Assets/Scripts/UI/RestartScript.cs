@@ -105,7 +105,7 @@ public class RestartScript : MonoBehaviour
         StaticScript.timerOn = false;
         StaticScript.no_of_erasers = 10000;
         StaticScript.enemies_killed=0;
-        StaticScript.no_of_enemies = 3;
+        StaticScript.no_of_enemies = 5;
         StaticScript.level = 0;
         StaticScript.no_of_poops = 10000;
         StaticScript.health = 100;

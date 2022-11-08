@@ -83,12 +83,16 @@ namespace Assets.Scripts
 
         private void FadeIn()
         {
-            lineRender.material.DOFade(0.6f, 0.5f).onComplete += FadeOut;
+            if (lineRender) {
+                lineRender.material.DOFade(0.6f, 0.5f).onComplete += FadeOut;
+            }
         }
 
         private void FadeOut()
         {
-            lineRender.material.DOFade(0, 0.5f).onComplete += FadeIn;
+            if (lineRender) {
+                lineRender.material.DOFade(0, 0.5f).onComplete += FadeIn;
+            }
         }
 
         private void ChangeScene()
