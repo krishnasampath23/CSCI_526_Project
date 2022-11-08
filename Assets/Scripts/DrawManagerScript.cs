@@ -24,6 +24,7 @@ public class DrawManagerScript : MonoBehaviour
             {
                 _currentLine = Instantiate(_linePrefab, mousePos, Quaternion.identity);
                 StaticScript.lines_drawn += 1;
+                TipScript.Ins.DrawLinesOK();
             }
             if (Input.GetMouseButton(0)) _currentLine.SetPosition(mousePos);
         }
@@ -36,6 +37,7 @@ public class DrawManagerScript : MonoBehaviour
                 {
                     _currentLine = Instantiate(_linePrefab, mousePos, Quaternion.identity);
                     StaticScript.lines_drawn += 1;
+                    TipScript.Ins.DrawLinesOK();
                 }
                 if (Input.GetMouseButton(0)) _currentLine.SetPosition(mousePos);
             }

@@ -67,6 +67,10 @@ public class PlayerScript : MonoBehaviour
             if (Input.GetKey(KeyCode.A)) input = Vector2.left;
             if (Input.GetKey(KeyCode.S)) input = Vector2.down;
             if (Input.GetKey(KeyCode.D)) input = Vector2.right;
+            if(input == Vector2.up || input == Vector2.left || input == Vector2.down || input == Vector2.right)
+            {
+                TipScript.Ins.DirStepOk();
+            }
         }
         if (ArrowKeysEnabled)
         {
@@ -181,6 +185,7 @@ public class PlayerScript : MonoBehaviour
             }
             this.GetComponent<SpriteRenderer>().color = collision.gameObject.GetComponent<SpriteRenderer>().color;
             isCurrentlyColliding = true;
+            TipScript.Ins.ToGreenPlatformOK();
             // GetComponent<SpriteRenderer>().color = new Color32 (5,137,35,255);
 
         }

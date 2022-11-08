@@ -22,4 +22,6 @@ static class StaticScript
     public static int lines_limit = 3;
     public static int no_color_switches=0;
     public static int no_of_erasers = 3;
+
+    public static int tutorialStep = 0;
 }
