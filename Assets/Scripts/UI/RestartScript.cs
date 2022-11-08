@@ -22,11 +22,16 @@ public class RestartScript : MonoBehaviour
             Debug.Log(StaticScript.level);
             Debug.Log(StaticScript.no_of_enemies);
         }
+        if(StaticScript.level == 6){
+            StaticScript.no_of_enemies = 2;
+            Debug.Log(StaticScript.level);
+            Debug.Log(StaticScript.no_of_enemies);
+        }
         StaticScript.no_of_poops += 10;
         StaticScript.health = 100;
         StaticScript.playingOrNot = true;
         StaticScript.no_color_switches=0;
-        if(StaticScript.level >= 5){
+        if(StaticScript.level >= 6){
             SceneManager.LoadScene("Levels");
         }
         if(StaticScript.level == 1){
@@ -38,10 +43,10 @@ public class RestartScript : MonoBehaviour
         SceneManager.LoadScene("Level"+StaticScript.level.ToString());
     }
 
-    public void Load_Tutorial_Page()
-    {
-        SceneManager.LoadScene("Tutorial_Page");
-    }
+    // public void Load_Tutorial_Page()
+    // {
+    //     SceneManager.LoadScene("Tutorial");
+    // }
 
     public void LoadAgain()
     {
@@ -59,6 +64,9 @@ public class RestartScript : MonoBehaviour
         if(StaticScript.level == 2 || StaticScript.level == 4 ||  StaticScript.level == 5){
             StaticScript.no_of_enemies = 4;
         }
+        if(StaticScript.level == 6){
+            StaticScript.no_of_enemies = 2;
+        }
         StaticScript.no_of_poops = 10;
         StaticScript.health = 100;
         StaticScript.playingOrNot = true;
@@ -67,7 +75,8 @@ public class RestartScript : MonoBehaviour
             StaticScript.lines_limit = 10000;
             StaticScript.no_of_erasers = 10000;
             StaticScript.no_of_poops = 10000;
-            SceneManager.LoadScene("Tutorial_Page");
+            StaticScript.no_of_enemies = 5;
+            SceneManager.LoadScene("Tutorial");
             StaticScript.lines_limit = 3;
         }
         else{
@@ -205,12 +214,31 @@ public class RestartScript : MonoBehaviour
         StaticScript.no_of_erasers = 3;
         StaticScript.enemies_killed=0;
         StaticScript.no_of_enemies = 4;
-        StaticScript.level = 4;
+        StaticScript.level = 5;
         StaticScript.no_of_poops = 10;
         StaticScript.health = 100;
         StaticScript.playingOrNot = true;
         StaticScript.no_color_switches=0;
         SceneManager.LoadScene("Level5");
+    }
+
+    public void LoadLevel6()
+    {
+        StaticScript.success_or_fail=-1;
+        StaticScript.timePrevious=StaticScript.timeElapsed;
+        StaticScript.score = 0;
+        StaticScript.timeLeft = 12;
+        StaticScript.lines_drawn=0;
+        StaticScript.timerOn = false;
+        StaticScript.no_of_erasers = 3;
+        StaticScript.enemies_killed=0;
+        StaticScript.no_of_enemies = 2;
+        StaticScript.level = 6;
+        StaticScript.no_of_poops = 10;
+        StaticScript.health = 100;
+        StaticScript.playingOrNot = true;
+        StaticScript.no_color_switches=0;
+        SceneManager.LoadScene("Level6");
     }
 
     public void LoadBack()
