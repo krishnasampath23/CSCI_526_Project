@@ -8,6 +8,8 @@ public class PlayerScript : MonoBehaviour
     public bool ArrowKeysEnabled = true;
     public bool RightClickMoveEnabled = false;
 
+    private float maxSpeed = 100f;
+
     public float JumpForce;
     float score;
 
@@ -89,6 +91,11 @@ public class PlayerScript : MonoBehaviour
             }
         }
         RB.AddForce(input * JumpForce);
+        // check if speed > maxSpeed
+        if(RB.velocity.magnitude > maxSpeed)
+        {
+            RB.velocity = RB.velocity.normalized * maxSpeed;
+        }
         // RB.velocity = input * JumpForce;
     }
 
