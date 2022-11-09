@@ -5,7 +5,8 @@ using UnityEngine;
 // Change the color of the object upon certain collisions
 public class DynamicColor : MonoBehaviour
 {
-    public bool ByEnemyBullet = true;
+    public bool ByEnemyBullet;
+    public bool ByPlatform;
 
 
     private SpriteRenderer sprite;
@@ -38,7 +39,8 @@ public class DynamicColor : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (ByEnemyBullet && collision.gameObject.CompareTag("EnemyBullet"))
+        if (ByEnemyBullet && collision.gameObject.CompareTag("EnemyBullet") ||
+            ByPlatform && (collision.gameObject.CompareTag("Platform1") || collision.gameObject.CompareTag("Platform2")))
         {
             contactingWith = collision.gameObject;
             updateColor();

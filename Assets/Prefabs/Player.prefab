@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2157619544145303718}
   - component: {fileID: 2157619544145303719}
   - component: {fileID: 2157619544145303716}
+  - component: {fileID: 3446448565200645232}
   m_Layer: 0
   m_Name: Player
   m_TagString: player
@@ -152,7 +153,6 @@ MonoBehaviour:
   RightClickMoveEnabled: 0
   JumpForce: 50
   isGrounded: 0
-  whichPlatform: 
 --- !u!114 &2157619544145303716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,3 +171,17 @@ MonoBehaviour:
   EraserPrefab: {fileID: 8307462610353344779, guid: 33800be0b7eb45f49b2773212a0797e3, type: 3}
   peelPrefab: {fileID: 0}
   black: {r: 0, g: 0, b: 0, a: 1}
+--- !u!114 &3446448565200645232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2157619544145303714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49d4e08a1cefc684db1ab2c5395f8357, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ByEnemyBullet: 0
+  ByPlatform: 1
