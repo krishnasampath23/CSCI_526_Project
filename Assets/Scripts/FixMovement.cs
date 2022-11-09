@@ -39,10 +39,6 @@ public class FixMovement : MonoBehaviour
         changeDirection(rb.velocity.x < 0);
       }
 
-      if (collision.gameObject.CompareTag("EnemyBullet"))
-      {
-        rb.constraints = RigidbodyConstraints2D.FreezeAll;
-      }
     }
 
     void changeDirection(bool toRight)
