@@ -1147,6 +1147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ByEnemyBullet: 1
+  ByPlatform: 0
 --- !u!114 &1207281619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1161,7 +1162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityX: 20
   rangeVal: 15
-  initialRightDirection: 0
+  initialRightDirection: 1
 --- !u!1 &1239802901
 GameObject:
   m_ObjectHideFlags: 0
@@ -1501,10 +1502,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 344044923}
     m_Modifications:
-    - target: {fileID: 5178402001637848597, guid: bf175e7d125d8294c80c9d841deb7659, type: 3}
-      propertyPath: m_Constraints
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 5178402001637848598, guid: bf175e7d125d8294c80c9d841deb7659, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1552,6 +1549,14 @@ PrefabInstance:
     - target: {fileID: 5178402001637848600, guid: bf175e7d125d8294c80c9d841deb7659, type: 3}
       propertyPath: rangeVal
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5178402001637848600, guid: bf175e7d125d8294c80c9d841deb7659, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5178402001637848600, guid: bf175e7d125d8294c80c9d841deb7659, type: 3}
+      propertyPath: initialRightDirection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5178402001637848601, guid: bf175e7d125d8294c80c9d841deb7659, type: 3}
       propertyPath: m_Name
