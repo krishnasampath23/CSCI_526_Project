@@ -122,10 +122,9 @@ public class PlayerScript : MonoBehaviour
 
         }
 
-        if (collision.gameObject.CompareTag("Platform2"))
+        if (collision.gameObject.name == "Green Platform")
         {
             TipScript.Ins.ToGreenPlatformOK();
-
         }
 
         if (collision.gameObject.CompareTag("Enemy"))
