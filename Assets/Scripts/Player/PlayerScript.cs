@@ -11,11 +11,8 @@ public class PlayerScript : MonoBehaviour
     private float maxSpeed = 100f;
 
     public float JumpForce;
-    float score;
 
     [SerializeField]
-    bool isGrounded = false;
-    bool isAlive = true;
     Rigidbody2D RB;
 
     private void Awake()
@@ -27,12 +24,6 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
         move();
-
-        if (isAlive)
-        {
-            score += Time.deltaTime * 10;
-        }
-
     }
 
     private void move()
@@ -82,11 +73,6 @@ public class PlayerScript : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("ground"))
         {
-            if (isGrounded == false)
-            {
-                isGrounded = true;
-
-            }
             // StaticScript.health = 0;
             if(StaticScript.playingOrNot == true)
             {
@@ -100,21 +86,7 @@ public class PlayerScript : MonoBehaviour
             //UnityEditor.EditorApplication.isPlaying = false;
 
         }
-        // if (collision.gameObject.CompareTag("person"))
-        // {
-        //     StaticScript.health -= 20;
-        //     Destroy(collision.gameObject);
-        // }
 
-        // if (collision.gameObject.CompareTag("food"))
-        // {
-        //     StaticScript.no_of_poops += 1;
-        //     Destroy(collision.gameObject);
-
-        //     //Application.Quit();
-        //     //UnityEditor.EditorApplication.isPlaying = false;
-
-        // }
         if (collision.gameObject.CompareTag("EnemyShield"))
         {
             StaticScript.health -= 10;
@@ -142,6 +114,11 @@ public class PlayerScript : MonoBehaviour
         {
             StaticScript.health -= 10;
             RB.AddForce(Vector2.up * 1000);
+        }
+
+        if (collision.gameObject.CompareTag("EnemyBullet"))
+        {
+            StaticScript.health -= 10;
         }
     }
 }
