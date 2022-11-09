@@ -34,6 +34,7 @@ public class BlockMovement : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+      if (!enabled) return;
       if (collision.gameObject.CompareTag("Line") || collision.gameObject.CompareTag("player"))
       {
         changeDirection(rb.velocity.x < 0);
