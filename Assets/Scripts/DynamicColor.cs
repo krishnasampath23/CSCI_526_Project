@@ -40,7 +40,7 @@ public class DynamicColor : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (ByEnemyBullet && collision.gameObject.CompareTag("EnemyBullet") ||
-            ByPlatform && (collision.gameObject.CompareTag("Platform1") || collision.gameObject.CompareTag("Platform2")))
+            ByPlatform && collision.gameObject.CompareTag("Platform"))
         {
             contactingWith = collision.gameObject;
             updateColor();

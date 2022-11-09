@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1287170819723071253}
   m_Layer: 0
   m_Name: Green Platform
-  m_TagString: Platform2
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

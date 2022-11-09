@@ -60,11 +60,7 @@ public class Bullet : MonoBehaviour
             }
         }
 
-        if (collision.gameObject.CompareTag("Platform1"))
-        {
-            Destroy(this.gameObject);
-        }
-        if (collision.gameObject.CompareTag("Platform2"))
+        if (collision.gameObject.CompareTag("Platform"))
         {
             Destroy(this.gameObject);
         }

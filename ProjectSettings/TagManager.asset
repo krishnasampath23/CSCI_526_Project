@@ -15,11 +15,9 @@ TagManager:
   - Bullet
   - LevelStart
   - EnemyShield
-  - Platform1
   - Enemy
   - Black Enemy
   - Green Enemy
-  - Platform2
   - ground
   - Eraser
   - Green Bullet
@@ -28,6 +26,7 @@ TagManager:
   - level
   - food
   - Peel
+  - Platform
   layers:
   - Default
   - TransparentFX
