@@ -256,11 +256,6 @@ Transform:
   m_Father: {fileID: 1467921000}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &219397662 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5178402001637848601, guid: bf175e7d125d8294c80c9d841deb7659, type: 3}
-  m_PrefabInstance: {fileID: 1372101156}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &224211917
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1566,27 +1561,17 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5178402001637848603, guid: bf175e7d125d8294c80c9d841deb7659, type: 3}
+    - target: {fileID: 5178402001637848603, guid: bf175e7d125d8294c80c9d841deb7659, type: 3}
+      propertyPath: randomizeFiringInterval
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf175e7d125d8294c80c9d841deb7659, type: 3}
 --- !u!4 &1372101157 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5178402001637848598, guid: bf175e7d125d8294c80c9d841deb7659, type: 3}
   m_PrefabInstance: {fileID: 1372101156}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1372101168
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 219397662}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3fc314d659bb43b7b3e4e493b5bb10c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 6330315066043923592, guid: 904bffacfedec1c419e126a4679cad4c, type: 3}
 --- !u!1 &1467920999
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,6 +5,12 @@ using UnityEngine;
 public class EnemyShoot : MonoBehaviour
 {
     public GameObject bulletPrefab;
+
+    public int firingInterval = 3;
+    public bool randomizeFiringInterval = true;
+    public int minFiringInterval = 2;
+    public int maxFiringInterval = 5;
+
     private Color color;
     private Vector3 firingPointDelta;
 
@@ -20,7 +26,10 @@ public class EnemyShoot : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(Random.Range(2, 5));
+            int interval = randomizeFiringInterval?
+                Random.Range(minFiringInterval, maxFiringInterval) :
+                firingInterval;
+            yield return new WaitForSeconds(interval);
             Shoot();
         }
     }
