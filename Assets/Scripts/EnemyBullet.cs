@@ -20,8 +20,10 @@ public class EnemyBullet : MonoBehaviour
             }
 
             if (collision.gameObject.CompareTag("Platform1")){
-                collision.gameObject.GetComponent<SpriteRenderer>().color = this.GetComponent<SpriteRenderer>().color;
+                var colorValue = this.GetComponent<SpriteRenderer>().color;
+                collision.gameObject.GetComponent<SpriteRenderer>().color = colorValue;
                 Destroy(this.gameObject);
+                TipScript.Ins.PlatformChangeGreen(colorValue);
             }
             if (collision.gameObject.CompareTag("Platform2")){
                 collision.gameObject.GetComponent<SpriteRenderer>().color = this.GetComponent<SpriteRenderer>().color;
