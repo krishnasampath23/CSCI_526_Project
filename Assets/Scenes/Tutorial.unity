@@ -15994,6 +15994,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5178402001637848600, guid: bf175e7d125d8294c80c9d841deb7659, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5178402001637848600, guid: bf175e7d125d8294c80c9d841deb7659, type: 3}
       propertyPath: velocityX
       value: 30
       objectReference: {fileID: 0}
