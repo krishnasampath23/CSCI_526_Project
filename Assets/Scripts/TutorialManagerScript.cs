@@ -11,9 +11,9 @@ namespace Assets.Scripts
         public GameObject scene2;
         public GameObject scene3;
 
-        public GameObject lineTip;
-        public LineRenderer lineRender;
-
+        public FadeScript lineTip1;
+        public FadeScript lineTip2;
+        public FadeScript lineTip3;
         public Transform goodjob;
 
         public Rigidbody2D player;
@@ -70,30 +70,32 @@ namespace Assets.Scripts
             }
         }
 
-        private void ShowLine()
+        private void ShowLine(int index)
         {
-            lineTip.SetActive(true);
-            FadeOut();
-        }
-
-        private void HideLine()
-        {
-            lineTip.SetActive(false);
-        }
-
-        private void FadeIn()
-        {
-            if (lineRender) {
-                lineRender.material.DOFade(0.6f, 0.5f).onComplete += FadeOut;
+            if(index == 0)
+            {
+                lineTip1.Show();
+            }
+            else
+            {
+                lineTip2.Show();
+                lineTip3.Show();
             }
         }
 
-        private void FadeOut()
+        private void HideLine(int index)
         {
-            if (lineRender) {
-                lineRender.material.DOFade(0, 0.5f).onComplete += FadeIn;
+            if (index == 0)
+            {
+                lineTip1.Hide();
+            }
+            else
+            {
+                lineTip2.Hide();
+                lineTip3.Hide();
             }
         }
+
 
         private void ChangeScene()
         {

@@ -34,6 +34,10 @@ public class DynamicColor : MonoBehaviour
                 StaticScript.no_color_switches+=1;
             }
             sprite.color = targetColor;
+            if(ByEnemyBullet)
+            {
+                TipScript.Ins.PlatformChangeGreen(targetColor);
+            }
         }
     }
 

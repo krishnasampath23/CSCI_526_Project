@@ -14,25 +14,25 @@ public class EventHandle
 		}
 		events();
 	}
-	public static event Action EventShowLineTip;
-	public static void CallEventShowLineTip()
+	public static event Action<int> EventShowLineTip;
+	public static void CallEventShowLineTip(int index)
 	{
-		Action events = EventHandle.EventShowLineTip;
+		Action<int>events = EventHandle.EventShowLineTip;
 		if (events == null)
 		{
 			return;
 		}
-		events();
+		events(index);
 	}
 
-	public static event Action EventHideLineTip;
-	public static void CallEventHideLineTip()
+	public static event Action<int> EventHideLineTip;
+	public static void CallEventHideLineTip(int index)
 	{
-		Action events = EventHandle.EventHideLineTip;
+		Action<int> events = EventHandle.EventHideLineTip;
 		if (events == null)
 		{
 			return;
 		}
-		events();
+		events(index);
 	}
 }
