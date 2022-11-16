@@ -75,8 +75,15 @@ public class RestartScript : MonoBehaviour
             StaticScript.lines_limit = 10000;
             StaticScript.no_of_erasers = 10000;
             StaticScript.no_of_poops = 10000;
+            if(StaticScript.tutorial_flag == false){
             StaticScript.no_of_enemies = 5;
+            }
+            else{
+                StaticScript.no_of_enemies = 3;
+            }
             SceneManager.LoadScene("Tutorial");
+            StaticScript.tutorial_flag = true;
+
             StaticScript.lines_limit = 3;
         }
         else{
@@ -114,7 +121,13 @@ public class RestartScript : MonoBehaviour
         StaticScript.timerOn = false;
         StaticScript.no_of_erasers = 10000;
         StaticScript.enemies_killed=0;
-        StaticScript.no_of_enemies = 5;
+        if(StaticScript.tutorial_flag == false){
+            StaticScript.no_of_enemies = 5;
+        }
+        else{
+            StaticScript.no_of_enemies = 3;
+        }
+        
         StaticScript.level = 0;
         StaticScript.no_of_poops = 10000;
         StaticScript.health = 100;
@@ -123,6 +136,7 @@ public class RestartScript : MonoBehaviour
         StaticScript.playingOrNot = true;
         StaticScript.no_color_switches=0;
         SceneManager.LoadScene("Tutorial");
+        StaticScript.tutorial_flag = true;
         StaticScript.lines_limit = 3;
         
     }
