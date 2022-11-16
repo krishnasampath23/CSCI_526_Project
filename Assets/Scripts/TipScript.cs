@@ -26,7 +26,7 @@ public class TipScript:MonoBehaviour
     string[][] tips = {
         new string[]{ "<color=#058923><size=20>Kill all the enemy to win this game!</size></color>", "Move:A&D",  "Press Spacebar to shoot & kill the tank." },
         new string[]{ "Touch the green platform to change color.","Shoot green bullets on the green tank to kill it." },
-        new string[]{ "Drop an eraser (press X) on the line to remove it.","Enemy`s bullets can change platform`s color.","Change your color to green and kill the green tank." ,"Draw a line as a ramp","Shoot a bullet onto the ramp to kill the purple tank", "Kill the second purple tank by trapping its movement ","Now kill it" }
+        new string[]{ "Drop an eraser (press X) on the line to remove it.","Enemy`s bullets can change platform`s color.","Change your color to green and kill the green tank." ,"Left click and hold to draw a line as a ramp","Shoot a bullet onto the ramp to kill the purple tank", "Kill the second purple tank by trapping its movement ","Now kill it" }
     };
     Vector3[][] poses = { 
         new Vector3[]{new Vector3(12.6f, 122f, 0), new Vector3(30.6f, 80.6f, 0), new Vector3(30.6f, 80.6f, 0) },
