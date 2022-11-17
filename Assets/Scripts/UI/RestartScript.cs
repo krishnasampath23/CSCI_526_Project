@@ -32,7 +32,7 @@ public class RestartScript : MonoBehaviour
         StaticScript.playingOrNot = true;
         StaticScript.no_color_switches=0;
         if(StaticScript.level >= 6){
-            SceneManager.LoadScene("Levels");
+            SceneManager.LoadScene("Levels", LoadSceneMode.Single);
         }
         if(StaticScript.level == 1){
             StaticScript.no_of_poops = 10;
@@ -40,7 +40,7 @@ public class RestartScript : MonoBehaviour
 
 
     Debug.Log("Level"+StaticScript.level.ToString());
-        SceneManager.LoadScene("Level"+StaticScript.level.ToString());
+        SceneManager.LoadScene("Level"+StaticScript.level.ToString(), LoadSceneMode.Single);
     }
 
     // public void Load_Tutorial_Page()
@@ -81,14 +81,14 @@ public class RestartScript : MonoBehaviour
             else{
                 StaticScript.no_of_enemies = 3;
             }
-            SceneManager.LoadScene("Tutorial");
+            SceneManager.LoadScene("Tutorial", LoadSceneMode.Single);
             StaticScript.tutorial_flag = true;
 
             StaticScript.lines_limit = 3;
         }
         else{
             Debug.Log("Level"+StaticScript.level.ToString());
-            SceneManager.LoadScene("Level"+StaticScript.level.ToString());
+            SceneManager.LoadScene("Level"+StaticScript.level.ToString(), LoadSceneMode.Single);
         }
         
     }
@@ -110,7 +110,7 @@ public class RestartScript : MonoBehaviour
         StaticScript.playingOrNot = false;
         StaticScript.no_color_switches=0;
 
-        SceneManager.LoadScene("Levels");
+        SceneManager.LoadScene("Levels", LoadSceneMode.Single);
     }
     public void LoadTutorial()
     {
@@ -135,7 +135,7 @@ public class RestartScript : MonoBehaviour
         StaticScript.lines_drawn = 0;
         StaticScript.playingOrNot = true;
         StaticScript.no_color_switches=0;
-        SceneManager.LoadScene("Tutorial");
+        SceneManager.LoadScene("Tutorial", LoadSceneMode.Single);
         StaticScript.tutorial_flag = true;
         StaticScript.lines_limit = 3;
         
@@ -157,7 +157,7 @@ public class RestartScript : MonoBehaviour
         StaticScript.health = 100;
         StaticScript.playingOrNot = true;
         StaticScript.no_color_switches=0;
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Level1", LoadSceneMode.Single);
     }
     public void LoadLevel2()
     {
@@ -175,7 +175,7 @@ public class RestartScript : MonoBehaviour
         StaticScript.health = 100;
         StaticScript.playingOrNot = true;
         StaticScript.no_color_switches=0;
-        SceneManager.LoadScene("Level2");
+        SceneManager.LoadScene("Level2", LoadSceneMode.Single);
     }
 
     public void LoadLevel3()
@@ -194,7 +194,7 @@ public class RestartScript : MonoBehaviour
         StaticScript.health = 100;
         StaticScript.playingOrNot = true;
         StaticScript.no_color_switches=0;
-        SceneManager.LoadScene("Level3");
+        SceneManager.LoadScene("Level3", LoadSceneMode.Single);
 
     }
 
@@ -214,7 +214,7 @@ public class RestartScript : MonoBehaviour
         StaticScript.health = 100;
         StaticScript.playingOrNot = true;
         StaticScript.no_color_switches=0;
-        SceneManager.LoadScene("Level4");
+        SceneManager.LoadScene("Level4", LoadSceneMode.Single);
     }
 
     public void LoadLevel5()
@@ -233,7 +233,7 @@ public class RestartScript : MonoBehaviour
         StaticScript.health = 100;
         StaticScript.playingOrNot = true;
         StaticScript.no_color_switches=0;
-        SceneManager.LoadScene("Level5");
+        SceneManager.LoadScene("Level5", LoadSceneMode.Single);
     }
 
     public void LoadLevel6()
@@ -252,19 +252,19 @@ public class RestartScript : MonoBehaviour
         StaticScript.health = 100;
         StaticScript.playingOrNot = true;
         StaticScript.no_color_switches=0;
-        SceneManager.LoadScene("Level6");
+        SceneManager.LoadScene("Level6", LoadSceneMode.Single);
     }
 
     public void LoadBack()
     {
         StaticScript.playingOrNot = false;
-        SceneManager.LoadScene("RestartScene");
+        SceneManager.LoadScene("RestartScene", LoadSceneMode.Single);
 
     }
 
     public void LoadMenu(){
         StaticScript.playingOrNot = false;
-        SceneManager.LoadScene("StartMenu");
+        SceneManager.LoadScene("StartMenu", LoadSceneMode.Single);
     }
 
     public void ExitGame()

@@ -6,10 +6,10 @@ public class EnemyShoot : MonoBehaviour
 {
     public GameObject bulletPrefab;
 
-    public int firingInterval = 3;
+    public int firingInterval = 1;
     public bool randomizeFiringInterval = true;
-    public int minFiringInterval = 2;
-    public int maxFiringInterval = 5;
+    public int minFiringInterval = 0;
+    public int maxFiringInterval = 1;
 
     private Color color;
     private Vector3 firingPointDelta;

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {   
-    public float bulletSpeed = 15f;
-    public float bulletDamage = 10f;
+    private float bulletSpeed = 100f;
+    private float bulletDamage = 10f;
     public Rigidbody2D rb;
 
     private void FixedUpdate(){
