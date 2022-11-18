@@ -6,11 +6,28 @@ public class Bullet : MonoBehaviour
 {   
     private float bulletSpeed = 100f;
     private float bulletDamage = 10f;
+    private bool isref = false;
+    Vector2 lastVelocity;
     public Rigidbody2D rb;
+    
+
+    private void Start(){
+        // rb.AddForce(Vector2.down * bulletSpeed);
+        rb.velocity = Vector2.down * bulletSpeed;
+        lastVelocity = rb.velocity;
+    }
 
     private void FixedUpdate(){
         //rb.velocity = Vector2.right * bulletSpeed;
-        rb.velocity = Vector2.down * bulletSpeed;
+        // // rb.velocity = Vector2.down * bulletSpeed;
+        // rb.velocity.x += bulletSpeed;
+        // rb.velocity.y += bulletSpeed;
+        // if(isref == true){
+        //     // rb.velocity *= bulletSpeed*10;
+        //     rb.AddForce(transform.position * bulletSpeed);
+        //     isref = false;
+        // }
+        lastVelocity = rb.velocity;
     }
 
     private void OnCollisionEnter2D(Collision2D collision){
@@ -59,6 +76,26 @@ public class Bullet : MonoBehaviour
                 
             }
         }
+
+         if (collision.gameObject.CompareTag("Line"))
+        {
+            rb.velocity = Vector2.Reflect(lastVelocity, collision.contacts[0].normal);
+            // if(isref==false){
+            //     rb.velocity = Vector2.Reflect(lastVelocity, collision.contacts[0].normal);
+            //     isref = true;
+            // }
+            
+        }
+
+         if (collision.gameObject.CompareTag("LevelStart"))
+        {
+            rb.velocity = Vector2.Reflect(lastVelocity, collision.contacts[0].normal);
+            // if(isref==false){
+            //     rb.velocity = Vector2.Reflect(lastVelocity, collision.contacts[0].normal);
+            //     isref = true;
+            // }
+        }
+
 
         if (collision.gameObject.CompareTag("Platform"))
         {
