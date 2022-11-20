@@ -18,8 +18,8 @@ public class UIscript : MonoBehaviour
     {
         StaticScript.timerOn = true;
         Score.text = "score = 0";
-        Lines_left.text = "Lines = 0";
-        Erasers.text = "Erasers = 0";
+        Lines_left.text = "= 0";
+        Erasers.text = "= 0";
         slider.maxValue = 100;
         slider.value = 100;
         slider1.maxValue = StaticScript.no_of_poops;
@@ -38,16 +38,16 @@ public class UIscript : MonoBehaviour
         PoopNumTxt.text = "x" + StaticScript.no_of_poops.ToString();
 
         if(StaticScript.level == 0){
-            Lines_left.text = "Lines = " + (10000 - StaticScript.lines_drawn).ToString();
+            Lines_left.text = "= " + (10000 - StaticScript.lines_drawn).ToString();
         }
         else {
             if (StaticScript.lines_drawn <= 3)
             {
-                Lines_left.text = "Lines = " + (StaticScript.lines_limit - StaticScript.lines_drawn).ToString();
+                Lines_left.text = "= " + (StaticScript.lines_limit - StaticScript.lines_drawn).ToString();
             }
         }
 
-        Erasers.text = "Erasers = " + StaticScript.no_of_erasers.ToString();
+        Erasers.text = "= " + StaticScript.no_of_erasers.ToString();
 
         if(StaticScript.enemies_killed == StaticScript.no_of_enemies && StaticScript.playingOrNot == true){
             StaticScript.success_or_fail = 1;
