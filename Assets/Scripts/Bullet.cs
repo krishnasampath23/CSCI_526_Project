@@ -7,6 +7,8 @@ public class Bullet : MonoBehaviour
     private float bulletSpeed = 100f;
     private float bulletDamage = 10f;
     private bool isref = false;
+
+    private float targetTime = 10.0f;
     Vector2 lastVelocity;
     public Rigidbody2D rb;
     
@@ -28,6 +30,11 @@ public class Bullet : MonoBehaviour
         //     isref = false;
         // }
         lastVelocity = rb.velocity;
+        targetTime -= Time.deltaTime;
+        if (targetTime <= 0.0f)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision){
@@ -89,7 +96,8 @@ public class Bullet : MonoBehaviour
 
          if (collision.gameObject.CompareTag("LevelStart"))
         {
-            rb.velocity = Vector2.Reflect(lastVelocity, collision.contacts[0].normal);
+            Destroy(this.gameObject);
+            // rb.velocity = Vector2.Reflect(lastVelocity, collision.contacts[0].normal);
             // if(isref==false){
             //     rb.velocity = Vector2.Reflect(lastVelocity, collision.contacts[0].normal);
             //     isref = true;
