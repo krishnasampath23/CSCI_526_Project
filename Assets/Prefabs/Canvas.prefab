@@ -280,7 +280,6 @@ GameObject:
   - component: {fileID: 4194331833609153365}
   - component: {fileID: 4194331833609153364}
   - component: {fileID: 4194331833609153366}
-  - component: {fileID: 4194331833609153367}
   m_Layer: 5
   m_Name: LinesLeft
   m_TagString: Untagged
@@ -406,25 +405,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &4194331833609153367
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4194331833609153369}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 924565f05139e4f79915b8bc8764691f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TimerTxt: {fileID: 4194331835073665976}
-  Score: {fileID: 4194331835168664766}
-  PoopNumTxt: {fileID: 4194331835026284701}
-  Lines_left: {fileID: 4194331833609153366}
-  Erasers: {fileID: 4194331834136540694}
-  slider: {fileID: 4194331835278277554}
-  slider1: {fileID: 4194331834216777625}
 --- !u!1 &4194331834136540699
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,7 +416,6 @@ GameObject:
   - component: {fileID: 4194331834136540696}
   - component: {fileID: 4194331834136540695}
   - component: {fileID: 4194331834136540694}
-  - component: {fileID: 4194331834136540697}
   m_Layer: 5
   m_Name: Erasers
   m_TagString: Untagged
@@ -562,25 +541,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &4194331834136540697
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4194331834136540699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 924565f05139e4f79915b8bc8764691f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TimerTxt: {fileID: 4194331835073665976}
-  Score: {fileID: 4194331835168664766}
-  PoopNumTxt: {fileID: 4194331835026284701}
-  Lines_left: {fileID: 4194331833609153366}
-  Erasers: {fileID: 4194331834136540694}
-  slider: {fileID: 4194331835278277554}
-  slider1: {fileID: 4194331834216777625}
 --- !u!1 &4194331834216777624
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,7 +551,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4194331834216777623}
   - component: {fileID: 4194331834216777625}
-  - component: {fileID: 4194331834216777622}
   m_Layer: 5
   m_Name: Poopbar
   m_TagString: Untagged
@@ -672,25 +631,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &4194331834216777622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4194331834216777624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 924565f05139e4f79915b8bc8764691f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TimerTxt: {fileID: 4194331835073665976}
-  Score: {fileID: 4194331835168664766}
-  PoopNumTxt: {fileID: 4194331835026284701}
-  Lines_left: {fileID: 4194331833609153366}
-  Erasers: {fileID: 4194331834136540694}
-  slider: {fileID: 4194331835278277554}
-  slider1: {fileID: 4194331834216777625}
 --- !u!1 &4194331834256466456
 GameObject:
   m_ObjectHideFlags: 0
@@ -1175,7 +1115,6 @@ GameObject:
   - component: {fileID: 4194331835026284696}
   - component: {fileID: 4194331835026284699}
   - component: {fileID: 4194331835026284701}
-  - component: {fileID: 4194331835026284698}
   m_Layer: 5
   m_Name: PoopText
   m_TagString: Untagged
@@ -1301,25 +1240,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &4194331835026284698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4194331835026284700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 924565f05139e4f79915b8bc8764691f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TimerTxt: {fileID: 4194331835073665976}
-  Score: {fileID: 4194331835168664766}
-  PoopNumTxt: {fileID: 4194331835026284701}
-  Lines_left: {fileID: 4194331833609153366}
-  Erasers: {fileID: 4194331834136540694}
-  slider: {fileID: 4194331835278277554}
-  slider1: {fileID: 4194331834216777625}
 --- !u!1 &4194331835073665979
 GameObject:
   m_ObjectHideFlags: 0
@@ -1331,7 +1251,6 @@ GameObject:
   - component: {fileID: 4194331835073665975}
   - component: {fileID: 4194331835073665974}
   - component: {fileID: 4194331835073665976}
-  - component: {fileID: 4194331835073665977}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1456,25 +1375,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &4194331835073665977
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4194331835073665979}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 924565f05139e4f79915b8bc8764691f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TimerTxt: {fileID: 4194331835073665976}
-  Score: {fileID: 4194331835168664766}
-  PoopNumTxt: {fileID: 4194331835026284701}
-  Lines_left: {fileID: 4194331833609153366}
-  Erasers: {fileID: 4194331834136540694}
-  slider: {fileID: 4194331835278277554}
-  slider1: {fileID: 4194331834216777625}
 --- !u!1 &4194331835168664737
 GameObject:
   m_ObjectHideFlags: 0
@@ -1486,7 +1386,6 @@ GameObject:
   - component: {fileID: 4194331835168664765}
   - component: {fileID: 4194331835168664764}
   - component: {fileID: 4194331835168664766}
-  - component: {fileID: 4194331835168664767}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -1611,25 +1510,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &4194331835168664767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4194331835168664737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 924565f05139e4f79915b8bc8764691f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TimerTxt: {fileID: 4194331835073665976}
-  Score: {fileID: 4194331835168664766}
-  PoopNumTxt: {fileID: 4194331835026284701}
-  Lines_left: {fileID: 4194331833609153366}
-  Erasers: {fileID: 4194331834136540694}
-  slider: {fileID: 4194331835278277554}
-  slider1: {fileID: 4194331834216777625}
 --- !u!1 &4194331835278277557
 GameObject:
   m_ObjectHideFlags: 0
@@ -1640,7 +1520,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4194331835278277552}
   - component: {fileID: 4194331835278277554}
-  - component: {fileID: 4194331835278277555}
   m_Layer: 5
   m_Name: Healthbar
   m_TagString: Untagged
@@ -1722,25 +1601,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &4194331835278277555
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4194331835278277557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 924565f05139e4f79915b8bc8764691f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TimerTxt: {fileID: 4194331835073665976}
-  Score: {fileID: 4194331835168664766}
-  PoopNumTxt: {fileID: 4194331835026284701}
-  Lines_left: {fileID: 4194331833609153366}
-  Erasers: {fileID: 4194331834136540694}
-  slider: {fileID: 4194331835278277554}
-  slider1: {fileID: 4194331834216777625}
 --- !u!1 &4194331835286958370
 GameObject:
   m_ObjectHideFlags: 0
@@ -1830,6 +1690,7 @@ GameObject:
   - component: {fileID: 4194331835459824435}
   - component: {fileID: 4194331835459824434}
   - component: {fileID: 3084038256514811441}
+  - component: {fileID: 334192101349490881}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1940,6 +1801,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseScreen: {fileID: 8357000867586568118}
+--- !u!114 &334192101349490881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4194331835459824437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 924565f05139e4f79915b8bc8764691f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimerTxt: {fileID: 4194331835073665976}
+  Score: {fileID: 4194331835168664766}
+  PoopNumTxt: {fileID: 4194331835026284701}
+  Lines_left: {fileID: 4194331833609153366}
+  Erasers: {fileID: 4194331834136540694}
+  slider: {fileID: 4194331835278277554}
+  slider1: {fileID: 4194331834216777625}
 --- !u!1 &4194331835514061675
 GameObject:
   m_ObjectHideFlags: 0
