@@ -27,6 +27,8 @@ TagManager:
   - food
   - Peel
   - Platform
+  - Hint
+  - HintText
   layers:
   - Default
   - TransparentFX
