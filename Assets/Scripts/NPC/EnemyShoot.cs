@@ -26,9 +26,13 @@ public class EnemyShoot : MonoBehaviour
     {
         while (true)
         {
-            int interval = randomizeFiringInterval?
-                Random.Range(minFiringInterval, maxFiringInterval) :
-                firingInterval;
+            float interval = randomizeFiringInterval ?
+                (float)(Random.Range(minFiringInterval, maxFiringInterval)) :
+                (float)(firingInterval);
+            if (StaticScript.level == 6)
+            {
+                interval = 0.2f;
+            }
             yield return new WaitForSeconds(interval);
             Shoot();
         }

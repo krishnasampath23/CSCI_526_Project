@@ -19,10 +19,10 @@ public class Level6EnemyShoot : MonoBehaviour
         SpriteRenderer sprite = GetComponent<SpriteRenderer>();
         color = sprite.color;
         firingPointDelta = Vector3.up * transform.lossyScale.y / 2;
-        StartCoroutine(SpawnFire());
+        SpawnFire();
     }
 
-    IEnumerator SpawnFire()
+    void SpawnFire()
     {
         while (true)
         {

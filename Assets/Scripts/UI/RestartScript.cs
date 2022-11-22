@@ -23,7 +23,7 @@ public class RestartScript : MonoBehaviour
             Debug.Log(StaticScript.no_of_enemies);
         }
         if(StaticScript.level == 6){
-            StaticScript.no_of_enemies = 2;
+            StaticScript.no_of_enemies = 3;
             Debug.Log(StaticScript.level);
             Debug.Log(StaticScript.no_of_enemies);
         }
@@ -65,7 +65,7 @@ public class RestartScript : MonoBehaviour
             StaticScript.no_of_enemies = 4;
         }
         if(StaticScript.level == 6){
-            StaticScript.no_of_enemies = 2;
+            StaticScript.no_of_enemies = 3;
         }
         StaticScript.no_of_poops = 10;
         StaticScript.health = 100;
@@ -246,7 +246,7 @@ public class RestartScript : MonoBehaviour
         StaticScript.timerOn = false;
         StaticScript.no_of_erasers = 3;
         StaticScript.enemies_killed=0;
-        StaticScript.no_of_enemies = 2;
+        StaticScript.no_of_enemies = 3;
         StaticScript.level = 6;
         StaticScript.no_of_poops = 10;
         StaticScript.health = 100;
