@@ -281,7 +281,7 @@ GameObject:
   - component: {fileID: 4194331833609153364}
   - component: {fileID: 4194331833609153366}
   m_Layer: 5
-  m_Name: LinesLeft
+  m_Name: Line Count
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -417,7 +417,7 @@ GameObject:
   - component: {fileID: 4194331834136540695}
   - component: {fileID: 4194331834136540694}
   m_Layer: 5
-  m_Name: Erasers
+  m_Name: Eraser Count
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1116,7 +1116,7 @@ GameObject:
   - component: {fileID: 4194331835026284699}
   - component: {fileID: 4194331835026284701}
   m_Layer: 5
-  m_Name: PoopText
+  m_Name: Bullet Count
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1252,7 +1252,7 @@ GameObject:
   - component: {fileID: 4194331835073665974}
   - component: {fileID: 4194331835073665976}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Timer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1613,7 +1613,7 @@ GameObject:
   - component: {fileID: 4194331835286958369}
   - component: {fileID: 4194331835286958368}
   m_Layer: 5
-  m_Name: Poop
+  m_Name: Bullet Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1908,7 +1908,7 @@ GameObject:
   - component: {fileID: 6515034595779254151}
   - component: {fileID: 8389980488537868281}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Eraser Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2061,7 +2061,7 @@ GameObject:
   - component: {fileID: 6710267083695422345}
   - component: {fileID: 3461814202521706850}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Pencil Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
