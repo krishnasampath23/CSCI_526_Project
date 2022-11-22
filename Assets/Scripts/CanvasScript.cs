@@ -7,11 +7,31 @@ public class CanvasScript : MonoBehaviour
 {
     public static bool GamePaused = false;
     public GameObject PauseScreen;
+    public GameObject Hint;
+    int hint_time;
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape)) TogglePause();
+    }
+
+    void FixedUpdate()
+    {
+        if (Hint.activeSelf)
+        {
+            hint_time -= 1;
+            if (hint_time == 0)
+            {
+                Hint.SetActive(false);
+            }
+        }
+    }
+
+    public void ShowHint()
+    {
+        Hint.SetActive(true);
+        hint_time = 200;
     }
 
     public void TogglePause()
