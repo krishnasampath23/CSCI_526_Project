@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CanvasScript : MonoBehaviour
 {
@@ -30,5 +31,11 @@ public class CanvasScript : MonoBehaviour
         Time.timeScale = 1;
         PauseScreen.SetActive(false);
         GamePaused = false;
+    }
+
+    public void MainMenu()
+    {
+        Resume();
+        SceneManager.LoadScene("StartMenu");
     }
 }
