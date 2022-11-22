@@ -11,11 +11,13 @@ public class CanvasScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (GamePaused) Resume();
-            else Pause();
-        }
+        if (Input.GetKeyDown(KeyCode.Escape)) TogglePause();
+    }
+
+    public void TogglePause()
+    {
+        if (GamePaused) Resume();
+        else Pause();
     }
 
     public void Pause()
