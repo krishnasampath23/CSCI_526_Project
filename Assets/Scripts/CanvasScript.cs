@@ -4,21 +4,31 @@ using UnityEngine;
 
 public class CanvasScript : MonoBehaviour
 {
-    bool GamePaused = false;
+    public static bool GamePaused = false;
+    public GameObject PauseScreen;
+
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (GamePaused)
-            {
-                Time.timeScale = 1;
-            }
-            else
-            {
-                Time.timeScale = 0;
-            }
-            GamePaused = !GamePaused;
+            if (GamePaused) Resume();
+            else Pause();
         }
+    }
+
+    public void Pause()
+    {
+        Time.timeScale = 0;
+        PauseScreen.SetActive(true);
+        GamePaused = true;
+    }
+
+
+    public void Resume()
+    {
+        Time.timeScale = 1;
+        PauseScreen.SetActive(false);
+        GamePaused = false;
     }
 }
