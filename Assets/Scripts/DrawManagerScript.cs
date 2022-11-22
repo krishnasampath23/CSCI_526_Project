@@ -18,6 +18,7 @@ public class DrawManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (CanvasScript.GamePaused) return;
         if(StaticScript.level == 0){
             Vector2 mousePos = _cam.ScreenToWorldPoint(Input.mousePosition);
             if (Input.GetMouseButtonDown(0))
