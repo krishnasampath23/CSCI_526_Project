@@ -1,12 +1,38 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class EndLevel : MonoBehaviour
+public class Level : MonoBehaviour
 {
+
+    public float TimeLeft = 12;
+    public int NoOfErasers = 3;
+    public int NoOfBullets = 10;
+    public int NoOfLines = 3;
 
     void Start()
     {
+        Scene scene = SceneManager.GetActiveScene();
+        StaticScript.level = scene.name[scene.name.Length-1] - '0';
+
+        StaticScript.success_or_fail = -1;
+        StaticScript.playingOrNot = true;
+
         StaticScript.timerOn = true;
+        StaticScript.timePrevious = StaticScript.timeElapsed;
+        StaticScript.timeLeft = TimeLeft;
+
+        StaticScript.health = 100;
+        StaticScript.score = 0;
+        StaticScript.lines_drawn = 0;
+        StaticScript.enemies_killed = 0;
+        StaticScript.no_color_switches = 0;
+
+        StaticScript.no_of_erasers = NoOfErasers;
+        StaticScript.no_of_poops = NoOfBullets;
+        StaticScript.lines_limit = NoOfLines;
+        StaticScript.no_of_enemies =
+            GameObject.FindGameObjectsWithTag("Black Enemy").Length +
+            GameObject.FindGameObjectsWithTag("Green Enemy").Length;
     }
 
     void Update()
