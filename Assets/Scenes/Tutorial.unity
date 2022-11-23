@@ -1825,7 +1825,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3945061880429075348, guid: 80206136e473f504fb5bef9aeeaa878e, type: 3}
       propertyPath: m_Name
-      value: Scene Manager
+      value: Level Manager
       objectReference: {fileID: 0}
     - target: {fileID: 3945061880429075350, guid: 80206136e473f504fb5bef9aeeaa878e, type: 3}
       propertyPath: m_RootOrder
