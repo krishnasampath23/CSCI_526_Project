@@ -1536,6 +1536,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PauseScreen: {fileID: 8357000867586568118}
   Hint: {fileID: 9050063872008176887}
+  HealthBar: {fileID: 4194331835278277554}
+  BulletNumber: {fileID: 4194331835026284701}
+  LineNumber: {fileID: 4194331833609153366}
+  EraserNumber: {fileID: 4194331834136540694}
+  Score: {fileID: 4194331835168664766}
 --- !u!114 &334192101349490881
 MonoBehaviour:
   m_ObjectHideFlags: 0

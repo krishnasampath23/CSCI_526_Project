@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
+using UnityEngine.UI;
 
 public class CanvasScript : MonoBehaviour
 {
@@ -9,6 +11,12 @@ public class CanvasScript : MonoBehaviour
     public GameObject PauseScreen;
     public GameObject Hint;
     int hint_time;
+
+    public Slider HealthBar;
+    public TMP_Text BulletNumber;
+    public TMP_Text LineNumber;
+    public TMP_Text EraserNumber;
+    public TMP_Text Score;
 
     void Start()
     {
@@ -19,6 +27,7 @@ public class CanvasScript : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape)) TogglePause();
+        UpdateUI();
     }
 
     void FixedUpdate()
@@ -31,6 +40,15 @@ public class CanvasScript : MonoBehaviour
                 Hint.SetActive(false);
             }
         }
+    }
+
+    void UpdateUI()
+    {
+        HealthBar.value = StaticScript.health;
+        BulletNumber.text = "x" + StaticScript.no_of_poops.ToString();
+        LineNumber.text = "x " + (StaticScript.lines_limit - StaticScript.lines_drawn).ToString();
+        EraserNumber.text = "x " + StaticScript.no_of_erasers.ToString();
+        Score.text = "score = " + StaticScript.score.ToString();
     }
 
     public void ShowHint()
