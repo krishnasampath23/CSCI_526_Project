@@ -8,7 +8,6 @@ static class StaticScript
     public static int level = 0;
 
     public static int success_or_fail=-1;
-    public static bool playingOrNot = false;
 
     public static float timePrevious=0;
     public static float timeElapsed=0;

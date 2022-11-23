@@ -19,7 +19,6 @@ public class RestartScript : MonoBehaviour
     public void LoadLevels()
     {
         StaticScript.level = -1;
-        StaticScript.playingOrNot = false;
         SceneManager.LoadScene("Levels", LoadSceneMode.Single);
     }
 
@@ -34,19 +33,16 @@ public class RestartScript : MonoBehaviour
 
     public void LoadBack()
     {
-        StaticScript.playingOrNot = false;
         SceneManager.LoadScene("RestartScene", LoadSceneMode.Single);
 
     }
 
     public void LoadMenu(){
-        StaticScript.playingOrNot = false;
         SceneManager.LoadScene("StartMenu", LoadSceneMode.Single);
     }
 
     public void ExitGame()
     {
-        StaticScript.playingOrNot = false;
         Application.Quit();
     }
 }

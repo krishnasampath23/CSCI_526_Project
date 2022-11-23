@@ -31,10 +31,6 @@ public class PlayerScript : MonoBehaviour
         Vector2 input = new Vector2();
         if (WASDEnabled)
         {
-            // if (Input.GetKeyDown(KeyCode.W)) input += Vector2.up;
-            // if (Input.GetKeyDown(KeyCode.A)) input += Vector2.left;
-            // if (Input.GetKeyDown(KeyCode.S)) input += Vector2.down;
-            // if (Input.GetKeyDown(KeyCode.D)) input += Vector2.right;
             if (Input.GetKey(KeyCode.W)) input = Vector2.up;
             if (Input.GetKey(KeyCode.A)) input = Vector2.left;
             if (Input.GetKey(KeyCode.S)) input = Vector2.down;
@@ -70,7 +66,6 @@ public class PlayerScript : MonoBehaviour
         {
             RB.velocity = RB.velocity.normalized * maxSpeed;
         }
-        // RB.velocity = input * JumpForce;
     }
 
 
@@ -99,37 +94,21 @@ public class PlayerScript : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("ground"))
         {
-            // StaticScript.health = 0;
-            if(StaticScript.playingOrNot == true)
-            {
-
-                
-                StaticScript.playingOrNot = false;
-                Debug.Log("Hit Ground : End Game");
-                StaticScript.success_or_fail = 0;
-                StaticScript.lines_drawn=GameObject.FindGameObjectsWithTag("Line").Length;
-                StartCoroutine(FadeAlphaToZero(this.gameObject.GetComponent<SpriteRenderer>(), 0.5f, this.gameObject));
-                //SceneManager.LoadScene("FailScene");
-            }
-            //Application.Quit(); // Replace this Play Again/ Restart scene
-            //UnityEditor.EditorApplication.isPlaying = false;
-
+            Debug.Log("Hit Ground : End Game");
+            StaticScript.success_or_fail = 0;
+            StaticScript.lines_drawn=GameObject.FindGameObjectsWithTag("Line").Length;
+            StartCoroutine(FadeAlphaToZero(this.gameObject.GetComponent<SpriteRenderer>(), 0.5f, this.gameObject));
         }
 
         if (collision.gameObject.CompareTag("EnemyShield"))
         {
             StaticScript.health -= 10;
             RB.AddForce(Vector2.up * 2000);
-            if (StaticScript.health == 0 && StaticScript.playingOrNot == true)
+            if (StaticScript.health == 0)
             {
-                //Application.Quit(); // Replace this Play Again/ Restart scene
-                StaticScript.playingOrNot = false;
                 StaticScript.success_or_fail = 0;
-                //StaticScript.lines_drawn=GameObject.FindGameObjectsWithTag("Line").Length;
                 Debug.Log("End Game: Health Lost");
                 StartCoroutine(FadeAlphaToZero(this.gameObject.GetComponent<SpriteRenderer>(), 0.5f, this.gameObject));
-                //SceneManager.LoadScene("FailScene");
-
             }
 
 
@@ -144,16 +123,11 @@ public class PlayerScript : MonoBehaviour
         {
             StaticScript.health -= 10;
             RB.AddForce(Vector2.up * 2000);
-            if (StaticScript.health == 0 && StaticScript.playingOrNot == true)
+            if (StaticScript.health == 0)
             {
-                //Application.Quit(); // Replace this Play Again/ Restart scene
-                StaticScript.playingOrNot = false;
                 StaticScript.success_or_fail = 0;
-                //StaticScript.lines_drawn=GameObject.FindGameObjectsWithTag("Line").Length;
                 Debug.Log("End Game: Health Lost");
                 StartCoroutine(FadeAlphaToZero(this.gameObject.GetComponent<SpriteRenderer>(), 0.5f, this.gameObject));
-                //SceneManager.LoadScene("FailScene");
-
             }
 
 
@@ -162,16 +136,11 @@ public class PlayerScript : MonoBehaviour
         {
             StaticScript.health -= 10;
             RB.AddForce(Vector2.up * 1000);
-            if (StaticScript.health == 0 && StaticScript.playingOrNot == true)
+            if (StaticScript.health == 0)
             {
-                //Application.Quit(); // Replace this Play Again/ Restart scene
-                StaticScript.playingOrNot = false;
                 StaticScript.success_or_fail = 0;
-                //StaticScript.lines_drawn=GameObject.FindGameObjectsWithTag("Line").Length;
                 Debug.Log("End Game: Health Lost");
                 StartCoroutine(FadeAlphaToZero(this.gameObject.GetComponent<SpriteRenderer>(), 0.5f, this.gameObject));
-                //SceneManager.LoadScene("FailScene");
-
             }
 
         }
@@ -179,16 +148,11 @@ public class PlayerScript : MonoBehaviour
         {
             StaticScript.health -= 10;
             RB.AddForce(Vector2.up * 1000);
-            if (StaticScript.health == 0 && StaticScript.playingOrNot == true)
+            if (StaticScript.health == 0)
             {
-                //Application.Quit(); // Replace this Play Again/ Restart scene
-                StaticScript.playingOrNot = false;
                 StaticScript.success_or_fail = 0;
-                //StaticScript.lines_drawn=GameObject.FindGameObjectsWithTag("Line").Length;
                 Debug.Log("End Game: Health Lost");
                 StartCoroutine(FadeAlphaToZero(this.gameObject.GetComponent<SpriteRenderer>(), 0.5f, this.gameObject));
-                //SceneManager.LoadScene("FailScene");
-
             }
 
         }
@@ -196,16 +160,11 @@ public class PlayerScript : MonoBehaviour
         if (collision.gameObject.CompareTag("EnemyBullet"))
         {
             StaticScript.health -= 10;
-            if (StaticScript.health == 0 && StaticScript.playingOrNot == true)
+            if (StaticScript.health == 0)
             {
-                //Application.Quit(); // Replace this Play Again/ Restart scene
-                StaticScript.playingOrNot = false;
                 StaticScript.success_or_fail = 0;
-                //StaticScript.lines_drawn=GameObject.FindGameObjectsWithTag("Line").Length;
                 Debug.Log("End Game: Health Lost");
                 StartCoroutine(FadeAlphaToZero(this.gameObject.GetComponent<SpriteRenderer>(), 0.5f, this.gameObject));
-                //SceneManager.LoadScene("FailScene");
-
             }
 
         }

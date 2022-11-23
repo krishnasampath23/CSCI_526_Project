@@ -11,7 +11,6 @@ public class Level : MonoBehaviour
     void Start()
     {
         StaticScript.success_or_fail = -1;
-        StaticScript.playingOrNot = true;
 
         StaticScript.timePrevious = StaticScript.timeElapsed;
 
@@ -56,31 +55,25 @@ public class Level : MonoBehaviour
         StaticScript.timeElapsed+=Time.deltaTime;
         StaticScript.score = StaticScript.enemies_killed*100;
 
-        if(StaticScript.enemies_killed == StaticScript.no_of_enemies && StaticScript.playingOrNot == true){
+        if(StaticScript.enemies_killed == StaticScript.no_of_enemies){
             StaticScript.success_or_fail = 1;
-            StaticScript.playingOrNot = false;
             Debug.Log("End Game: Level Complete");
             SceneManager.LoadScene("RestartScene");
         }
 
-        if(StaticScript.health == 0 && StaticScript.playingOrNot == true)
+        if(StaticScript.health == 0)
         {
-            //Application.Quit(); // Replace this Play Again/ Restart scene
-            StaticScript.playingOrNot = false;
             StaticScript.success_or_fail = 0;
             Debug.Log("End Game: Health Lost");
             SceneManager.LoadScene("FailScene");
         }
-        if(StaticScript.no_of_poops == 0 && StaticScript.playingOrNot == true)
+        if(StaticScript.no_of_poops == 0)
         {
-            //Application.Quit(); // Replace this Play Again/ Restart scene
             Debug.Log("Number of bullets");
             Debug.Log(GameObject.FindGameObjectsWithTag("Bullet").Length);
 
-
             if(GameObject.FindGameObjectsWithTag("Bullet").Length == 1)
             {
-                StaticScript.playingOrNot = false;
                 StaticScript.success_or_fail = 0;
                 Debug.Log("End Game: Poops Over");
                 SceneManager.LoadScene("FailScene");
