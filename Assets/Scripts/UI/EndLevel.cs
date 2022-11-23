@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class UIscript : MonoBehaviour
+public class EndLevel : MonoBehaviour
 {
 
     void Start()
