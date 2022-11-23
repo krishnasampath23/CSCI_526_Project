@@ -37,7 +37,7 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    IEnumerator FadeAlphaToZero(SpriteRenderer renderer, float fadeSpeed, GameObject G1)
+    IEnumerator FadeAlphaToZero(SpriteRenderer renderer, float fadeSpeed, GameObject G1, int enemycheck)
     {
        
         Color matColor = renderer.material.color;
@@ -52,6 +52,10 @@ public class Bullet : MonoBehaviour
         }
         renderer.material.color = new Color(matColor.r, matColor.g, matColor.b, 0f);
         Destroy(G1);
+        if (enemycheck == 1)
+        {
+            StaticScript.enemies_killed += 1;
+        }
         
     }
 
@@ -59,32 +63,76 @@ public class Bullet : MonoBehaviour
 
          if (collision.gameObject.CompareTag("Green Enemy"))
         {
-            if(this.gameObject.GetComponent<SpriteRenderer>().color == collision.gameObject.GetComponent<SpriteRenderer>().color){
-                StaticScript.enemies_killed += 1;
-                StartCoroutine(FadeAlphaToZero(collision.gameObject.GetComponent<SpriteRenderer>(), 1f,collision.gameObject));
-                StartCoroutine(FadeAlphaToZero(this.gameObject.GetComponent<SpriteRenderer>(), 1f,this.gameObject));
+
+            if (StaticScript.level != 0)
+            {
+                if (this.gameObject.GetComponent<SpriteRenderer>().color == collision.gameObject.GetComponent<SpriteRenderer>().color)
+                {
+
+                    StartCoroutine(FadeAlphaToZero(collision.gameObject.GetComponent<SpriteRenderer>(), 0.5f, collision.gameObject,1));
+                    StartCoroutine(FadeAlphaToZero(this.gameObject.GetComponent<SpriteRenderer>(), 0.5f, this.gameObject,0));
+                  
+                }
+                else
+                {
+                    Destroy(this.gameObject);
+       
+                }
 
             }
+
             else
             {
-                Destroy(this.gameObject);
-                TipScript.Ins.BlackBulletTouchGreenEnemy();
+                if (this.gameObject.GetComponent<SpriteRenderer>().color == collision.gameObject.GetComponent<SpriteRenderer>().color)
+                {
+                    StaticScript.enemies_killed += 1;
+                    Destroy(collision.gameObject);
+                    Destroy(this.gameObject);
+                    TipScript.Ins.KillGreenEnemy();
+                }
+                else
+                {
+                    Destroy(this.gameObject);
+                    TipScript.Ins.BlackBulletTouchGreenEnemy();
+                }
             }
         }
 
         if (collision.gameObject.CompareTag("Black Enemy"))
         {
-            
-            if(this.gameObject.GetComponent<SpriteRenderer>().color == collision.gameObject.GetComponent<SpriteRenderer>().color){
-                StaticScript.enemies_killed += 1;
-                StartCoroutine(FadeAlphaToZero(collision.gameObject.GetComponent<SpriteRenderer>(), 1f, collision.gameObject));
-                StartCoroutine(FadeAlphaToZero(collision.gameObject.GetComponent<SpriteRenderer>(), 1f, this.gameObject));
-                TipScript.Ins.KillBlackEnemy();
+            if (StaticScript.level != 0)
+            {
+                if (this.gameObject.GetComponent<SpriteRenderer>().color == collision.gameObject.GetComponent<SpriteRenderer>().color)
+                {
+
+                    StartCoroutine(FadeAlphaToZero(collision.gameObject.GetComponent<SpriteRenderer>(), 0.5f, collision.gameObject,1));
+                    StartCoroutine(FadeAlphaToZero(collision.gameObject.GetComponent<SpriteRenderer>(), 0.5f, this.gameObject,0));
+                    //StaticScript.enemies_killed += 1;
+                    //TipScript.Ins.KillBlackEnemy();
+
+                }
+                else
+                {
+                    Destroy(this.gameObject);
+                }
+
             }
             else
             {
-                
+                Destroy(this.gameObject);
+                if (this.gameObject.GetComponent<SpriteRenderer>().color == collision.gameObject.GetComponent<SpriteRenderer>().color)
+                {
+                    StaticScript.enemies_killed += 1;
+                    Destroy(collision.gameObject);
+                    Destroy(this.gameObject);
+                    TipScript.Ins.KillBlackEnemy();
+                }
+                else
+                {
+                    Destroy(this.gameObject);
+                }
             }
+
         }
 
          if (collision.gameObject.CompareTag("Line"))

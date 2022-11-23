@@ -1,4 +1,4 @@
-
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -46,10 +46,14 @@ public class PlayerScript : MonoBehaviour
         }
         if (ArrowKeysEnabled)
         {
-            if (Input.GetKeyDown(KeyCode.UpArrow)) input += Vector2.up;
-            if (Input.GetKeyDown(KeyCode.LeftArrow)) input += Vector2.left;
-            if (Input.GetKeyDown(KeyCode.DownArrow)) input += Vector2.down;
-            if (Input.GetKeyDown(KeyCode.RightArrow)) input += Vector2.right;
+            if (Input.GetKey(KeyCode.UpArrow)) input += Vector2.up;
+            if (Input.GetKey(KeyCode.LeftArrow)) input += Vector2.left;
+            if (Input.GetKey(KeyCode.DownArrow)) input += Vector2.down;
+            if (Input.GetKey(KeyCode.RightArrow)) input += Vector2.right;
+            if (input == Vector2.up || input == Vector2.left || input == Vector2.down || input == Vector2.right)
+            {
+                TipScript.Ins.DirStepOk();
+            }
         }
         if (RightClickMoveEnabled)
         {
@@ -69,6 +73,28 @@ public class PlayerScript : MonoBehaviour
         // RB.velocity = input * JumpForce;
     }
 
+
+    IEnumerator FadeAlphaToZero(SpriteRenderer renderer, float fadeSpeed, GameObject G1)
+    {
+
+        Color matColor = renderer.material.color;
+        float alphaValue = renderer.material.color.a;
+
+        while (renderer.material.color.a > 0f)
+        {
+            alphaValue -= Time.deltaTime / fadeSpeed;
+            renderer.material.color = new Color(matColor.r, matColor.g, matColor.b, alphaValue);
+            yield return null;
+            //yield return new WaitForSeconds(500);
+        }
+        renderer.material.color = new Color(matColor.r, matColor.g, matColor.b, 0f);
+        //Destroy(G1);
+        SceneManager.LoadScene("FailScene");
+
+    }
+
+
+
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("ground"))
@@ -76,11 +102,14 @@ public class PlayerScript : MonoBehaviour
             // StaticScript.health = 0;
             if(StaticScript.playingOrNot == true)
             {
+
+                
                 StaticScript.playingOrNot = false;
                 Debug.Log("Hit Ground : End Game");
                 StaticScript.success_or_fail = 0;
                 StaticScript.lines_drawn=GameObject.FindGameObjectsWithTag("Line").Length;
-                SceneManager.LoadScene("FailScene");
+                StartCoroutine(FadeAlphaToZero(this.gameObject.GetComponent<SpriteRenderer>(), 0.5f, this.gameObject));
+                //SceneManager.LoadScene("FailScene");
             }
             //Application.Quit(); // Replace this Play Again/ Restart scene
             //UnityEditor.EditorApplication.isPlaying = false;
@@ -91,6 +120,18 @@ public class PlayerScript : MonoBehaviour
         {
             StaticScript.health -= 10;
             RB.AddForce(Vector2.up * 2000);
+            if (StaticScript.health == 0 && StaticScript.playingOrNot == true)
+            {
+                //Application.Quit(); // Replace this Play Again/ Restart scene
+                StaticScript.playingOrNot = false;
+                StaticScript.success_or_fail = 0;
+                //StaticScript.lines_drawn=GameObject.FindGameObjectsWithTag("Line").Length;
+                Debug.Log("End Game: Health Lost");
+                StartCoroutine(FadeAlphaToZero(this.gameObject.GetComponent<SpriteRenderer>(), 0.5f, this.gameObject));
+                //SceneManager.LoadScene("FailScene");
+
+            }
+
 
         }
 
@@ -103,22 +144,70 @@ public class PlayerScript : MonoBehaviour
         {
             StaticScript.health -= 10;
             RB.AddForce(Vector2.up * 2000);
+            if (StaticScript.health == 0 && StaticScript.playingOrNot == true)
+            {
+                //Application.Quit(); // Replace this Play Again/ Restart scene
+                StaticScript.playingOrNot = false;
+                StaticScript.success_or_fail = 0;
+                //StaticScript.lines_drawn=GameObject.FindGameObjectsWithTag("Line").Length;
+                Debug.Log("End Game: Health Lost");
+                StartCoroutine(FadeAlphaToZero(this.gameObject.GetComponent<SpriteRenderer>(), 0.5f, this.gameObject));
+                //SceneManager.LoadScene("FailScene");
+
+            }
+
 
         }
         if (collision.gameObject.CompareTag("Green Enemy"))
         {
             StaticScript.health -= 10;
             RB.AddForce(Vector2.up * 1000);
+            if (StaticScript.health == 0 && StaticScript.playingOrNot == true)
+            {
+                //Application.Quit(); // Replace this Play Again/ Restart scene
+                StaticScript.playingOrNot = false;
+                StaticScript.success_or_fail = 0;
+                //StaticScript.lines_drawn=GameObject.FindGameObjectsWithTag("Line").Length;
+                Debug.Log("End Game: Health Lost");
+                StartCoroutine(FadeAlphaToZero(this.gameObject.GetComponent<SpriteRenderer>(), 0.5f, this.gameObject));
+                //SceneManager.LoadScene("FailScene");
+
+            }
+
         }
         if (collision.gameObject.CompareTag("Black Enemy"))
         {
             StaticScript.health -= 10;
             RB.AddForce(Vector2.up * 1000);
+            if (StaticScript.health == 0 && StaticScript.playingOrNot == true)
+            {
+                //Application.Quit(); // Replace this Play Again/ Restart scene
+                StaticScript.playingOrNot = false;
+                StaticScript.success_or_fail = 0;
+                //StaticScript.lines_drawn=GameObject.FindGameObjectsWithTag("Line").Length;
+                Debug.Log("End Game: Health Lost");
+                StartCoroutine(FadeAlphaToZero(this.gameObject.GetComponent<SpriteRenderer>(), 0.5f, this.gameObject));
+                //SceneManager.LoadScene("FailScene");
+
+            }
+
         }
 
         if (collision.gameObject.CompareTag("EnemyBullet"))
         {
             StaticScript.health -= 10;
+            if (StaticScript.health == 0 && StaticScript.playingOrNot == true)
+            {
+                //Application.Quit(); // Replace this Play Again/ Restart scene
+                StaticScript.playingOrNot = false;
+                StaticScript.success_or_fail = 0;
+                //StaticScript.lines_drawn=GameObject.FindGameObjectsWithTag("Line").Length;
+                Debug.Log("End Game: Health Lost");
+                StartCoroutine(FadeAlphaToZero(this.gameObject.GetComponent<SpriteRenderer>(), 0.5f, this.gameObject));
+                //SceneManager.LoadScene("FailScene");
+
+            }
+
         }
     }
 }
