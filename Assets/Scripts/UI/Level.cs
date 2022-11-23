@@ -11,9 +11,6 @@ public class Level : MonoBehaviour
 
     void Start()
     {
-        Scene scene = SceneManager.GetActiveScene();
-        StaticScript.level = scene.name[scene.name.Length-1] - '0';
-
         StaticScript.success_or_fail = -1;
         StaticScript.playingOrNot = true;
 
@@ -33,6 +30,27 @@ public class Level : MonoBehaviour
         StaticScript.no_of_enemies =
             GameObject.FindGameObjectsWithTag("Black Enemy").Length +
             GameObject.FindGameObjectsWithTag("Green Enemy").Length;
+
+        string scene_name = SceneManager.GetActiveScene().name;
+        if (scene_name == "Tutorial")
+        {
+            if (StaticScript.tutorial_flag)
+            {
+                StaticScript.no_of_enemies = 3;
+            }
+            else
+            {
+                StaticScript.no_of_enemies = 5;
+            }
+            StaticScript.tutorial_flag = true;
+            StaticScript.level = 0;
+        }
+        else
+        {
+            int suffix = scene_name[scene_name.Length-1] - '0';
+            if (suffix > 0 && suffix < 10)
+                StaticScript.level = suffix;
+        }
     }
 
     void Update()

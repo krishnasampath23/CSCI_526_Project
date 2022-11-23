@@ -1871,6 +1871,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6687237915170139071, guid: 80206136e473f504fb5bef9aeeaa878e, type: 3}
+      propertyPath: NoOfLines
+      value: 999
+      objectReference: {fileID: 0}
+    - target: {fileID: 6687237915170139071, guid: 80206136e473f504fb5bef9aeeaa878e, type: 3}
+      propertyPath: NoOfBullets
+      value: 999
+      objectReference: {fileID: 0}
+    - target: {fileID: 6687237915170139071, guid: 80206136e473f504fb5bef9aeeaa878e, type: 3}
+      propertyPath: NoOfErasers
+      value: 999
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80206136e473f504fb5bef9aeeaa878e, type: 3}
 --- !u!1 &1890480842
