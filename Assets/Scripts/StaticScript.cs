@@ -12,8 +12,6 @@ static class StaticScript
 
     public static float timePrevious=0;
     public static float timeElapsed=0;
-    public static float timeLeft = 0;
-    public static bool timerOn = false;
 
     public static int health = 100;
     public static int score = 0;

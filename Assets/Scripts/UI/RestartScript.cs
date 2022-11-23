@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class RestartScript : MonoBehaviour
 {
+    // static variables are now handled in Assets\Scripts\UI\Level.cs
     public void LoadGame()
     {
         StaticScript.level += 1;

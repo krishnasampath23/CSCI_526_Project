@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 public class Level : MonoBehaviour
 {
 
-    public float TimeLeft = 12;
     public int NoOfErasers = 3;
     public int NoOfBullets = 10;
     public int NoOfLines = 3;
@@ -14,9 +13,7 @@ public class Level : MonoBehaviour
         StaticScript.success_or_fail = -1;
         StaticScript.playingOrNot = true;
 
-        StaticScript.timerOn = true;
         StaticScript.timePrevious = StaticScript.timeElapsed;
-        StaticScript.timeLeft = TimeLeft;
 
         StaticScript.health = 100;
         StaticScript.score = 0;
@@ -88,11 +85,6 @@ public class Level : MonoBehaviour
                 Debug.Log("End Game: Poops Over");
                 SceneManager.LoadScene("FailScene");
             }
-        }
-
-        if (StaticScript.timerOn && StaticScript.timeLeft > 0)
-        {
-            StaticScript.timeLeft -= Time.deltaTime / 4;
         }
     }
 
