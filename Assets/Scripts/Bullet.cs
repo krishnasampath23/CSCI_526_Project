@@ -37,29 +37,33 @@ public class Bullet : MonoBehaviour
         }
     }
 
+    IEnumerator FadeAlphaToZero(SpriteRenderer renderer, float fadeSpeed, GameObject G1)
+    {
+       
+        Color matColor = renderer.material.color;
+        float alphaValue = renderer.material.color.a;
+
+        while (renderer.material.color.a > 0f)
+        {
+            alphaValue -= Time.deltaTime / fadeSpeed;
+            renderer.material.color = new Color(matColor.r, matColor.g, matColor.b, alphaValue);
+            yield return null;
+            //yield return new WaitForSeconds(500);
+        }
+        renderer.material.color = new Color(matColor.r, matColor.g, matColor.b, 0f);
+        Destroy(G1);
+        
+    }
+
     private void OnCollisionEnter2D(Collision2D collision){
-        //if (collision.gameObject.CompareTag("person")){
-        //    // Red person/BadPerson = person
-        //    StaticScript.score += 100;
-        //    StaticScript.timeLeft += 20;
-        //    Destroy(collision.gameObject);
-        //    Destroy(this.gameObject);
-        //}
-        //if (collision.gameObject.CompareTag("goodPerson"))
-        //{
-        //    StaticScript.score -= 50;
-        //    StaticScript.timeLeft -= 10;
-        //    Destroy(collision.gameObject);
-        //    Destroy(this.gameObject);
-        //}
 
          if (collision.gameObject.CompareTag("Green Enemy"))
         {
             if(this.gameObject.GetComponent<SpriteRenderer>().color == collision.gameObject.GetComponent<SpriteRenderer>().color){
                 StaticScript.enemies_killed += 1;
-                Destroy(collision.gameObject);
-                Destroy(this.gameObject);
-                TipScript.Ins.KillGreenEnemy();
+                StartCoroutine(FadeAlphaToZero(collision.gameObject.GetComponent<SpriteRenderer>(), 1f,collision.gameObject));
+                StartCoroutine(FadeAlphaToZero(this.gameObject.GetComponent<SpriteRenderer>(), 1f,this.gameObject));
+
             }
             else
             {
@@ -71,11 +75,10 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.CompareTag("Black Enemy"))
         {
             
-            Destroy(this.gameObject);
             if(this.gameObject.GetComponent<SpriteRenderer>().color == collision.gameObject.GetComponent<SpriteRenderer>().color){
                 StaticScript.enemies_killed += 1;
-                Destroy(collision.gameObject);
-                Destroy(this.gameObject);
+                StartCoroutine(FadeAlphaToZero(collision.gameObject.GetComponent<SpriteRenderer>(), 1f, collision.gameObject));
+                StartCoroutine(FadeAlphaToZero(collision.gameObject.GetComponent<SpriteRenderer>(), 1f, this.gameObject));
                 TipScript.Ins.KillBlackEnemy();
             }
             else
