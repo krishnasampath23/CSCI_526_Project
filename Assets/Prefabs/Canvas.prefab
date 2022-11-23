@@ -1553,8 +1553,8 @@ MonoBehaviour:
   PoopNumTxt: {fileID: 4194331835026284701}
   Lines_left: {fileID: 4194331833609153366}
   Erasers: {fileID: 4194331834136540694}
-  slider: {fileID: 4194331835278277554}
-  slider1: {fileID: 4194331834216777625}
+  HealthBar: {fileID: 4194331835278277554}
+  PoopBar: {fileID: 4194331834216777625}
 --- !u!1 &4194331835514061675
 GameObject:
   m_ObjectHideFlags: 0
