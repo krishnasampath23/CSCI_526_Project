@@ -77,10 +77,4 @@ public class CanvasScript : MonoBehaviour
         PauseScreen.SetActive(false);
         GamePaused = false;
     }
-
-    public void Levels()
-    {
-        Resume();
-        SceneManager.LoadScene("Levels");
-    }
 }
