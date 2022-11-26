@@ -78,9 +78,9 @@ public class CanvasScript : MonoBehaviour
         GamePaused = false;
     }
 
-    public void MainMenu()
+    public void Levels()
     {
         Resume();
-        SceneManager.LoadScene("StartMenu");
+        SceneManager.LoadScene("Levels");
     }
 }
