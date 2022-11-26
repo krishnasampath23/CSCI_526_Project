@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1142513577416240412, guid: 32f95935490c7a6479ab7a63d870b034, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e2f8341dc16674a908da41abb150baf7, type: 3}
     - target: {fileID: 2137809467630382691, guid: 32f95935490c7a6479ab7a63d870b034, type: 3}
       propertyPath: m_Name
       value: Eraser
