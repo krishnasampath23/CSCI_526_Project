@@ -62,3 +62,8 @@ crashlytics-build.properties
 
 # MAC files
 .DS_Store
+
+# WebGL Builds
+/WebGL Builds/
+/connectwebgl.zip
+/webgl_sharing
