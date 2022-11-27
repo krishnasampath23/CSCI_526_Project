@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class DrawManagerScript : MonoBehaviour
 {
@@ -11,19 +12,23 @@ public class DrawManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (CanvasScript.GamePaused) return;
+        if (CanvasScript.GamePaused ||
+            StaticScript.lines_drawn >= StaticScript.lines_limit)
+            return;
 
-        if (StaticScript.lines_drawn < StaticScript.lines_limit)
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject())
         {
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            if (Input.GetMouseButtonDown(0))
+            if (_currentLine == null)
                 _currentLine = Instantiate(_linePrefab, mousePos, Quaternion.identity);
-            if (Input.GetMouseButtonUp(0)) {
+            _currentLine.SetPosition(mousePos);
+        }
+        if (Input.GetMouseButtonUp(0)) {
+            if (_currentLine != null) {
                 TipScript.Ins.DrawLinesOK();
                 StaticScript.lines_drawn += 1;
+                _currentLine = null;
             }
-            if (Input.GetMouseButton(0))
-                _currentLine.SetPosition(mousePos);
         }
     }
 }
