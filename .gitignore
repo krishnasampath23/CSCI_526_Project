@@ -23,7 +23,8 @@
 
 # Visual Studio cache directory
 .vs/
-.vsconfig/
+.vsconfig
+.vscode/
 # Gradle cache directory
 .gradle/
 
@@ -67,3 +68,6 @@ crashlytics-build.properties
 /WebGL Builds/
 /connectwebgl.zip
 /webgl_sharing
+
+
+mono_crash.*
