@@ -65,6 +65,7 @@ public class Level : MonoBehaviour
         {
             StaticScript.success_or_fail = 0;
             Debug.Log("End Game: Health Lost");
+            StaticScript.lose = "You ran out of Health";
             SceneManager.LoadScene("FailScene");
         }
         if(StaticScript.no_of_poops == 0)
@@ -76,6 +77,7 @@ public class Level : MonoBehaviour
             {
                 StaticScript.success_or_fail = 0;
                 Debug.Log("End Game: Poops Over");
+                StaticScript.lose = "You ran out of Bullets";
                 SceneManager.LoadScene("FailScene");
             }
         }

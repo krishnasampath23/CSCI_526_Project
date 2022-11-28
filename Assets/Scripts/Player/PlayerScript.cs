@@ -97,7 +97,9 @@ public class PlayerScript : MonoBehaviour
             Debug.Log("Hit Ground : End Game");
             StaticScript.success_or_fail = 0;
             StaticScript.lines_drawn=GameObject.FindGameObjectsWithTag("Line").Length;
+            StaticScript.lose = "You should not touch ground or beige colored enemy shelters";
             StartCoroutine(FadeAlphaToZero(this.gameObject.GetComponent<SpriteRenderer>(), 0.5f, this.gameObject));
+
         }
 
         if (collision.gameObject.CompareTag("EnemyShield"))

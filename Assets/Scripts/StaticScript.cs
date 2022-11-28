@@ -26,4 +26,6 @@ static class StaticScript
 
     public static bool tutorial_flag = false;
     public static int tutorialStep = 0;
+
+    public static string lose = "";
 }
