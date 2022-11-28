@@ -1895,8 +1895,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4528063027013048174, guid: 38cf5604fa09adc4aa716870f1d5beed, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 181.754
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528063027013048174, guid: 38cf5604fa09adc4aa716870f1d5beed, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 206.914
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528063027013048174, guid: 38cf5604fa09adc4aa716870f1d5beed, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 840
+      value: 830.8772
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528063027013048174, guid: 38cf5604fa09adc4aa716870f1d5beed, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 301.54324
       objectReference: {fileID: 0}
     - target: {fileID: 5421533611899307022, guid: 38cf5604fa09adc4aa716870f1d5beed, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1910,6 +1922,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Try drawing a line which can reflect the bomb to reach enemies above
         current level
+      objectReference: {fileID: 0}
+    - target: {fileID: 7530799726138488362, guid: 38cf5604fa09adc4aa716870f1d5beed, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7530799726138488362, guid: 38cf5604fa09adc4aa716870f1d5beed, type: 3}
       propertyPath: m_fontColor.b

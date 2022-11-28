@@ -1107,7 +1107,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 0c661903540a84eacafca182ad7a224d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3e0c0fb4602c84aeeaa7a1fed405fe18, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1126,8 +1126,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 607416067}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 111.9422, y: 56.4315, z: 0}
-  m_LocalScale: {x: 52.693207, y: 55.231075, z: 1}
+  m_LocalPosition: {x: 93.3594, y: 79.923, z: 0}
+  m_LocalScale: {x: 80.082794, y: 69.73475, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2317,16 +2317,20 @@ PrefabInstance:
       value: Touching the beige colored shelters can kill the player
       objectReference: {fileID: 0}
     - target: {fileID: 7530799726138488362, guid: 38cf5604fa09adc4aa716870f1d5beed, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7530799726138488362, guid: 38cf5604fa09adc4aa716870f1d5beed, type: 3}
       propertyPath: m_fontColor.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7530799726138488362, guid: 38cf5604fa09adc4aa716870f1d5beed, type: 3}
       propertyPath: m_fontColor.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7530799726138488362, guid: 38cf5604fa09adc4aa716870f1d5beed, type: 3}
       propertyPath: m_fontColor.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9182111339364359322, guid: 38cf5604fa09adc4aa716870f1d5beed, type: 3}
       propertyPath: m_AnchoredPosition.x

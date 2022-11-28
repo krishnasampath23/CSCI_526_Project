@@ -1660,8 +1660,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4528063027013048174, guid: 38cf5604fa09adc4aa716870f1d5beed, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 168
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528063027013048174, guid: 38cf5604fa09adc4aa716870f1d5beed, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 148.527
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528063027013048174, guid: 38cf5604fa09adc4aa716870f1d5beed, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 844
+      value: 828.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528063027013048174, guid: 38cf5604fa09adc4aa716870f1d5beed, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 330.736
       objectReference: {fileID: 0}
     - target: {fileID: 5421533611899307022, guid: 38cf5604fa09adc4aa716870f1d5beed, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1670,6 +1682,10 @@ PrefabInstance:
     - target: {fileID: 7530799726138488362, guid: 38cf5604fa09adc4aa716870f1d5beed, type: 3}
       propertyPath: m_text
       value: Touch the platforms to change color
+      objectReference: {fileID: 0}
+    - target: {fileID: 7530799726138488362, guid: 38cf5604fa09adc4aa716870f1d5beed, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9182111339364359322, guid: 38cf5604fa09adc4aa716870f1d5beed, type: 3}
       propertyPath: m_LocalScale.x
