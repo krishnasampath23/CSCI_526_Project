@@ -25,7 +25,7 @@ public class RestartScript : MonoBehaviour
     public void LoadLevel(int level_id)
     {
         string scene_name;
-        if (level_id > 6) scene_name = "Levels";
+        if (level_id > 8) scene_name = "Levels";
         if (level_id == 0) scene_name = "Tutorial";
         else scene_name = "Level" + level_id.ToString();
         SceneManager.LoadScene(scene_name);
