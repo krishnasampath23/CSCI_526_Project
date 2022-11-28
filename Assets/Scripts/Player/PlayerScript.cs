@@ -7,6 +7,8 @@ public class PlayerScript : MonoBehaviour
     public bool WASDEnabled = true;
     public bool ArrowKeysEnabled = true;
     public bool RightClickMoveEnabled = false;
+    private AudioClip platformCollisionSound;
+    private AudioSource audioSource;
 
     private float maxSpeed = 100f;
 
@@ -18,6 +20,11 @@ public class PlayerScript : MonoBehaviour
     private void Awake()
     {
         RB = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
+    }
+    private void Start()
+    {
+      platformCollisionSound = (AudioClip)Resources.Load("collide");
     }
 
     // Update is called once per frame
@@ -99,7 +106,8 @@ public class PlayerScript : MonoBehaviour
             StaticScript.lines_drawn=GameObject.FindGameObjectsWithTag("Line").Length;
             StaticScript.lose = "You should not touch ground or beige colored enemy shelters";
             StartCoroutine(FadeAlphaToZero(this.gameObject.GetComponent<SpriteRenderer>(), 0.5f, this.gameObject));
-
+            audioSource.clip = platformCollisionSound;
+            audioSource.Play();
         }
 
         if (collision.gameObject.CompareTag("EnemyShield"))
