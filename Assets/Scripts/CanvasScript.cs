@@ -13,6 +13,8 @@ public class CanvasScript : MonoBehaviour
     int hint_time;
 
     public Slider HealthBar;
+    public Gradient gradient;
+    public Image Fill;
     public TMP_Text BulletNumber;
     public TMP_Text LineNumber;
     public TMP_Text EraserNumber;
@@ -22,6 +24,7 @@ public class CanvasScript : MonoBehaviour
     {
         Hint.SetActive(false);
         PauseScreen.SetActive(false);
+        Fill.color = gradient.Evaluate(1f);
     }
 
     void Update()
@@ -45,6 +48,7 @@ public class CanvasScript : MonoBehaviour
     void UpdateUI()
     {
         HealthBar.value = StaticScript.health;
+        Fill.color = gradient.Evaluate(HealthBar.normalizedValue);
         BulletNumber.text = "x" + StaticScript.no_of_poops.ToString();
         LineNumber.text = "x " + (StaticScript.lines_limit - StaticScript.lines_drawn).ToString();
         EraserNumber.text = "x " + StaticScript.no_of_erasers.ToString();
