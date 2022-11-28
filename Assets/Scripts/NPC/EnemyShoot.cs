@@ -33,6 +33,10 @@ public class EnemyShoot : MonoBehaviour
             {
                 interval = 0.2f;
             }
+            if (StaticScript.level == 7)
+            {
+                interval = 0.2f;
+            }
             yield return new WaitForSeconds(interval);
             Shoot();
         }
