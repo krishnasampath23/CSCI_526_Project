@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
-{   
+{
     private float bulletSpeed = 100f;
     private float bulletDamage = 10f;
     private bool isref = false;
@@ -11,35 +11,20 @@ public class Bullet : MonoBehaviour
     private float targetTime = 10.0f;
     Vector2 lastVelocity;
     public Rigidbody2D rb;
-    
+
 
     private void Start(){
-        // rb.AddForce(Vector2.down * bulletSpeed);
         rb.velocity = Vector2.down * bulletSpeed;
         lastVelocity = rb.velocity;
+        Destroy(this.gameObject, targetTime);
     }
 
     private void FixedUpdate(){
-        //rb.velocity = Vector2.right * bulletSpeed;
-        // // rb.velocity = Vector2.down * bulletSpeed;
-        // rb.velocity.x += bulletSpeed;
-        // rb.velocity.y += bulletSpeed;
-        // if(isref == true){
-        //     // rb.velocity *= bulletSpeed*10;
-        //     rb.AddForce(transform.position * bulletSpeed);
-        //     isref = false;
-        // }
         lastVelocity = rb.velocity;
-        targetTime -= Time.deltaTime;
-        if (targetTime <= 0.0f)
-        {
-            Destroy(this.gameObject);
-        }
     }
 
     IEnumerator FadeAlphaToZero(SpriteRenderer renderer, float fadeSpeed, GameObject G1, int enemycheck)
     {
-       
         Color matColor = renderer.material.color;
         float alphaValue = renderer.material.color.a;
 
@@ -68,15 +53,13 @@ public class Bullet : MonoBehaviour
             {
                 if (this.gameObject.GetComponent<SpriteRenderer>().color == collision.gameObject.GetComponent<SpriteRenderer>().color)
                 {
-
                     StartCoroutine(FadeAlphaToZero(collision.gameObject.GetComponent<SpriteRenderer>(), 0.5f, collision.gameObject,1));
                     StartCoroutine(FadeAlphaToZero(this.gameObject.GetComponent<SpriteRenderer>(), 0.5f, this.gameObject,0));
-                  
                 }
                 else
                 {
                     Destroy(this.gameObject);
-       
+
                 }
 
             }
