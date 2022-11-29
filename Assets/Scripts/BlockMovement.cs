@@ -5,76 +5,45 @@ using UnityEngine;
 
 public class BlockMovement : MonoBehaviour
 {
-    public GameObject block;
     private Rigidbody2D rb;
-    private float currentX;
-    private int val;
-    public bool isRightDirection=false;
-    private void Awake(){
-      rb = GetComponent<Rigidbody2D>();
-    }
-    // private void FixedUpdate(){
-    //   rb.velocity = new Vector2(20f, 0f);
-    // }
-    float rangeVal;
     private SpriteRenderer spriteRenderer;
+    private float currentX;
+    public float velocityX = 20;
+    public float rangeVal = 25;
+    public bool initialRightDirection = false;
 
     void Start()
     {
-      currentX = block.transform.position.x;
-      rangeVal = Random.Range(15f,35f);
-      val = Random.Range(1,3);
-      Debug.Log(val);
-      if(val == 1)
-      {
-        isRightDirection = true;
-      }
-      if(val ==  2)
-      {
-        isRightDirection = false;
-      }
+      rb = GetComponent<Rigidbody2D>();
       spriteRenderer = GetComponent<SpriteRenderer>();
+      currentX = rb.position.x;
+      changeDirection(initialRightDirection);
     }
+
     void Update()
     {
-      if(isRightDirection)
+      if (rb.position.x >= currentX+rangeVal)
       {
-        moveObjectRight();
+        changeDirection(false);
       }
-      if(!isRightDirection)
+      if (rb.position.x <= currentX-rangeVal)
       {
-        moveObjectLeft();
-      }
-      if(block.transform.position.x >=currentX+rangeVal)
-      {
-        isRightDirection = false;
-        spriteRenderer.flipX = true;
-      }
-      if(block.transform.position.x <= currentX-rangeVal)
-      {
-        isRightDirection = true;
-        spriteRenderer.flipX = false;
+        changeDirection(true);
       }
     }
-    void moveObjectRight()
+
+    void OnCollisionEnter2D(Collision2D collision)
     {
-      rb.velocity = new Vector2(20f, 0f);
-    }
-    void moveObjectLeft()
-    {
-      rb.velocity = new Vector2(-20f, 0f);
-    }
-    void OnCollisionEnter2D(Collision2D collision2D)
-    {
-      if(isRightDirection)
+      if (!enabled) return;
+      if (collision.gameObject.CompareTag("Line") || collision.gameObject.CompareTag("player"))
       {
-        isRightDirection = false;
-        spriteRenderer.flipX = true;
+        changeDirection(rb.velocity.x < 0);
       }
-      else if(!isRightDirection)
-      {
-        isRightDirection = true;
-        spriteRenderer.flipX = false;
-      }
+    }
+
+    void changeDirection(bool toRight)
+    {
+      rb.velocity = (toRight ? Vector2.right : Vector2.left) * velocityX;
+      spriteRenderer.flipX = !toRight;
     }
 }

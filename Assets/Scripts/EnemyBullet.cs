@@ -1,45 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
-{   
-    public float bulletSpeed = 15f;
-    public float bulletDamage = 10f;
-    public Rigidbody2D rb;
+{
+    private float bulletSpeed = 100f;
+    private float targetTime = 10.0f;
+    private Rigidbody2D rb;
 
-    private void FixedUpdate(){
-        //rb.velocity = Vector2.right * bulletSpeed;
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
         rb.velocity = Vector2.up * bulletSpeed;
+        Destroy(this.gameObject, targetTime);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision){
-
-            if (collision.gameObject.CompareTag("player")){
-                StaticScript.health -= 10;
-                Destroy(this.gameObject);
-            }
-
-            if (collision.gameObject.CompareTag("Platform1")){
-                collision.gameObject.GetComponent<SpriteRenderer>().color = this.GetComponent<SpriteRenderer>().color;
-                Destroy(this.gameObject);
-            }
-            if (collision.gameObject.CompareTag("Platform2")){
-                collision.gameObject.GetComponent<SpriteRenderer>().color = this.GetComponent<SpriteRenderer>().color;
-                Destroy(this.gameObject);
-            }
-
-            if (collision.gameObject.CompareTag("LevelStart")){
-                Destroy(this.gameObject);
-            }
-            if (collision.gameObject.CompareTag("ground")){
-                Destroy(this.gameObject);
-            }
-
-            if (collision.gameObject.CompareTag("Line"))
-            {
-                Destroy(this.gameObject);
-            }
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Line"))
+        {
+            rb.velocity = Vector2.Reflect(rb.velocity, collision.contacts[0].normal);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
     }
-    }
+}

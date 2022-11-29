@@ -1,4 +1,4 @@
-
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,51 +7,30 @@ public class PlayerScript : MonoBehaviour
     public bool WASDEnabled = true;
     public bool ArrowKeysEnabled = true;
     public bool RightClickMoveEnabled = false;
+    private AudioClip platformCollisionSound;
+    private AudioSource audioSource;
+
+    private float maxSpeed = 100f;
 
     public float JumpForce;
-    float score;
 
     [SerializeField]
-    bool isGrounded = false;
-    bool isAlive = true;
-    public string whichPlatform;
-    bool isCurrentlyColliding = false;
     Rigidbody2D RB;
 
     private void Awake()
     {
         RB = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
+    }
+    private void Start()
+    {
+      platformCollisionSound = (AudioClip)Resources.Load("collide");
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if(isCurrentlyColliding == true){
-            // Debug.Log(whichPlatform);
-            if(this.GetComponent<SpriteRenderer>().color != GameObject.FindGameObjectWithTag(whichPlatform).GetComponent<SpriteRenderer>().color){
-                StaticScript.no_color_switches+=1;
-            }
-            this.GetComponent<SpriteRenderer>().color=GameObject.FindGameObjectWithTag(whichPlatform).GetComponent<SpriteRenderer>().color;
-
-        }
-
-        //StaticScript.score += 1;
-
-
-        if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
-        {
-            //Application.Quit(); ; // For Web GL Build
-            //Debug.Log("All enemies are dead");
-            //UnityEditor.EditorApplication.isPlaying = false;
-        }
-
         move();
-
-        if (isAlive)
-        {
-            score += Time.deltaTime * 10;
-        }
-
     }
 
     private void move()
@@ -59,17 +38,25 @@ public class PlayerScript : MonoBehaviour
         Vector2 input = new Vector2();
         if (WASDEnabled)
         {
-            if (Input.GetKeyDown(KeyCode.W)) input += Vector2.up;
-            if (Input.GetKeyDown(KeyCode.A)) input += Vector2.left;
-            if (Input.GetKeyDown(KeyCode.S)) input += Vector2.down;
-            if (Input.GetKeyDown(KeyCode.D)) input += Vector2.right;
+            if (Input.GetKey(KeyCode.W)) input = Vector2.up;
+            if (Input.GetKey(KeyCode.A)) input = Vector2.left;
+            if (Input.GetKey(KeyCode.S)) input = Vector2.down;
+            if (Input.GetKey(KeyCode.D)) input = Vector2.right;
+            if(input == Vector2.up || input == Vector2.left || input == Vector2.down || input == Vector2.right)
+            {
+                TipScript.Ins.DirStepOk();
+            }
         }
         if (ArrowKeysEnabled)
         {
-            if (Input.GetKeyDown(KeyCode.UpArrow)) input += Vector2.up;
-            if (Input.GetKeyDown(KeyCode.LeftArrow)) input += Vector2.left;
-            if (Input.GetKeyDown(KeyCode.DownArrow)) input += Vector2.down;
-            if (Input.GetKeyDown(KeyCode.RightArrow)) input += Vector2.right;
+            if (Input.GetKey(KeyCode.UpArrow)) input += Vector2.up;
+            if (Input.GetKey(KeyCode.LeftArrow)) input += Vector2.left;
+            if (Input.GetKey(KeyCode.DownArrow)) input += Vector2.down;
+            if (Input.GetKey(KeyCode.RightArrow)) input += Vector2.right;
+            if (input == Vector2.up || input == Vector2.left || input == Vector2.down || input == Vector2.right)
+            {
+                TipScript.Ins.DirStepOk();
+            }
         }
         if (RightClickMoveEnabled)
         {
@@ -81,120 +68,115 @@ public class PlayerScript : MonoBehaviour
             }
         }
         RB.AddForce(input * JumpForce);
+        // check if speed > maxSpeed
+        if(RB.velocity.magnitude > maxSpeed)
+        {
+            RB.velocity = RB.velocity.normalized * maxSpeed;
+        }
     }
 
-    public void OnCollisionExit2D(Collision2D collision)
+
+    IEnumerator FadeAlphaToZero(SpriteRenderer renderer, float fadeSpeed, GameObject G1)
     {
-        if (collision.gameObject.CompareTag("Platform1"))
+
+        Color matColor = renderer.material.color;
+        float alphaValue = renderer.material.color.a;
+
+        while (renderer.material.color.a > 0f)
         {
-
-            whichPlatform = "Platform1";
-            // if(this.GetComponent<SpriteRenderer>().color != collision.gameObject.GetComponent<SpriteRenderer>().color){
-            //     StaticScript.no_color_switches+=1;
-            // }
-            this.GetComponent<SpriteRenderer>().color = collision.gameObject.GetComponent<SpriteRenderer>().color;
-            isCurrentlyColliding = false;
-            // GetComponent<SpriteRenderer>().color = new Color (0,0,0,1);
-
+            alphaValue -= Time.deltaTime / fadeSpeed;
+            renderer.material.color = new Color(matColor.r, matColor.g, matColor.b, alphaValue);
+            yield return null;
+            //yield return new WaitForSeconds(500);
         }
-
-        if (collision.gameObject.CompareTag("Platform2"))
-        {
-            whichPlatform = "Platform2";
-            // if(this.GetComponent<SpriteRenderer>().color != collision.gameObject.GetComponent<SpriteRenderer>().color){
-            //     StaticScript.no_color_switches+=1;
-            // }
-            this.GetComponent<SpriteRenderer>().color = collision.gameObject.GetComponent<SpriteRenderer>().color;
-            isCurrentlyColliding = false;
-            // GetComponent<SpriteRenderer>().color = new Color32 (5,137,35,255);
-
-        }
+        renderer.material.color = new Color(matColor.r, matColor.g, matColor.b, 0f);
+        //Destroy(G1);
+        SceneManager.LoadScene("FailScene");
 
     }
+
+
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("ground"))
         {
-            if (isGrounded == false)
-            {
-                isGrounded = true;
-
-            }
-            // StaticScript.health = 0;
-            if(StaticScript.playingOrNot == true)
-            {
-                StaticScript.playingOrNot = false;
-                Debug.Log("Hit Ground : End Game");
-                StaticScript.success_or_fail = 0;
-                StaticScript.lines_drawn=GameObject.FindGameObjectsWithTag("Line").Length;
-                SceneManager.LoadScene("FailScene");
-            }
-            //Application.Quit(); // Replace this Play Again/ Restart scene
-            //UnityEditor.EditorApplication.isPlaying = false;
-
+            Debug.Log("Hit Ground : End Game");
+            StaticScript.success_or_fail = 0;
+            StaticScript.lines_drawn=GameObject.FindGameObjectsWithTag("Line").Length;
+            StaticScript.lose = "You should not touch ground or beige colored enemy shelters";
+            StartCoroutine(FadeAlphaToZero(this.gameObject.GetComponent<SpriteRenderer>(), 0.5f, this.gameObject));
+            audioSource.clip = platformCollisionSound;
+            audioSource.Play();
         }
-        // if (collision.gameObject.CompareTag("person"))
-        // {
-        //     StaticScript.health -= 20;
-        //     Destroy(collision.gameObject);
-        // }
 
-        // if (collision.gameObject.CompareTag("food"))
-        // {
-        //     StaticScript.no_of_poops += 1;
-        //     Destroy(collision.gameObject);
-
-        //     //Application.Quit();
-        //     //UnityEditor.EditorApplication.isPlaying = false;
-
-        // }
         if (collision.gameObject.CompareTag("EnemyShield"))
         {
             StaticScript.health -= 10;
             RB.AddForce(Vector2.up * 2000);
+            if (StaticScript.health == 0)
+            {
+                StaticScript.success_or_fail = 0;
+                Debug.Log("End Game: Health Lost");
+                StartCoroutine(FadeAlphaToZero(this.gameObject.GetComponent<SpriteRenderer>(), 0.5f, this.gameObject));
+            }
+
 
         }
 
-        if (collision.gameObject.CompareTag("Platform1"))
+        if (collision.gameObject.name == "Green Platform")
         {
-            whichPlatform = "Platform1";
-            if(this.GetComponent<SpriteRenderer>().color != collision.gameObject.GetComponent<SpriteRenderer>().color){
-                StaticScript.no_color_switches+=1;
-            }
-            this.GetComponent<SpriteRenderer>().color = collision.gameObject.GetComponent<SpriteRenderer>().color;
-            isCurrentlyColliding = true;
-            // GetComponent<SpriteRenderer>().color = new Color (0,0,0,1);
-
-        }
-
-        if (collision.gameObject.CompareTag("Platform2"))
-        {
-            whichPlatform = "Platform2";
-            if(this.GetComponent<SpriteRenderer>().color != collision.gameObject.GetComponent<SpriteRenderer>().color){
-                StaticScript.no_color_switches+=1;
-            }
-            this.GetComponent<SpriteRenderer>().color = collision.gameObject.GetComponent<SpriteRenderer>().color;
-            isCurrentlyColliding = true;
-            // GetComponent<SpriteRenderer>().color = new Color32 (5,137,35,255);
-
+            TipScript.Ins.ToGreenPlatformOK();
         }
 
         if (collision.gameObject.CompareTag("Enemy"))
         {
             StaticScript.health -= 10;
             RB.AddForce(Vector2.up * 2000);
+            if (StaticScript.health == 0)
+            {
+                StaticScript.success_or_fail = 0;
+                Debug.Log("End Game: Health Lost");
+                StartCoroutine(FadeAlphaToZero(this.gameObject.GetComponent<SpriteRenderer>(), 0.5f, this.gameObject));
+            }
+
 
         }
         if (collision.gameObject.CompareTag("Green Enemy"))
         {
             StaticScript.health -= 10;
             RB.AddForce(Vector2.up * 1000);
+            if (StaticScript.health == 0)
+            {
+                StaticScript.success_or_fail = 0;
+                Debug.Log("End Game: Health Lost");
+                StartCoroutine(FadeAlphaToZero(this.gameObject.GetComponent<SpriteRenderer>(), 0.5f, this.gameObject));
+            }
+
         }
         if (collision.gameObject.CompareTag("Black Enemy"))
         {
             StaticScript.health -= 10;
             RB.AddForce(Vector2.up * 1000);
+            if (StaticScript.health == 0)
+            {
+                StaticScript.success_or_fail = 0;
+                Debug.Log("End Game: Health Lost");
+                StartCoroutine(FadeAlphaToZero(this.gameObject.GetComponent<SpriteRenderer>(), 0.5f, this.gameObject));
+            }
+
+        }
+
+        if (collision.gameObject.CompareTag("EnemyBullet"))
+        {
+            StaticScript.health -= 10;
+            if (StaticScript.health == 0)
+            {
+                StaticScript.success_or_fail = 0;
+                Debug.Log("End Game: Health Lost");
+                StartCoroutine(FadeAlphaToZero(this.gameObject.GetComponent<SpriteRenderer>(), 0.5f, this.gameObject));
+            }
+
         }
     }
 }

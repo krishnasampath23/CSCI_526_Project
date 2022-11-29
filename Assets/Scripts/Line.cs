@@ -24,7 +24,8 @@ public class Line : MonoBehaviour
         if (collision.gameObject.CompareTag("Eraser")){
                 Destroy(this.gameObject);
                 Destroy(collision.gameObject);
-            }
+                TipScript.Ins.EraserLineOK();
+        }
 
     }
 

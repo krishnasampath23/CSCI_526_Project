@@ -21,7 +21,7 @@
             {
                 "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
                 "key": "buildOutputDirList",
-                "value": "{\"m_Value\":\"C:/Users/krish/Documents/CSCI 526/Final Staging/CSCI_526_Project/WebGL Builds;C:/Users/krish/Documents/CSCI 526/Rakshita/CSCI_526_Rakshita-Project-staging/WebGL Builds;C:/Users/sgolaga/Desktop/GameDev/CSCI_526_Project-staging/WebGL Builds;;;;;;;\"}"
+                "value": "{\"m_Value\":\"/Users/norito/Desktop/documentation/USC/courses/526/project/1115webgl;/Users/norito/Desktop/documentation/USC/courses/526/project/526_project/WebGL Builds;C:/Users/krish/Documents/CSCI 526/Final Staging/CSCI_526_Project/WebGL Builds;C:/Users/krish/Documents/CSCI 526/Rakshita/CSCI_526_Rakshita-Project-staging/WebGL Builds;C:/Users/sgolaga/Desktop/GameDev/CSCI_526_Project-staging/WebGL Builds;;;;;\"}"
             }
         ]
     }
