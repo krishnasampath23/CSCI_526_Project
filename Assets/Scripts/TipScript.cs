@@ -51,7 +51,7 @@ public class TipScript:MonoBehaviour
         ShowTip();
         if(sceneIndex == 0)
         {
-            Invoke("ShowNextTip", 5);
+            Invoke("ShowNextTip", 2);
         }
     }
 
