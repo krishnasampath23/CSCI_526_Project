@@ -35,6 +35,7 @@ public class Bullet : MonoBehaviour
             yield return null;
             //yield return new WaitForSeconds(500);
         }
+        renderer.material.color = new Color(matColor.r, matColor.g, matColor.b, 0.0f);
         renderer.material.color = new Color(matColor.r, matColor.g, matColor.b, 0f);
         Destroy(G1);
         if (enemycheck == 1)
@@ -54,7 +55,7 @@ public class Bullet : MonoBehaviour
                 if (this.gameObject.GetComponent<SpriteRenderer>().color == collision.gameObject.GetComponent<SpriteRenderer>().color)
                 {
                     StartCoroutine(FadeAlphaToZero(collision.gameObject.GetComponent<SpriteRenderer>(), 0.5f, collision.gameObject,1));
-                    StartCoroutine(FadeAlphaToZero(this.gameObject.GetComponent<SpriteRenderer>(), 0.5f, this.gameObject,0));
+                    StartCoroutine(FadeAlphaToZero(this.gameObject.GetComponent<SpriteRenderer>(), 0.5f, this.gameObject, 0));
                 }
                 else
                 {
@@ -89,7 +90,7 @@ public class Bullet : MonoBehaviour
                 {
 
                     StartCoroutine(FadeAlphaToZero(collision.gameObject.GetComponent<SpriteRenderer>(), 0.5f, collision.gameObject,1));
-                    StartCoroutine(FadeAlphaToZero(collision.gameObject.GetComponent<SpriteRenderer>(), 0.5f, this.gameObject,0));
+                    StartCoroutine(FadeAlphaToZero(collision.gameObject.GetComponent<SpriteRenderer>(), 0.5f, this.gameObject, 0));
                     //StaticScript.enemies_killed += 1;
                     //TipScript.Ins.KillBlackEnemy();
 
