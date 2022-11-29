@@ -1995,10 +1995,30 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4528063027013048174, guid: 38cf5604fa09adc4aa716870f1d5beed, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 281.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528063027013048174, guid: 38cf5604fa09adc4aa716870f1d5beed, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 194.781
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528063027013048174, guid: 38cf5604fa09adc4aa716870f1d5beed, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 812.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528063027013048174, guid: 38cf5604fa09adc4aa716870f1d5beed, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 307.61
+      objectReference: {fileID: 0}
     - target: {fileID: 7530799726138488362, guid: 38cf5604fa09adc4aa716870f1d5beed, type: 3}
       propertyPath: m_text
       value: You could try drawing a line to stop the trajectory of bullets from
         one enemy. Use available lines very carefully
+      objectReference: {fileID: 0}
+    - target: {fileID: 7530799726138488362, guid: 38cf5604fa09adc4aa716870f1d5beed, type: 3}
+      propertyPath: m_fontStyle
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38cf5604fa09adc4aa716870f1d5beed, type: 3}

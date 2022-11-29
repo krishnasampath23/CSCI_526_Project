@@ -1680,8 +1680,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4528063027013048174, guid: 38cf5604fa09adc4aa716870f1d5beed, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 223.452
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528063027013048174, guid: 38cf5604fa09adc4aa716870f1d5beed, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 178.328
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528063027013048174, guid: 38cf5604fa09adc4aa716870f1d5beed, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 815
+      value: 819.726
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528063027013048174, guid: 38cf5604fa09adc4aa716870f1d5beed, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 315.836
       objectReference: {fileID: 0}
     - target: {fileID: 5421533611899307022, guid: 38cf5604fa09adc4aa716870f1d5beed, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1691,6 +1703,10 @@ PrefabInstance:
       propertyPath: m_text
       value: You could try drawing a line to stop the trajectory of bullets from
         one enemy. Use available lines very carefully
+      objectReference: {fileID: 0}
+    - target: {fileID: 7530799726138488362, guid: 38cf5604fa09adc4aa716870f1d5beed, type: 3}
+      propertyPath: m_fontStyle
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7530799726138488362, guid: 38cf5604fa09adc4aa716870f1d5beed, type: 3}
       propertyPath: m_fontColor.b
